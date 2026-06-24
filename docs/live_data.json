@@ -1,6 +1,6 @@
 {
-  "generatedMT": "2026-06-23T22:40:57.097921-06:00",
-  "ts": "22:40 MT",
+  "generatedMT": "2026-06-23T22:47:54.687887-06:00",
+  "ts": "22:47 MT",
   "mlbLive": [
     {
       "id": "401815880",
@@ -10,7 +10,7 @@
       "homeScore": "6",
       "awayScore": "6",
       "state": "in",
-      "period": 9,
+      "period": 10,
       "displayClock": "0:00",
       "venue": "Petco Park",
       "date": "2026-06-24T01:40Z",
@@ -281,7 +281,7 @@
       "homeScore": "6",
       "awayScore": "6",
       "state": "in",
-      "period": 9,
+      "period": 10,
       "displayClock": "0:00",
       "venue": "Petco Park",
       "date": "2026-06-24T01:40Z",
