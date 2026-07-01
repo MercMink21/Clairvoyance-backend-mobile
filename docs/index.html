@@ -2223,15 +2223,15 @@ let LOCKED_PROPS=(()=>{try{return JSON.parse(localStorage.getItem('locked_props'
 (function seedTennisBets(){const D=window.__CV_DATA||{};
   const tb=[
     // ✅ SETTLED WINS — RG R1 WTA (May 24-26)
-    {id:'ten_rg_r1_sakkari_noskova',hA:'M.Sakkari',awA:'L.Noskova',sport:'TEN',betType:'ML',betOn:'M.Sakkari ML',winProb:.585,ml:'+142',decOdds:2.42,wager:100,outcome:'win',date:'2026-05-24',lockedAt:1748095200000,note:'RG R1 WTA — PREMIUM VALUE. Sakkari +142 vs Noskova(12). 3x RG QF pedigree. Won.'},
-    {id:'ten_rg_r1_svitolina_bondar',hA:'E.Svitolina',awA:'A.Bondar',sport:'TEN',betType:'ML',betOn:'E.Svitolina ML',winProb:.736,ml:'-280',decOdds:1.357,wager:100,outcome:'win',date:'2026-05-25',lockedAt:1748181600000,note:'RG R1 WTA — Svitolina(7) vs Bondar. Clay veteran dominant. Won.'},
-    {id:'ten_rg_r1_swiatek_jones',hA:'I.Swiatek',awA:'E.Jones',sport:'TEN',betType:'ML',betOn:'I.Swiatek ML',winProb:.875,ml:'-700',decOdds:1.143,wager:100,outcome:'win',date:'2026-05-25',lockedAt:1748181600000,note:'RG R1 WTA — Swiatek(3) PREMIUM OPTIMAL. 4x RG champion. Jones wildcard. Won.'},
-    {id:'ten_rg_r1_paolini_yastremska',hA:'J.Paolini',awA:'D.Yastremska',sport:'TEN',betType:'ML',betOn:'J.Paolini ML',winProb:.688,ml:'-220',decOdds:1.455,wager:100,outcome:'win',date:'2026-05-25',lockedAt:1748181600000,note:'RG R1 WTA — Paolini(13) 2024 RG finalist. Clay elite. Won.'},
-    {id:'ten_rg_r1_rybakina_erjavec',hA:'E.Rybakina',awA:'V.Erjavec',sport:'TEN',betType:'ML',betOn:'E.Rybakina ML',winProb:.833,ml:'-500',decOdds:1.200,wager:100,outcome:'win',date:'2026-05-26',lockedAt:1748268000000,note:'RG R1 WTA — Rybakina(2) vs Erjavec qualifier. OPTIMAL. Won.'},
-    {id:'ten_rg_r1_sabalenka_bouzas',hA:'A.Sabalenka',awA:'J.Bouzas-Maneiro',sport:'TEN',betType:'ML',betOn:'A.Sabalenka ML',winProb:.857,ml:'-600',decOdds:1.167,wager:100,outcome:'win',date:'2026-05-26',lockedAt:1748268000000,note:'RG R1 WTA — Sabalenka(1) dominant. Bouzas-Maneiro qualifier. Won.'},
+    {id:'ten_rg_r1_sakkari_noskova',hA:'M.Sakkari',awA:'L.Noskova',sport:'WTA',betType:'ML',betOn:'M.Sakkari ML',winProb:.585,ml:'+142',decOdds:2.42,wager:100,outcome:'win',date:'2026-05-24',lockedAt:1748095200000,note:'RG R1 WTA — PREMIUM VALUE. Sakkari +142 vs Noskova(12). 3x RG QF pedigree. Won.'},
+    {id:'ten_rg_r1_svitolina_bondar',hA:'E.Svitolina',awA:'A.Bondar',sport:'WTA',betType:'ML',betOn:'E.Svitolina ML',winProb:.736,ml:'-280',decOdds:1.357,wager:100,outcome:'win',date:'2026-05-25',lockedAt:1748181600000,note:'RG R1 WTA — Svitolina(7) vs Bondar. Clay veteran dominant. Won.'},
+    {id:'ten_rg_r1_swiatek_jones',hA:'I.Swiatek',awA:'E.Jones',sport:'WTA',betType:'ML',betOn:'I.Swiatek ML',winProb:.875,ml:'-700',decOdds:1.143,wager:100,outcome:'win',date:'2026-05-25',lockedAt:1748181600000,note:'RG R1 WTA — Swiatek(3) PREMIUM OPTIMAL. 4x RG champion. Jones wildcard. Won.'},
+    {id:'ten_rg_r1_paolini_yastremska',hA:'J.Paolini',awA:'D.Yastremska',sport:'WTA',betType:'ML',betOn:'J.Paolini ML',winProb:.688,ml:'-220',decOdds:1.455,wager:100,outcome:'win',date:'2026-05-25',lockedAt:1748181600000,note:'RG R1 WTA — Paolini(13) 2024 RG finalist. Clay elite. Won.'},
+    {id:'ten_rg_r1_rybakina_erjavec',hA:'E.Rybakina',awA:'V.Erjavec',sport:'WTA',betType:'ML',betOn:'E.Rybakina ML',winProb:.833,ml:'-500',decOdds:1.200,wager:100,outcome:'win',date:'2026-05-26',lockedAt:1748268000000,note:'RG R1 WTA — Rybakina(2) vs Erjavec qualifier. OPTIMAL. Won.'},
+    {id:'ten_rg_r1_sabalenka_bouzas',hA:'A.Sabalenka',awA:'J.Bouzas-Maneiro',sport:'WTA',betType:'ML',betOn:'A.Sabalenka ML',winProb:.857,ml:'-600',decOdds:1.167,wager:100,outcome:'win',date:'2026-05-26',lockedAt:1748268000000,note:'RG R1 WTA — Sabalenka(1) dominant. Bouzas-Maneiro qualifier. Won.'},
     // 📡 LIVE / PENDING — May 26
-    {id:'ten_rg_r1_osaka_siegemund',hA:'N.Osaka',awA:'L.Siegemund',sport:'TEN',betType:'ML',betOn:'N.Osaka ML',winProb:.661,ml:'-195',decOdds:1.513,wager:100,outcome:'win',date:'2026-05-26',lockedAt:1748275200000,note:'RG R1 WTA — Osaka(16) def. Siegemund. Clay specialist neutralized. Won.'},
-    {id:'ten_rg_r1_keys_vandewinkel',hA:'M.Keys',awA:'H.Vandewinkel',sport:'TEN',betType:'ML',betOn:'M.Keys ML',winProb:.756,ml:'-310',decOdds:1.323,wager:100,outcome:'win',date:'2026-05-26',lockedAt:1748275200000,note:'RG R1 WTA — Keys(19) def. Vandewinkel wildcard. Power baseline too much. Won.'},
+    {id:'ten_rg_r1_osaka_siegemund',hA:'N.Osaka',awA:'L.Siegemund',sport:'WTA',betType:'ML',betOn:'N.Osaka ML',winProb:.661,ml:'-195',decOdds:1.513,wager:100,outcome:'win',date:'2026-05-26',lockedAt:1748275200000,note:'RG R1 WTA — Osaka(16) def. Siegemund. Clay specialist neutralized. Won.'},
+    {id:'ten_rg_r1_keys_vandewinkel',hA:'M.Keys',awA:'H.Vandewinkel',sport:'WTA',betType:'ML',betOn:'M.Keys ML',winProb:.756,ml:'-310',decOdds:1.323,wager:100,outcome:'win',date:'2026-05-26',lockedAt:1748275200000,note:'RG R1 WTA — Keys(19) def. Vandewinkel wildcard. Power baseline too much. Won.'},
   ];
   try{
     const preds=JSON.parse(localStorage.getItem('preds')||'[]');
@@ -2356,30 +2356,30 @@ let LOCKED_PROPS=(()=>{try{return JSON.parse(localStorage.getItem('locked_props'
     // Tennis Roland Garros 2026
     // WTA R1 settled picks (already seeded above)
     // QF/SF/Final additional results:
-    {id:'ten_rg_wta_sf_andreeva',sport:'TEN',betType:'ML',betOn:'M.Andreeva ML',hA:'M.Andreeva',awA:'A.Sabalenka',ml:'+280',decOdds:3.80,winProb:.45,wager:1,outcome:'win',date:'2026-06-05',lockedAt:1749128400000,note:'RG 2026 WTA SF — Andreeva +280 UPSET. def. Sabalenka(1) 6-1 6-3. Massive VALUE win.'},
-    {id:'ten_rg_wta_final_andreeva',sport:'TEN',betType:'ML',betOn:'M.Andreeva ML',hA:'M.Andreeva',awA:'M.Chwalinska',ml:'-350',decOdds:1.286,winProb:.78,wager:1,outcome:'win',date:'2026-06-06',lockedAt:1749214800000,note:'RG 2026 WTA Final — Andreeva(8) def. Chwalinska 6-3 6-2. CHAMPION. First slam title at 19.'},
+    {id:'ten_rg_wta_sf_andreeva',sport:'WTA',betType:'ML',betOn:'M.Andreeva ML',hA:'M.Andreeva',awA:'A.Sabalenka',ml:'+280',decOdds:3.80,winProb:.45,wager:1,outcome:'win',date:'2026-06-05',lockedAt:1749128400000,note:'RG 2026 WTA SF — Andreeva +280 UPSET. def. Sabalenka(1) 6-1 6-3. Massive VALUE win.'},
+    {id:'ten_rg_wta_final_andreeva',sport:'WTA',betType:'ML',betOn:'M.Andreeva ML',hA:'M.Andreeva',awA:'M.Chwalinska',ml:'-350',decOdds:1.286,winProb:.78,wager:1,outcome:'win',date:'2026-06-06',lockedAt:1749214800000,note:'RG 2026 WTA Final — Andreeva(8) def. Chwalinska 6-3 6-2. CHAMPION. First slam title at 19.'},
     // Tennis Roland Garros 2026
-    {id:'ten_rg_r1_sakkari_noskova',sport:'TEN',betType:'ML',betOn:'M.Sakkari ML',hA:'M.Sakkari',awA:'L.Noskova',ml:'+142',decOdds:2.42,winProb:.585,wager:100,outcome:'win',date:'2026-05-24',lockedAt:1748095200000,note:'RG R1 WTA PREMIUM VALUE +142. Won.'},
-    {id:'ten_rg_r1_svitolina_bondar',sport:'TEN',betType:'ML',betOn:'E.Svitolina ML',hA:'E.Svitolina',awA:'A.Bondar',ml:'-280',decOdds:1.357,winProb:.736,wager:100,outcome:'win',date:'2026-05-25',lockedAt:1748181600000,note:'RG R1 WTA Svitolina(7). Won.'},
-    {id:'ten_rg_r1_swiatek_jones',sport:'TEN',betType:'ML',betOn:'I.Swiatek ML',hA:'I.Swiatek',awA:'E.Jones',ml:'-700',decOdds:1.143,winProb:.875,wager:100,outcome:'win',date:'2026-05-25',lockedAt:1748181600000,note:'RG R1 WTA Swiatek(3). Won.'},
-    {id:'ten_rg_r1_paolini_yastremska',sport:'TEN',betType:'ML',betOn:'J.Paolini ML',hA:'J.Paolini',awA:'D.Yastremska',ml:'-220',decOdds:1.455,winProb:.688,wager:100,outcome:'win',date:'2026-05-25',lockedAt:1748181600000,note:'RG R1 WTA Paolini(13). Won.'},
-    {id:'ten_rg_r1_rybakina_erjavec',sport:'TEN',betType:'ML',betOn:'E.Rybakina ML',hA:'E.Rybakina',awA:'V.Erjavec',ml:'-500',decOdds:1.200,winProb:.833,wager:100,outcome:'win',date:'2026-05-26',lockedAt:1748268000000,note:'RG R1 WTA Rybakina(2). Won.'},
-    {id:'ten_rg_r1_sabalenka_bouzas',sport:'TEN',betType:'ML',betOn:'A.Sabalenka ML',hA:'A.Sabalenka',awA:'J.Bouzas-Maneiro',ml:'-600',decOdds:1.167,winProb:.857,wager:100,outcome:'win',date:'2026-05-26',lockedAt:1748268000000,note:'RG R1 WTA Sabalenka(1). Won.'},
-    {id:'ten_rg_r1_osaka_siegemund',sport:'TEN',betType:'ML',betOn:'N.Osaka ML',hA:'N.Osaka',awA:'L.Siegemund',ml:'-195',decOdds:1.513,winProb:.661,wager:100,outcome:'win',date:'2026-05-26',lockedAt:1748275200000,note:'RG R1 WTA Osaka(16). Won.'},
-    {id:'ten_rg_r1_keys_vandewinkel',sport:'TEN',betType:'ML',betOn:'M.Keys ML',hA:'M.Keys',awA:'H.Vandewinkel',ml:'-310',decOdds:1.323,winProb:.756,wager:100,outcome:'win',date:'2026-05-26',lockedAt:1748275200000,note:'RG R1 WTA Keys(19). Won.'},
+    {id:'ten_rg_r1_sakkari_noskova',sport:'WTA',betType:'ML',betOn:'M.Sakkari ML',hA:'M.Sakkari',awA:'L.Noskova',ml:'+142',decOdds:2.42,winProb:.585,wager:100,outcome:'win',date:'2026-05-24',lockedAt:1748095200000,note:'RG R1 WTA PREMIUM VALUE +142. Won.'},
+    {id:'ten_rg_r1_svitolina_bondar',sport:'WTA',betType:'ML',betOn:'E.Svitolina ML',hA:'E.Svitolina',awA:'A.Bondar',ml:'-280',decOdds:1.357,winProb:.736,wager:100,outcome:'win',date:'2026-05-25',lockedAt:1748181600000,note:'RG R1 WTA Svitolina(7). Won.'},
+    {id:'ten_rg_r1_swiatek_jones',sport:'WTA',betType:'ML',betOn:'I.Swiatek ML',hA:'I.Swiatek',awA:'E.Jones',ml:'-700',decOdds:1.143,winProb:.875,wager:100,outcome:'win',date:'2026-05-25',lockedAt:1748181600000,note:'RG R1 WTA Swiatek(3). Won.'},
+    {id:'ten_rg_r1_paolini_yastremska',sport:'WTA',betType:'ML',betOn:'J.Paolini ML',hA:'J.Paolini',awA:'D.Yastremska',ml:'-220',decOdds:1.455,winProb:.688,wager:100,outcome:'win',date:'2026-05-25',lockedAt:1748181600000,note:'RG R1 WTA Paolini(13). Won.'},
+    {id:'ten_rg_r1_rybakina_erjavec',sport:'WTA',betType:'ML',betOn:'E.Rybakina ML',hA:'E.Rybakina',awA:'V.Erjavec',ml:'-500',decOdds:1.200,winProb:.833,wager:100,outcome:'win',date:'2026-05-26',lockedAt:1748268000000,note:'RG R1 WTA Rybakina(2). Won.'},
+    {id:'ten_rg_r1_sabalenka_bouzas',sport:'WTA',betType:'ML',betOn:'A.Sabalenka ML',hA:'A.Sabalenka',awA:'J.Bouzas-Maneiro',ml:'-600',decOdds:1.167,winProb:.857,wager:100,outcome:'win',date:'2026-05-26',lockedAt:1748268000000,note:'RG R1 WTA Sabalenka(1). Won.'},
+    {id:'ten_rg_r1_osaka_siegemund',sport:'WTA',betType:'ML',betOn:'N.Osaka ML',hA:'N.Osaka',awA:'L.Siegemund',ml:'-195',decOdds:1.513,winProb:.661,wager:100,outcome:'win',date:'2026-05-26',lockedAt:1748275200000,note:'RG R1 WTA Osaka(16). Won.'},
+    {id:'ten_rg_r1_keys_vandewinkel',sport:'WTA',betType:'ML',betOn:'M.Keys ML',hA:'M.Keys',awA:'H.Vandewinkel',ml:'-310',decOdds:1.323,winProb:.756,wager:100,outcome:'win',date:'2026-05-26',lockedAt:1748275200000,note:'RG R1 WTA Keys(19). Won.'},
     // ── Marta Kostyuk vs Katie Volynets — RG R3, June 1 2026 ──
-    {id:'ten_rg_r3_kostyuk_volynets',sport:'TEN',betType:'ML',betOn:'M.Kostyuk ML',hA:'M.Kostyuk',awA:'K.Volynets',ml:'-165',decOdds:1.606,winProb:.622,wager:100,outcome:'win',date:'2026-06-01',lockedAt:1748779200000,note:'RG R3 WTA — Kostyuk def. Volynets. Clay form solid. Won.'},
+    {id:'ten_rg_r3_kostyuk_volynets',sport:'WTA',betType:'ML',betOn:'M.Kostyuk ML',hA:'M.Kostyuk',awA:'K.Volynets',ml:'-165',decOdds:1.606,winProb:.622,wager:100,outcome:'win',date:'2026-06-01',lockedAt:1748779200000,note:'RG R3 WTA — Kostyuk def. Volynets. Clay form solid. Won.'},
     // ── Marta Kostyuk vs Elina Svitolina — RG R4, June 2 2026 (UPSET WIN) ──
-    {id:'ten_rg_r4_kostyuk_svitolina',sport:'TEN',betType:'ML',betOn:'M.Kostyuk ML',hA:'M.Kostyuk',awA:'E.Svitolina',ml:'+195',decOdds:2.950,winProb:.340,wager:100,outcome:'win',date:'2026-06-02',lockedAt:1748865600000,note:'RG R4 WTA UPSET WIN — Kostyuk (+195) def. Svitolina (7). Aggressive baseline game. Svitolina OUT.'},
+    {id:'ten_rg_r4_kostyuk_svitolina',sport:'WTA',betType:'ML',betOn:'M.Kostyuk ML',hA:'M.Kostyuk',awA:'E.Svitolina',ml:'+195',decOdds:2.950,winProb:.340,wager:100,outcome:'win',date:'2026-06-02',lockedAt:1748865600000,note:'RG R4 WTA UPSET WIN — Kostyuk (+195) def. Svitolina (7). Aggressive baseline game. Svitolina OUT.'},
     // ── VGK +1.5 vs Carolina Hurricanes — SCF G1, June 2 2026 ──
     {id:'nhl_scf_g1_vgk_rl',sport:'NHL',betType:'RL',betOn:'VGK +1.5',hA:'CAR',awA:'VGK',ml:'-118',decOdds:1.847,winProb:.600,wager:1,outcome:'win',date:'2026-06-02',lockedAt:1748865600000,note:'SCF G1 WIN. VGK +1.5 puck line. VGK won outright 5-4 vs CAR. Marner+Eichel dominant.'},
     {id:'nhl_scf_g2_car_ml',sport:'NHL',betType:'ML',betOn:'CAR ML',hA:'VGK',awA:'CAR',ml:'+118',decOdds:2.18,winProb:.48,wager:1,outcome:'win',date:'2026-06-04',lockedAt:1749038400000,note:'SCF G2 WIN. CAR won at home PNC Arena. Series tied 1-1. CAR home ice advantage.'},
     // ── Alexander Zverev vs Tomas Machac — RG QF, June 3 2026 ──
-    {id:'ten_rg_qf_zverev_machac',sport:'TEN',betType:'ML',betOn:'A.Zverev ML',hA:'A.Zverev',awA:'T.Machac',ml:'-270',decOdds:1.370,winProb:.730,wager:100,outcome:'win',date:'2026-06-03',lockedAt:1748952000000,note:'RG QF ATP WIN — Zverev def. Machac. Power baseline too much on clay. Advances to SF.'},
+    {id:'ten_rg_qf_zverev_machac',sport:'ATP',betType:'ML',betOn:'A.Zverev ML',hA:'A.Zverev',awA:'T.Machac',ml:'-270',decOdds:1.370,winProb:.730,wager:100,outcome:'win',date:'2026-06-03',lockedAt:1748952000000,note:'RG QF ATP WIN — Zverev def. Machac. Power baseline too much on clay. Advances to SF.'},
     // ── Casper Ruud vs Hamad Medjedovic — RG QF, June 3 2026 ──
-    {id:'ten_rg_qf_ruud_medjedovic',sport:'TEN',betType:'ML',betOn:'C.Ruud ML',hA:'C.Ruud',awA:'H.Medjedovic',ml:'-420',decOdds:1.238,winProb:.808,wager:100,outcome:'win',date:'2026-06-03',lockedAt:1748952000000,note:'RG QF ATP WIN — Ruud def. Medjedovic. Clay specialist dominant. Advances to SF vs Zverev.'},
+    {id:'ten_rg_qf_ruud_medjedovic',sport:'ATP',betType:'ML',betOn:'C.Ruud ML',hA:'C.Ruud',awA:'H.Medjedovic',ml:'-420',decOdds:1.238,winProb:.808,wager:100,outcome:'win',date:'2026-06-03',lockedAt:1748952000000,note:'RG QF ATP WIN — Ruud def. Medjedovic. Clay specialist dominant. Advances to SF vs Zverev.'},
     // ── Mirra Andreeva vs Marta Kostyuk — RG QF WTA, June 4 2026 ──
-    {id:'ten_rg_qf_andreeva_kostyuk',sport:'TEN',betType:'ML',betOn:'M.Andreeva ML',hA:'M.Andreeva',awA:'M.Kostyuk',ml:'-155',decOdds:1.645,winProb:.608,wager:100,outcome:'win',date:'2026-06-04',lockedAt:1749038400000,note:'RG QF WTA WIN — Andreeva def. Kostyuk. Clay aggression. Advances to SF.'},
+    {id:'ten_rg_qf_andreeva_kostyuk',sport:'WTA',betType:'ML',betOn:'M.Andreeva ML',hA:'M.Andreeva',awA:'M.Kostyuk',ml:'-155',decOdds:1.645,winProb:.608,wager:100,outcome:'win',date:'2026-06-04',lockedAt:1749038400000,note:'RG QF WTA WIN — Andreeva def. Kostyuk. Clay aggression. Advances to SF.'},
     // ── NBA Finals G2 — NYK Knicks vs SA Spurs · June 5 2026 · NYK WON 105-104 ──
     // Series tied 1-1. All props settled from model.
     {id:'finals_g2_brunson_pts',sport:'NBA',betType:'PROP',betOn:'Jalen Brunson OVER PTS 27.5',hA:'SA',awA:'NY',ml:'-112',decOdds:1.893,winProb:.66,wager:1,outcome:'win',date:'2026-06-05',lockedAt:1749168600000,note:'NBA Finals G2 WIN. Brunson OVER 27.5 pts. NYK won 105-104. Brunson carried offense.',playerResult:'WIN'},
@@ -2471,16 +2471,16 @@ let LOCKED_PROPS=(()=>{try{return JSON.parse(localStorage.getItem('locked_props'
     {id:'wnba_h_059',sport:'WNBA',betType:'ML',betOn:'LAS ML',hA:'LAS',awA:'CHI',ml:'-140',decOdds:1.714,winProb:.60,wager:1,outcome:'loss',date:'2025-06-15',lockedAt:1749945600000,note:'LAS upset at home. Loss.'},
     {id:'wnba_h_060',sport:'WNBA',betType:'ML',betOn:'NYL ML',hA:'NYL',awA:'DAL',ml:'-175',decOdds:1.571,winProb:.65,wager:1,outcome:'win',date:'2025-06-18',lockedAt:1750204800000,note:'NYL dominant. Won.'},
     // Tennis (Mar–May 2026 additional)
-    {id:'ten_h_061',sport:'TEN',betType:'ML',betOn:'C.Alcaraz ML',hA:'C.Alcaraz',awA:'H.Hurkacz',ml:'-225',decOdds:1.444,winProb:.72,wager:1,outcome:'win',date:'2026-03-15',lockedAt:1741996800000,note:'IW Masters. Alcaraz dominant. Won.'},
-    {id:'ten_h_062',sport:'TEN',betType:'ML',betOn:'I.Swiatek ML',hA:'I.Swiatek',awA:'A.Sabalenka',ml:'-135',decOdds:1.741,winProb:.58,wager:1,outcome:'loss',date:'2026-03-18',lockedAt:1742256000000,note:'IW WTA Final. Sabalenka won. Loss.'},
-    {id:'ten_h_063',sport:'TEN',betType:'ML',betOn:'C.Alcaraz ML',hA:'C.Alcaraz',awA:'N.Djokovic',ml:'-155',decOdds:1.645,winProb:.62,wager:1,outcome:'win',date:'2026-03-22',lockedAt:1742601600000,note:'Miami Masters. Alcaraz. Won.'},
-    {id:'ten_h_064',sport:'TEN',betType:'ML',betOn:'A.Sabalenka ML',hA:'A.Sabalenka',awA:'C.Gauff',ml:'-165',decOdds:1.606,winProb:.64,wager:1,outcome:'win',date:'2026-03-25',lockedAt:1742860800000,note:'Miami WTA. Sabalenka. Won.'},
-    {id:'ten_h_065',sport:'TEN',betType:'ML',betOn:'C.Alcaraz ML',hA:'C.Alcaraz',awA:'J.Sinner',ml:'-120',decOdds:1.833,winProb:.56,wager:1,outcome:'win',date:'2026-04-12',lockedAt:1744416000000,note:'Monte Carlo. Alcaraz clay. Won.'},
-    {id:'ten_h_066',sport:'TEN',betType:'ML',betOn:'I.Swiatek ML',hA:'I.Swiatek',awA:'M.Keys',ml:'-200',decOdds:1.500,winProb:.68,wager:1,outcome:'win',date:'2026-04-15',lockedAt:1744675200000,note:'Stuttgart. Swiatek. Won.'},
-    {id:'ten_h_067',sport:'TEN',betType:'ML',betOn:'J.Sinner ML',hA:'J.Sinner',awA:'C.Alcaraz',ml:'-115',decOdds:1.869,winProb:.55,wager:1,outcome:'loss',date:'2026-04-19',lockedAt:1745020800000,note:'Barcelona. Alcaraz won. Loss.'},
-    {id:'ten_h_068',sport:'TEN',betType:'ML',betOn:'C.Alcaraz ML',hA:'C.Alcaraz',awA:'H.Hurkacz',ml:'-175',decOdds:1.571,winProb:.65,wager:1,outcome:'win',date:'2026-04-26',lockedAt:1745625600000,note:'Madrid Masters. Alcaraz. Won.'},
-    {id:'ten_h_069',sport:'TEN',betType:'ML',betOn:'I.Swiatek ML',hA:'I.Swiatek',awA:'J.Paolini',ml:'-220',decOdds:1.455,winProb:.70,wager:1,outcome:'win',date:'2026-04-29',lockedAt:1745884800000,note:'Madrid WTA. Swiatek. Won.'},
-    {id:'ten_h_070',sport:'TEN',betType:'ML',betOn:'C.Alcaraz ML',hA:'C.Alcaraz',awA:'A.Zverev',ml:'-130',decOdds:1.769,winProb:.58,wager:1,outcome:'win',date:'2026-05-10',lockedAt:1746835200000,note:'Rome Masters. Alcaraz. Won.'},
+    {id:'ten_h_061',sport:'ATP',betType:'ML',betOn:'C.Alcaraz ML',hA:'C.Alcaraz',awA:'H.Hurkacz',ml:'-225',decOdds:1.444,winProb:.72,wager:1,outcome:'win',date:'2026-03-15',lockedAt:1741996800000,note:'IW Masters. Alcaraz dominant. Won.'},
+    {id:'ten_h_062',sport:'WTA',betType:'ML',betOn:'I.Swiatek ML',hA:'I.Swiatek',awA:'A.Sabalenka',ml:'-135',decOdds:1.741,winProb:.58,wager:1,outcome:'loss',date:'2026-03-18',lockedAt:1742256000000,note:'IW WTA Final. Sabalenka won. Loss.'},
+    {id:'ten_h_063',sport:'ATP',betType:'ML',betOn:'C.Alcaraz ML',hA:'C.Alcaraz',awA:'N.Djokovic',ml:'-155',decOdds:1.645,winProb:.62,wager:1,outcome:'win',date:'2026-03-22',lockedAt:1742601600000,note:'Miami Masters. Alcaraz. Won.'},
+    {id:'ten_h_064',sport:'WTA',betType:'ML',betOn:'A.Sabalenka ML',hA:'A.Sabalenka',awA:'C.Gauff',ml:'-165',decOdds:1.606,winProb:.64,wager:1,outcome:'win',date:'2026-03-25',lockedAt:1742860800000,note:'Miami WTA. Sabalenka. Won.'},
+    {id:'ten_h_065',sport:'ATP',betType:'ML',betOn:'C.Alcaraz ML',hA:'C.Alcaraz',awA:'J.Sinner',ml:'-120',decOdds:1.833,winProb:.56,wager:1,outcome:'win',date:'2026-04-12',lockedAt:1744416000000,note:'Monte Carlo. Alcaraz clay. Won.'},
+    {id:'ten_h_066',sport:'WTA',betType:'ML',betOn:'I.Swiatek ML',hA:'I.Swiatek',awA:'M.Keys',ml:'-200',decOdds:1.500,winProb:.68,wager:1,outcome:'win',date:'2026-04-15',lockedAt:1744675200000,note:'Stuttgart. Swiatek. Won.'},
+    {id:'ten_h_067',sport:'ATP',betType:'ML',betOn:'J.Sinner ML',hA:'J.Sinner',awA:'C.Alcaraz',ml:'-115',decOdds:1.869,winProb:.55,wager:1,outcome:'loss',date:'2026-04-19',lockedAt:1745020800000,note:'Barcelona. Alcaraz won. Loss.'},
+    {id:'ten_h_068',sport:'ATP',betType:'ML',betOn:'C.Alcaraz ML',hA:'C.Alcaraz',awA:'H.Hurkacz',ml:'-175',decOdds:1.571,winProb:.65,wager:1,outcome:'win',date:'2026-04-26',lockedAt:1745625600000,note:'Madrid Masters. Alcaraz. Won.'},
+    {id:'ten_h_069',sport:'WTA',betType:'ML',betOn:'I.Swiatek ML',hA:'I.Swiatek',awA:'J.Paolini',ml:'-220',decOdds:1.455,winProb:.70,wager:1,outcome:'win',date:'2026-04-29',lockedAt:1745884800000,note:'Madrid WTA. Swiatek. Won.'},
+    {id:'ten_h_070',sport:'ATP',betType:'ML',betOn:'C.Alcaraz ML',hA:'C.Alcaraz',awA:'A.Zverev',ml:'-130',decOdds:1.769,winProb:.58,wager:1,outcome:'win',date:'2026-05-10',lockedAt:1746835200000,note:'Rome Masters. Alcaraz. Won.'},
     // NHL Playoffs 2026 (Apr–May)
     {id:'nhl_pl_071',sport:'NHL',betType:'ML',betOn:'FLA ML',hA:'FLA',awA:'TBL',ml:'-165',decOdds:1.606,winProb:.64,wager:1,outcome:'win',date:'2026-04-20',lockedAt:1745107200000,note:'R1 G1. FLA home. Won.'},
     {id:'nhl_pl_072',sport:'NHL',betType:'ML',betOn:'CAR ML',hA:'CAR',awA:'WSH',ml:'-145',decOdds:1.690,winProb:.61,wager:1,outcome:'win',date:'2026-04-20',lockedAt:1745121600000,note:'R1 G1. CAR home. Won.'},
@@ -3540,6 +3540,25 @@ function saveP(a){
 function getDailyLog(){return S.g('daily_log',{})||{};}
 function saveDailyLog(d){S.s('daily_log',d);idbSaveDailyLog(d);/* always expand, never reduce */}
 
+// Migrate any legacy sport:'TEN' preds → 'ATP' or 'WTA' using player DBs
+function _migrateTenSport(){
+  const preds=getP();
+  const adb=typeof ATP_DB!=='undefined'?ATP_DB:{};
+  const wdb=typeof WTA_DB!=='undefined'?WTA_DB:{};
+  let changed=0;
+  // Fix TEN → ATP/WTA
+  preds.filter(p=>p.sport==='TEN').forEach(p=>{
+    const sp=adb[p.hA]?'ATP':wdb[p.hA]?'WTA':adb[p.awA]?'ATP':wdb[p.awA]?'WTA':null;
+    if(sp){p.sport=sp;if(!p.league||p.league==='TEN')p.league=sp;changed++;}
+  });
+  // Fix swapped ATP↔WTA (e.g. Swiatek tagged ATP or Alcaraz tagged WTA)
+  preds.filter(p=>p.sport==='ATP'||p.sport==='WTA').forEach(p=>{
+    const inATP=adb[p.hA]||adb[p.awA];const inWTA=wdb[p.hA]||wdb[p.awA];
+    if(p.sport==='ATP'&&!inATP&&inWTA){p.sport='WTA';if(p.league==='ATP')p.league='WTA';changed++;}
+    else if(p.sport==='WTA'&&!inWTA&&inATP){p.sport='ATP';if(p.league==='WTA')p.league='ATP';changed++;}
+  });
+  if(changed){saveP(preds);}
+}
 // Sync localStorage picks FROM backend (called on init)
 async function syncPicksFromBackend(){
   if(!API_ONLINE())return;
@@ -3711,7 +3730,10 @@ async function lockPick(hA,awA,type,betOn,p,ml,d,date){
   if(type==='WNBA')sportTag='WNBA';
   else if(type==='NBA')sportTag='NBA';
   else if(type==='PL'||type==='NHL')sportTag='NHL';
-  else if(type==='TEN'||type==='TENNIS')sportTag='TEN';
+  else if(type==='TEN'||type==='TENNIS'){
+    const _adb=typeof ATP_DB!=='undefined'?ATP_DB:{};const _wdb=typeof WTA_DB!=='undefined'?WTA_DB:{};
+    sportTag=_adb[hA]?'ATP':_wdb[hA]?'WTA':_adb[awA]?'ATP':_wdb[awA]?'WTA':'TEN';
+  }
   else if(type==='NFL')sportTag='NFL';
   else if(type==='CFB')sportTag='CFB';
   else if(type==='PWHL')sportTag='PWHL';
@@ -5449,7 +5471,7 @@ window._ibsSubmit=function(){
   const fullAway=_teamName(away,sport)||away;
   const preds=getP();
   const newBet={
-    id:Date.now(),date,sport,hA:fullHome,awA:fullAway,
+    id:'imp_'+Date.now(),date,sport,hA:fullHome,awA:fullAway,
     betType,betOn:betOn+(line?(' '+line):''),
     ml:ml||'—',decOdds,winProb,wager,
     outcome:'pending',notes,
@@ -7447,7 +7469,7 @@ function renderOverall(){
     {lbl:'NBA',           codes:['NBA'],                   always:true},
     {lbl:'WNBA',          codes:['WNBA'],                  always:true},
     {lbl:'CBB',           codes:['CBB','NCAAB'],           always:true},
-    {lbl:'ATP',           codes:['ATP','TEN'],             always:true},
+    {lbl:'ATP',           codes:['ATP'],                   always:true},
     {lbl:'WTA',           codes:['WTA'],                   always:true},
     {lbl:'World Cup',     codes:['SOC','WC'],              always:true},
     {lbl:'Premier League',codes:['PL'],                    always:true},
@@ -7926,8 +7948,10 @@ function renderOverallVisuals(){
     <circle cx="${px(pts.length-1).toFixed(1)}" cy="${py(pts[pts.length-1]).toFixed(1)}" r="3" fill="${pts[pts.length-1]>=0?'#00f0ff':'#ff2090'}" filter="url(#glow1)"/>
   </svg>`;
   // 2. Win Rate by Sport
-  const sportColors={MLB:'#ff2090',NHL:'#00f0ff',NBA:'#ffdd00',TEN:'#bbff00',F1:'#ff7700',WNBA:'#6690ff',NCAAB:'#f000ff',SOC:'#00f0aa',PL:'#5b9bd5',LIGA:'#ff4400',BL:'#e00000',MLS:'#00c14b'};
-  const sData=['MLB','NBA','WNBA','CBB','NFL','CFB','NHL','NCAAH','SHL','LIIGA','KHL','PWHL','TEN','ATP','WTA','SOC','WC','PL','LIGA','BL','MLS'].map(s=>{const sp=settled.filter(p=>p.sport===s);const w=sp.filter(p=>p.outcome==='win').length;return{s,n:sp.length,w,pct:sp.length?w/sp.length:null};});
+  const sportColors={MLB:'#ff2090',NHL:'#00f0ff',NBA:'#ffdd00',TENNIS:'#bbff00',F1:'#ff7700',WNBA:'#6690ff',NCAAB:'#f000ff',SOC:'#00f0aa',PL:'#5b9bd5',LIGA:'#ff4400',BL:'#e00000',MLS:'#00c14b'};
+  const sDataRaw=['MLB','NBA','WNBA','CBB','NFL','CFB','NHL','NCAAH','SHL','LIIGA','KHL','PWHL','SOC','WC','PL','LIGA','BL','MLS'].map(s=>{const sp=settled.filter(p=>p.sport===s);const w=sp.filter(p=>p.outcome==='win').length;return{s,n:sp.length,w,pct:sp.length?w/sp.length:null};});
+  const tenSp=settled.filter(p=>p.sport==='TEN'||p.sport==='ATP'||p.sport==='WTA');const tenW=tenSp.filter(p=>p.outcome==='win').length;
+  const sData=[...sDataRaw,{s:'TENNIS',n:tenSp.length,w:tenW,pct:tenSp.length?tenW/tenSp.length:null}];
   const barW=260,barH=sData.length*22+10;
   const barSVG=`<svg width="${barW}" height="${barH}">
     ${sData.map((d,i)=>{const bw=(d.pct||0)*(barW-80);const col=sportColors[d.s]||'var(--nc)';return`<g transform="translate(0,${i*22})">
@@ -8766,7 +8790,7 @@ function renderOverallHistory(sportFilter,dateFrom,dateTo){
 
 function renderTennisOverall(){
   const el=document.getElementById('ovr-ten-content');if(!el)return;
-  const tenPicks=getP().filter(p=>p.sport==='TEN');
+  const tenPicks=getP().filter(p=>p.sport==='TEN'||p.sport==='ATP'||p.sport==='WTA');
   const settled=tenPicks.filter(p=>p.outcome!=='pending');
   const wins=settled.filter(p=>p.outcome==='win').length;
   const acc=settled.length?wins/settled.length:null;
@@ -8909,7 +8933,7 @@ function renderOverallTrends(){
   });
 
   // ── Self-assessment ───────────────────────────────────────────────────────
-  const spStats=['MLB','NHL','NBA','TEN'].map(s=>{const sb=all.filter(p=>p.sport===s);const p=perfOf(sb);return{s,...p};}).filter(d=>d.n>=3);
+  const spStats=[...['MLB','NHL','NBA'].map(s=>{const sb=all.filter(p=>p.sport===s);const p=perfOf(sb);return{s,...p};}),{s:'TENNIS',...perfOf(all.filter(p=>p.sport==='TEN'||p.sport==='ATP'||p.sport==='WTA'))}].filter(d=>d.n>=3);
   spStats.sort((a,b)=>(b.acc||0)-(a.acc||0));
   const bestSp=spStats[0],worstSp=spStats[spStats.length-1];
   const typeStats=['ML','RL','PL','OU','PROP'].map(t=>{const tb=all.filter(p=>p.betType===t);const p=perfOf(tb);return{t,...p};}).filter(d=>d.n>=3);
@@ -10477,10 +10501,27 @@ function renderHomePage(){
         const evPct=p._evVal!=null?(p._evVal*100).toFixed(1)+'%':'';
         const col=bc(p._bucket);
         const bet=(_expandBetOn(p.betOn||'',p.sport)||p.betOn||'').slice(0,38);
-        return`<div style="flex-shrink:0;width:248px;background:rgba(4,0,12,.85);border:1px solid ${col}44;border-radius:4px;padding:10px 12px;display:flex;flex-direction:column;gap:5px;cursor:default;transition:border-color .2s" onmouseenter="this.style.borderColor='${col}99'" onmouseleave="this.style.borderColor='${col}44'">
+        const isSleeper=p._bucket==='SLEEPER';
+        const isPremium=p._bucket==='PREMIUM';
+        // Reasoning for premium cards
+        const reasonParts=[];
+        if(p.basis)reasonParts.push(p.basis.slice(0,90));
+        else{
+          if(p.winProb)reasonParts.push(`${(p.winProb*100).toFixed(0)}% win probability`);
+          if(p._evVal!=null)reasonParts.push(`+${(p._evVal*100).toFixed(1)}% expected value edge`);
+          const mlN=parseFloat((p.ml||'').replace('+',''))||0;
+          if(mlN<0)reasonParts.push('favourite play');
+          else if(mlN>0)reasonParts.push('underdog value spot');
+          if(p.grade&&p.grade!=='LEAN')reasonParts.push(p.grade+' tier');
+        }
+        const reasonText=reasonParts.join(' · ').slice(0,110);
+        return`<div style="flex-shrink:0;width:272px;background:rgba(4,0,12,.85);border:1px solid ${col}${isSleeper?'66':'44'};border-radius:4px;padding:10px 12px;display:flex;flex-direction:column;gap:5px;cursor:default;transition:border-color .2s${isSleeper?';box-shadow:0 0 8px '+col+'22':''}" onmouseenter="this.style.borderColor='${col}99'" onmouseleave="this.style.borderColor='${col}${isSleeper?'66':'44'}'">
           <div style="display:flex;align-items:center;justify-content:space-between;gap:6px">
             <span style="font-family:var(--mono);font-size:10px;padding:1px 5px;border:1px solid ${sc(p.sport)};color:${sc(p.sport)};border-radius:2px">${p.sport}</span>
-            <span style="font-family:var(--mono);font-size:9px;padding:1px 5px;background:${col}22;border:1px solid ${col};color:${col};border-radius:2px;letter-spacing:1px">${p._bucket}</span>
+            ${isSleeper
+              ?`<span style="font-family:var(--mono);font-size:9px;padding:1px 6px;background:${col}22;border:1px solid ${col};color:${col};border-radius:2px;letter-spacing:1px;display:flex;align-items:center;gap:3px"><span style="font-size:11px">⚡</span>SLEEPER</span>`
+              :`<span style="font-family:var(--mono);font-size:9px;padding:1px 5px;background:${col}22;border:1px solid ${col};color:${col};border-radius:2px;letter-spacing:1px">◆ PREMIUM</span>`
+            }
           </div>
           <div style="font-family:var(--mono);font-size:10px;color:var(--t3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${mu}</div>
           <div style="font-family:var(--mono);font-size:13px;color:var(--t1);font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${bet}</div>
@@ -10489,6 +10530,7 @@ function renderHomePage(){
             ${conf?`<span style="font-family:var(--mono);font-size:10px;color:var(--t3)">${conf}</span>`:''}
             ${evPct?`<span style="font-family:var(--mono);font-size:10px;color:var(--nc);margin-left:auto">${evPct} EV</span>`:''}
           </div>
+          ${reasonText?`<div style="border-top:1px solid rgba(255,255,255,.07);margin-top:2px;padding-top:5px"><div style="font-family:var(--mono);font-size:9px;letter-spacing:1px;color:${col}99;margin-bottom:2px">${isSleeper?'WHY SLEEPER':'REASONING'}</div><div style="font-family:var(--mono);font-size:10px;color:var(--t3);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">${reasonText}</div></div>`:''}
         </div>`;
       };
       // Duplicate picks for seamless oscillation feel (fill space generously)
@@ -11816,6 +11858,18 @@ const ATP_DB={
  'R.Hijikata':          {rank:98, hardElo:1808,clayElo:1798,grassElo:1812,formElo:1810,serveElo:1870,returnElo:1830,fs:.62,fsw:.72,ssw:.51,ace:4.2,df:2.4,hold:.80,brk:.36,retw:.37,hw:.67,cw:.63,gw:.68,age:24,cty:'AUS',fat:1},
  'H.Hurkacz':           {rank:99, hardElo:1927,clayElo:1831,grassElo:1962,formElo:1840,serveElo:1990,returnElo:1880,fs:.65,fsw:.75,ssw:.53,ace:6.0,df:2.0,hold:.84,brk:.37,retw:.37,hw:.74,cw:.64,gw:.76,age:28,cty:'POL',fat:2, mcpNetFreq:.116,mcpNetW:.703,mcpSnV:.025,mcpFhWnr:.132,mcpBhWnr:.073,mcpRallyAgg:-12,mcpRetAgg:27,mcpRiPW:.463,mcpRetWnr:.031},
  'L.Van Assche':        {rank:100,hardElo:1668,clayElo:1685,grassElo:1635,formElo:1672,serveElo:1840,returnElo:1810,fs:.61,fsw:.71,ssw:.51,ace:4.0,df:2.8,hold:.79,brk:.36,retw:.36,hw:.57,cw:.59,gw:.56,age:21,cty:'BEL',fat:1},
+ 'G.Dimitrov':          {rank:101,hardElo:1902,clayElo:1880,grassElo:1902,formElo:1898,serveElo:1950,returnElo:1900,fs:.63,fsw:.74,ssw:.53,ace:4.5,df:2.2,hold:.83,brk:.40,retw:.40,hw:.73,cw:.70,gw:.76,age:34,cty:'BUL',fat:2},
+ 'M.Berrettini':        {rank:102,hardElo:1870,clayElo:1855,grassElo:1930,formElo:1865,serveElo:2000,returnElo:1870,fs:.65,fsw:.76,ssw:.54,ace:8.0,df:2.8,hold:.85,brk:.37,retw:.37,hw:.73,cw:.68,gw:.80,age:29,cty:'ITA',fat:2},
+ 'P.Carreno Busta':     {rank:103,hardElo:1848,clayElo:1900,grassElo:1800,formElo:1845,serveElo:1840,returnElo:1880,fs:.60,fsw:.71,ssw:.52,ace:2.5,df:2.2,hold:.79,brk:.42,retw:.41,hw:.68,cw:.73,gw:.62,age:34,cty:'ESP',fat:2},
+ 'G.Mpetshi Perricard': {rank:104,hardElo:1915,clayElo:1855,grassElo:1882,formElo:1920,serveElo:2060,returnElo:1840,fs:.67,fsw:.78,ssw:.53,ace:11.0,df:3.5,hold:.86,brk:.33,retw:.33,hw:.72,cw:.63,gw:.72,age:21,cty:'FRA',fat:1},
+ 'M.Arnaldi':           {rank:105,hardElo:1865,clayElo:1870,grassElo:1820,formElo:1870,serveElo:1890,returnElo:1880,fs:.62,fsw:.73,ssw:.52,ace:5.0,df:2.5,hold:.82,brk:.39,retw:.39,hw:.70,cw:.70,gw:.65,age:24,cty:'ITA',fat:1},
+ 'R.Bautista Agut':     {rank:106,hardElo:1840,clayElo:1845,grassElo:1825,formElo:1838,serveElo:1850,returnElo:1890,fs:.60,fsw:.71,ssw:.52,ace:2.5,df:2.0,hold:.79,brk:.42,retw:.42,hw:.68,cw:.70,gw:.65,age:37,cty:'ESP',fat:2},
+ 'S.Wawrinka':          {rank:107,hardElo:1832,clayElo:1860,grassElo:1805,formElo:1828,serveElo:1920,returnElo:1880,fs:.62,fsw:.73,ssw:.53,ace:5.5,df:2.5,hold:.81,brk:.39,retw:.39,hw:.67,cw:.71,gw:.64,age:41,cty:'SUI',fat:3},
+ 'M.Zheng':             {rank:108,hardElo:1790,clayElo:1805,grassElo:1755,formElo:1788,serveElo:1850,returnElo:1830,fs:.61,fsw:.72,ssw:.51,ace:4.0,df:2.5,hold:.79,brk:.37,retw:.37,hw:.64,cw:.65,gw:.62,age:22,cty:'CHN',fat:1},
+ 'S.Ofner':             {rank:109,hardElo:1810,clayElo:1825,grassElo:1775,formElo:1808,serveElo:1880,returnElo:1840,fs:.62,fsw:.72,ssw:.52,ace:4.5,df:2.5,hold:.80,brk:.38,retw:.38,hw:.65,cw:.67,gw:.62,age:28,cty:'AUT',fat:1},
+ 'A.Muller':            {rank:110,hardElo:1808,clayElo:1820,grassElo:1780,formElo:1806,serveElo:1870,returnElo:1830,fs:.62,fsw:.72,ssw:.51,ace:5.0,df:2.8,hold:.80,brk:.36,retw:.36,hw:.64,cw:.64,gw:.63,age:26,cty:'FRA',fat:1},
+ 'T.Kokkinakis':        {rank:111,hardElo:1815,clayElo:1795,grassElo:1820,formElo:1812,serveElo:1950,returnElo:1840,fs:.64,fsw:.74,ssw:.52,ace:6.5,df:3.0,hold:.82,brk:.36,retw:.36,hw:.65,cw:.62,gw:.67,age:29,cty:'AUS',fat:2},
+ 'B.Van de Zandschulp': {rank:112,hardElo:1824,clayElo:1843,grassElo:1782,formElo:1830,serveElo:1860,returnElo:1860,fs:.61,fsw:.72,ssw:.52,ace:4.0,df:2.3,hold:.79,brk:.39,retw:.39,hw:.69,cw:.69,gw:.63,age:30,cty:'NED',fat:1},
 };
 // WTA_DB: Rankings updated May 26 2026.
 const WTA_DB={
@@ -11919,6 +11973,19 @@ const WTA_DB={
  'S.Kraus':          {rank:98, hardElo:1655,clayElo:1665,grassElo:1618,formElo:1651,serveElo:1788,returnElo:1796,fs:.59,fsw:.69,ssw:.51,ace:2.0,df:2.5,hold:.72,brk:.40,retw:.40,hw:.54,cw:.57,gw:.51,age:24,cty:'AUT',fat:1},
  'H.Vandewinkel':    {rank:99, hardElo:1652,clayElo:1658,grassElo:1615,formElo:1648,serveElo:1785,returnElo:1794,fs:.58,fsw:.68,ssw:.50,ace:1.8,df:2.5,hold:.72,brk:.40,retw:.40,hw:.53,cw:.57,gw:.51,age:20,cty:'BEL',fat:1},
  'A.Tomljanovic':    {rank:100,hardElo:1659,clayElo:1648,grassElo:1648,formElo:1655,serveElo:1840,returnElo:1810,fs:.62,fsw:.72,ssw:.51,ace:3.2,df:2.8,hold:.76,brk:.37,retw:.37,hw:.58,cw:.56,gw:.59,age:32,cty:'AUS',fat:2},
+ 'B.Andreescu':      {rank:101,hardElo:1921,clayElo:1885,grassElo:1855,formElo:1910,serveElo:1900,returnElo:1900,fs:.61,fsw:.71,ssw:.52,ace:3.0,df:3.2,hold:.78,brk:.42,retw:.42,hw:.72,cw:.69,gw:.66,age:25,cty:'CAN',fat:2},
+ 'B.Haddad Maia':    {rank:102,hardElo:1895,clayElo:1902,grassElo:1840,formElo:1890,serveElo:1870,returnElo:1890,fs:.60,fsw:.70,ssw:.52,ace:2.5,df:2.8,hold:.77,brk:.43,retw:.42,hw:.72,cw:.73,gw:.66,age:29,cty:'BRA',fat:2},
+ 'K.Pliskova':       {rank:103,hardElo:1920,clayElo:1875,grassElo:1888,formElo:1900,serveElo:1970,returnElo:1860,fs:.63,fsw:.72,ssw:.51,ace:6.5,df:3.5,hold:.79,brk:.37,retw:.37,hw:.71,cw:.67,gw:.70,age:34,cty:'CZE',fat:2},
+ 'P.Badosa':         {rank:104,hardElo:1930,clayElo:1935,grassElo:1862,formElo:1925,serveElo:1880,returnElo:1910,fs:.60,fsw:.71,ssw:.52,ace:2.5,df:2.9,hold:.78,brk:.43,retw:.42,hw:.73,cw:.74,gw:.67,age:28,cty:'ESP',fat:2},
+ 'M.Chwalinska':     {rank:105,hardElo:1902,clayElo:1895,grassElo:1845,formElo:1898,serveElo:1870,returnElo:1890,fs:.60,fsw:.70,ssw:.51,ace:2.5,df:2.8,hold:.77,brk:.41,retw:.41,hw:.70,cw:.71,gw:.64,age:24,cty:'POL',fat:1},
+ 'Z.Shuai':          {rank:106,hardElo:1805,clayElo:1820,grassElo:1762,formElo:1800,serveElo:1820,returnElo:1840,fs:.59,fsw:.69,ssw:.51,ace:2.0,df:2.7,hold:.75,brk:.41,retw:.41,hw:.62,cw:.65,gw:.59,age:39,cty:'CHN',fat:3},
+ 'A.Ito':            {rank:107,hardElo:1798,clayElo:1815,grassElo:1752,formElo:1794,serveElo:1815,returnElo:1825,fs:.59,fsw:.69,ssw:.51,ace:2.0,df:2.7,hold:.74,brk:.40,retw:.40,hw:.61,cw:.64,gw:.58,age:25,cty:'JPN',fat:1},
+ 'A.Blinkova':       {rank:108,hardElo:1845,clayElo:1858,grassElo:1795,formElo:1840,serveElo:1850,returnElo:1870,fs:.60,fsw:.70,ssw:.51,ace:2.5,df:2.8,hold:.76,brk:.41,retw:.41,hw:.64,cw:.67,gw:.61,age:27,cty:'RUS',fat:1},
+ 'F.Jones':          {rank:109,hardElo:1648,clayElo:1648,grassElo:1665,formElo:1644,serveElo:1795,returnElo:1800,fs:.60,fsw:.70,ssw:.51,ace:2.5,df:2.8,hold:.74,brk:.39,retw:.39,hw:.53,cw:.52,gw:.55,age:23,cty:'GBR',fat:1},
+ 'H.Dart':           {rank:110,hardElo:1642,clayElo:1638,grassElo:1660,formElo:1638,serveElo:1800,returnElo:1800,fs:.61,fsw:.71,ssw:.51,ace:3.0,df:2.8,hold:.75,brk:.38,retw:.38,hw:.54,cw:.52,gw:.56,age:28,cty:'GBR',fat:1},
+ 'C.Liu':            {rank:111,hardElo:1710,clayElo:1712,grassElo:1672,formElo:1706,serveElo:1810,returnElo:1818,fs:.60,fsw:.70,ssw:.51,ace:2.5,df:2.8,hold:.75,brk:.40,retw:.40,hw:.59,cw:.61,gw:.57,age:25,cty:'USA',fat:1},
+ 'N.Podoroska':      {rank:112,hardElo:1792,clayElo:1815,grassElo:1745,formElo:1788,serveElo:1820,returnElo:1830,fs:.59,fsw:.69,ssw:.51,ace:2.0,df:2.7,hold:.74,brk:.41,retw:.41,hw:.61,cw:.65,gw:.57,age:28,cty:'ARG',fat:2},
+ 'S.Williams':       {rank:200,hardElo:2100,clayElo:2050,grassElo:2080,formElo:1900,serveElo:2100,returnElo:2000,fs:.63,fsw:.73,ssw:.54,ace:5.0,df:3.5,hold:.80,brk:.43,retw:.43,hw:.80,cw:.76,gw:.82,age:44,cty:'USA',fat:3},
 };
 
 // ── yELO (Year-to-date ELO) — Source: tennisabstract.com, June 2026 ──
@@ -12262,115 +12329,153 @@ const TEN_TOURNAMENTS=[{
   rounds:[
     {id:'r1',name:'Round 1',dates:'Jun 29 – Jul 1',status:'active',
       atp:[
-        // ── SECTION 1: Sinner quarter (top eighth) ──────────────────────────
-        {p1:'J.Sinner',          s1:'(1)', p2:'M.Kecmanovic',    s2:'',    p1ml:-600,p2ml:420, lean:1,grade:'OPTIMAL',basis:'Sinner #1 seed, grass Elo 2088. Kecmanovic grass Elo ~1751, outclassed. Alcaraz OUT clears the top half. No path to a set loss in R1.'},
-        {p1:'C.Norrie',          s1:'(18)',p2:'T.Otte',           s2:'',    p1ml:-280,p2ml:235, lean:1,grade:'LEAN',   basis:'Norrie grass Elo 1848, solid home-crowd player at SW19. Otte a capable ball-striker but grass Elo lower. Norrie R1 lean.'},
-        {p1:'L.Darderi',         s1:'(17)',p2:'A.Popyrin',        s2:'',    p1ml:-220,p2ml:185, lean:1,grade:'LEAN',   basis:'Darderi grass Elo 1790, improving tour-level clay specialist making his Wimbledon mark. Popyrin big serve but inconsistent on grass. Lean Darderi.'},
-        {p1:'A.Fils',            s1:'(26)',p2:'P.Martinez',       s2:'',    p1ml:-240,p2ml:200, lean:1,grade:'LEAN',   basis:'Fils grass Elo 1796, young Frenchman with heavy ball — adapting to grass well in 2026. Martinez clay base, limited grass ceiling. Lean Fils.'},
-        {p1:'M.Berrettini',      s1:'',   p2:'B.Bonzi',           s2:'',    p1ml:-200,p2ml:168, lean:1,grade:'LEAN',   basis:'Berrettini 2021 Wimbledon finalist with a massive serve — grass Elo would be high if he had stayed healthy. Bonzi solid but outgunned on this surface. Lean Berrettini.'},
-        {p1:'T.Griekspoor',      s1:'',   p2:'F.Marozsan',        s2:'',    p1ml:-150,p2ml:128, lean:1,grade:'LEAN',   basis:'Griekspoor grass Elo 1788, big serve — natural grass game. Marozsan clay Elo ~1902 but grass Elo significantly lower. Lean Griekspoor.'},
-        {p1:'G.Mpetshi Perricard',s1:'',  p2:'H.Laaksonen',       s2:'',    p1ml:-200,p2ml:168, lean:1,grade:'LEAN',   basis:'Mpetshi Perricard 6\'8" with one of the biggest serves on tour — grass is his best surface. Laaksonen veteran but outgunned. Lean GMP.'},
-        {p1:'A.de Minaur',       s1:'(5)',p2:'R.Burruchaga',      s2:'',    p1ml:-700,p2ml:480, lean:1,grade:'OPTIMAL',basis:'de Minaur grass Elo 1834 — elite counter-puncher on quick surfaces. Burruchaga Slam debut, outmatched. Alcaraz OUT cleans his quarter.'},
-        // ── SECTION 2: FAA quarter ────────────────────────────────────────────
-        {p1:'F.Auger-Aliassime',  s1:'(3)',p2:'G.Diallo',          s2:'',    p1ml:-450,p2ml:325, lean:1,grade:'LEAN',   basis:'FAA grass Elo only 1789 — lowest of any top-10 seed. Diallo has a big serve but grass Elo modest. R1 lean is safe — fade FAA in futures.'},
-        {p1:'J.Mensik',           s1:'(13)',p2:'T.Atmane',         s2:'',    p1ml:-280,p2ml:235, lean:1,grade:'LEAN',   basis:'Mensik grass Elo 1870 — strong server with clean ball-striking. Atmane young Frenchman with solid serve but outranked. Lean Mensik.'},
-        {p1:'U.Humbert',          s1:'(14)',p2:'A.Rinderknech',    s2:'',    p1ml:-180,p2ml:152, lean:1,grade:'LEAN',   basis:'TIGHT. Humbert grass Elo 1870, huge serve — natural grass player. Rinderknech also big serve, grassElo 1800. Humbert edges on consistency and Wimbledon record.'},
-        {p1:'F.Tiafoe',           s1:'(15)',p2:'M.Fucsovics',      s2:'',    p1ml:-250,p2ml:210, lean:1,grade:'LEAN',   basis:'Tiafoe grass Elo 1883 — athletic, powerful, loves fast surfaces. Fucsovics a solid grass-courter but outranked. Lean Tiafoe.'},
-        {p1:'C.Moutet',           s1:'',   p2:'E.Quinn',            s2:'',    p1ml:-130,p2ml:110, lean:1,grade:'NEUTRAL',basis:'EVEN MATCH. Moutet tricky lefty with slice game — suits grass. Quinn improving young American. Slight lean Moutet on grass experience.'},
-        {p1:'A.Michelsen',        s1:'',   p2:'M.McDonald',         s2:'',    p1ml:-140,p2ml:118, lean:1,grade:'LEAN',   basis:'Michelsen grass Elo 1800, steady American improving rapidly. McDonald solid but Michelsen edges him on current form. Lean Michelsen.'},
-        {p1:'B.Nakashima',        s1:'(24)',p2:'A.Cazaux',          s2:'',    p1ml:-220,p2ml:185, lean:1,grade:'LEAN',   basis:'Nakashima grass Elo 1810, consistent baseline game. Cazaux young Frenchman still developing on grass. Lean Nakashima.'},
-        {p1:'D.Medvedev',         s1:'(8)',p2:'T.Etcheverry',      s2:'',    p1ml:-380,p2ml:290, lean:1,grade:'LEAN',   basis:'Medvedev grass Elo 1855 — respectable but third tier vs Sinner/Djokovic. Etcheverry clay Elo ~1903, grass Elo ~1752 — exposed on surface. Lean Medvedev.'},
-        // ── SECTION 3: Shelton quarter ────────────────────────────────────────
-        {p1:'B.Shelton',          s1:'(4)',p2:'O.Virtanen',        s2:'',    p1ml:-650,p2ml:440, lean:1,grade:'OPTIMAL',basis:'Shelton grass Elo 1863, biggest serve on tour. Virtanen outside top 100, no grass Slam history. Lean Shelton. 3.8% title prob.'},
-        {p1:'T.Paul',             s1:'(19)',p2:'B.van de Zandschulp',s2:'',  p1ml:-180,p2ml:152, lean:1,grade:'LEAN',   basis:'Paul grass Elo 1841 — underrated on fast surfaces. van de Zandschulp has solid serve but Paul edges on Wimbledon experience. Lean Paul.'},
-        {p1:'T.Machac',           s1:'(20)',p2:'Y.Hanfmann',       s2:'',    p1ml:-260,p2ml:215, lean:1,grade:'LEAN',   basis:'Machac grass Elo 1830, Czech talent with flat serve and clean striking. Hanfmann veteran German, competitive but outranked. Lean Machac.'},
-        {p1:'H.Rune',             s1:'(22)',p2:'D.Altmaier',       s2:'',    p1ml:-280,p2ml:235, lean:1,grade:'LEAN',   basis:'Rune grass Elo 1820 with improving serve — solid Wimbledon contender in 2026. Altmaier clay specialist, grass Elo significantly lower. Lean Rune.'},
-        {p1:'L.Tien',             s1:'(21)',p2:'M.Navone',         s2:'',    p1ml:-250,p2ml:210, lean:1,grade:'LEAN',   basis:'Tien 20-year-old American with massive upside, grass Elo 1830. Navone clay Elo ~1852 but grass Elo ~1738. Lean Tien.'},
-        {p1:'A.Tabilo',           s1:'',   p2:'M.Korda',            s2:'',    p1ml:-130,p2ml:110, lean:1,grade:'NEUTRAL',basis:'EVEN. Tabilo grass Elo ~1803 slightly edge over Korda. Both athletic baseliners who have improved on grass. Slight lean Tabilo on recent form.'},
-        {p1:'A.Davidovich Fokina',s1:'(25)',p2:'N.Borges',         s2:'',    p1ml:-220,p2ml:185, lean:1,grade:'LEAN',   basis:'Davidovich Fokina athletic Spanish defender. Borges solid Portuguese but grass Elo ~1741, limited grass pedigree. Lean Davidovich Fokina.'},
-        {p1:'A.Bublik',           s1:'(9)',p2:'M.Purcell',         s2:'',    p1ml:-350,p2ml:275, lean:1,grade:'LEAN',   basis:'Bublik grass Elo 1920 — one of the best grass Elos in the draw. Biggest serve in Wimbledon history stat lines. Purcell Aussie doubles specialist, no match here. Lean Bublik.'},
-        // ── SECTION 4: Djokovic quarter ────────────────────────────────────────
-        {p1:'N.Djokovic',         s1:'(7)',p2:'W.Yibing',          s2:'',    p1ml:-500,p2ml:360, lean:1,grade:'OPTIMAL',basis:'Djokovic grass Elo 1925 — highest of any seed outside Sinner. 7× champion. 10.2% title prob (2nd in ATP). Best futures value at +380.'},
-        {p1:'K.Khachanov',        s1:'(29)',p2:'P.Kotov',          s2:'',    p1ml:-300,p2ml:250, lean:1,grade:'LEAN',   basis:'Khachanov grass Elo 1858, big serve, solid grass game at 6\'6". Kotov ranked outside top 60, grass Elo lower. Lean Khachanov.'},
-        {p1:'S.Korda',            s1:'(23)',p2:'H.Medjedovic',     s2:'',    p1ml:-220,p2ml:185, lean:1,grade:'LEAN',   basis:'Korda grass Elo 1828, big serve and improving net game. Medjedovic young Serbian talent, grass Elo ~1738 — outranked. Lean Korda.'},
-        {p1:'J.Fonseca',          s1:'(30)',p2:'J.Sousa',          s2:'',    p1ml:-200,p2ml:168, lean:1,grade:'LEAN',   basis:'Fonseca 18-year-old Brazilian with tremendous upside. Sousa veteran, limited grass Elo. Lean Fonseca on youth and form.'},
-        {p1:'I.Buse',             s1:'(32)',p2:'A.Mannarino',      s2:'',    p1ml:-160,p2ml:135, lean:1,grade:'LEAN',   basis:'Buse Peruvian grass-courter, improved significantly in 2026. Mannarino lefty veteran — tricky slice but 37 years old. Lean Buse.'},
-        {p1:'D.Shapovalov',       s1:'(16)',p2:'L.Pouille',        s2:'',    p1ml:-320,p2ml:260, lean:1,grade:'LEAN',   basis:'Shapovalov grass Elo 1853 — naturally gifted on fast surfaces with big lefty serve. Pouille veteran Frenchman past peak. Lean Shapovalov.'},
-        {p1:'F.Cerundolo',        s1:'',   p2:'J.Munar',            s2:'',    p1ml:-170,p2ml:143, lean:1,grade:'LEAN',   basis:'Cerundolo clay Elo ~1924 but exposed on grass. Munar similarly clay-built. Lean Cerundolo on slightly better all-court game.'},
-        {p1:'T.Fritz',            s1:'(6)',p2:'J.Draper',          s2:'',    p1ml:-160,p2ml:138, lean:1,grade:'LEAN',   basis:'Fritz grass Elo 1857, Draper ~1654. Home crowd and ascending form for Draper. Fritz serve + experience wins slightly. Monitor lines.'},
-        // ── SECTION 5: Zverev quarter ────────────────────────────────────────
-        {p1:'A.Zverev',           s1:'(2)',p2:'A.Blockx',          s2:'',    p1ml:-700,p2ml:480, lean:1,grade:'OPTIMAL',basis:'Zverev grass Elo 1914. Blockx grass Elo ~1698, no Slam pedigree. yElo 2133 shows peak form. Lean Zverev.'},
-        {p1:'J.Lehecka',          s1:'(10)',p2:'C.Ugo Carabelli',  s2:'',    p1ml:-380,p2ml:295, lean:1,grade:'LEAN',   basis:'Lehecka grass Elo 1862, explosive serve and flat ball-striking. Ugo Carabelli clay-suited, grass Elo ~1658. Lean Lehecka clearly.'},
-        {p1:'L.Musetti',          s1:'(11)',p2:'Z.Bergs',          s2:'',    p1ml:-260,p2ml:215, lean:1,grade:'LEAN',   basis:'Musetti grass Elo 1850, improving serve and net game. Bergs solid Belgian but grass Elo ~1768, outranked. Lean Musetti.'},
-        {p1:'A.Rublev',           s1:'(12)',p2:'R.Safiullin',      s2:'',    p1ml:-280,p2ml:230, lean:1,grade:'LEAN',   basis:'Rublev clay Elo 1872, grass Elo 1784. Safiullin streaky but capable on grass. Rublev consistency + ranking gap should get R1 win.'},
-        {p1:'T.Etcheverry',       s1:'',   p2:'M.Cilic',            s2:'',    p1ml:140, p2ml:-160, lean:2,grade:'LEAN',  basis:'FADE ETCHEVERRY on grass. Cilic at 37 still has one of the best grass serves on tour — 2017 champion at SW19. Etcheverry clay Elo ~1903, grass Elo ~1752. Lean Cilic.'},
-        {p1:'T.Paul',             s1:'',   p2:'A.Karatsev',         s2:'',    p1ml:-190,p2ml:160, lean:1,grade:'LEAN',   basis:'Paul grass Elo 1841. Karatsev veteran, solid but ranked lower. Lean Paul.'},
-        {p1:'J.Thompson',         s1:'',   p2:'C.Garin',            s2:'',    p1ml:-150,p2ml:128, lean:1,grade:'LEAN',   basis:'Thompson Aussie grass-courter — comfortable at SW19. Garin clay specialist, grass Elo limited. Lean Thompson.'},
-        {p1:'N.Kyrgios',          s1:'',   p2:'M.Mmoh',             s2:'',    p1ml:-300,p2ml:248, lean:1,grade:'LEAN',   basis:'Kyrgios grass Elo historically elite — 2022 Wimbledon finalist. If healthy, giant serve is massive on grass. Mmoh improving but outgunned here. Lean Kyrgios.'},
-        // ── SECTION 6: Medvedev/Ruud quarter ──────────────────────────────────
-        {p1:'C.Ruud',             s1:'(11)',p2:'H.Hurkacz',          s2:'',    p1ml:130, p2ml:-150,lean:2,grade:'LEAN',   basis:'FADE THE SEED. Ruud grass Elo ~1714, clay specialist. Hurkacz huge serve and net game built for Wimbledon. Lean Hurkacz.'},
-        {p1:'F.Cobolli',          s1:'(28)',p2:'D.Goffin',           s2:'',    p1ml:-220,p2ml:185, lean:1,grade:'LEAN',   basis:'Cobolli grass Elo 1810, improving Italian. Goffin Belgian veteran with solid Wimbledon history — competitive but ranked lower. Lean Cobolli.'},
-        {p1:'V.Vacherot',         s1:'',   p2:'M.Bergs',             s2:'',    p1ml:-140,p2ml:118, lean:1,grade:'LEAN',   basis:'Vacherot ranked 19 in 2026, improved grass game. Bergs solid Belgian but outranked on this surface. Lean Vacherot.'},
-        {p1:'L.Sonego',           s1:'',   p2:'S.Kwon',              s2:'',    p1ml:-200,p2ml:168, lean:1,grade:'LEAN',   basis:'Sonego Italian with attacking game suited to grass. Kwon Korean tour-level player, grass Elo limited. Lean Sonego.'},
-        {p1:'A.Tabilo',           s1:'',   p2:'J.Cerundolo',         s2:'',    p1ml:-160,p2ml:135, lean:1,grade:'LEAN',   basis:'Tabilo grass Elo ~1803. Cerundolo clay Elo ~1845, grass Elo ~1720 — clay specialist exposed. Lean Tabilo.'},
-        {p1:'R.Jodar',            s1:'',   p2:'B.Giron',             s2:'',    p1ml:-150,p2ml:128, lean:1,grade:'LEAN',   basis:'Jodar young Spaniard improving. Giron clay-based American with limited grass results. Lean Jodar.'},
-        {p1:'J.Fearnley',         s1:'WC', p2:'G.Soeda',             s2:'',    p1ml:-180,p2ml:152, lean:1,grade:'LEAN',   basis:'Fearnley British wild card at home — crowd factor huge. Solid grass game from UK juniors. Soeda Japanese veteran, grass Elo limited. Lean Fearnley.'},
-        {p1:'N.Kyrgios',          s1:'',   p2:'A.Popyrin',           s2:'',    p1ml:-200,p2ml:168, lean:1,grade:'LEAN',   basis:'Kyrgios grass Elo historically elite — 2022 Wimbledon finalist. Big serve unplayable on grass when on. Popyrin Aussie talent but Kyrgios ceiling far higher. Lean Kyrgios.'},
+        // ── SECTION 1: Sinner eighth ──────────────────────────────────────
+        {p1:'J.Sinner',s1:'(1)',p2:'M.Kecmanovic',s2:'',p1ml:-600,p2ml:420,lean:1,grade:'OPTIMAL',basis:'Sinner #1 seed, grass Elo 2088. Kecmanovic grass Elo ~1751, outclassed. Alcaraz OUT clears the top half. No path to a set loss in R1.',winner:'J.Sinner',score:'6-4, 6-7(3), 6-4, 6-3'},
+        {p1:'N.Borges',s1:'',p2:'T.Boyer',s2:'',p1ml:-160,p2ml:135,lean:1,grade:'LEAN',basis:'Borges solid baseline game, improving on grass. Boyer young Frenchman, ranked lower. Lean Borges.',winner:'N.Borges',score:'6-3, 6-4, 7-6(3)'},
+        {p1:'A.Vukic',s1:'',p2:'J.Brooksby',s2:'',p1ml:-140,p2ml:118,lean:1,grade:'LEAN',basis:'Vukic Aussie grinder, competitive on grass. Brooksby improving American. Close — lean Vukic.',winner:'A.Vukic',score:'6-3, 6-4, 7-5'},
+        {p1:'E.Nava',s1:'',p2:'I.Buse',s2:'(31)',p1ml:200,p2ml:-240,lean:2,grade:'LEAN',basis:'Buse seeded 31st, improved significantly in 2026. Nava young American, outranked on grass. Lean Buse.',winner:'E.Nava',score:'6-3, 6-4, 7-6(2)'},
+        {p1:'R.Jodar',s1:'(23)',p2:'F.Gill',s2:'',p1ml:-220,p2ml:185,lean:1,grade:'LEAN',basis:'Jodar seeded 23rd, solid all-court game. Gill young Australian, outranked. Lean Jodar.'},
+        {p1:'D.Shapovalov',s1:'',p2:'P.Carreno Busta',s2:'',p1ml:-160,p2ml:135,lean:1,grade:'LEAN',basis:'Shapovalov lefty serve-and-volley game built for Wimbledon. Carreno Busta clay specialist, grass Elo lower. Lean Shapovalov.',winner:'P.Carreno Busta',score:'3-6, 7-6(4), 7-6(9)'},
+        {p1:'S.Mochizuki',s1:'',p2:'M.Basing',s2:'',p1ml:-130,p2ml:110,lean:1,grade:'LEAN',basis:'Mochizuki improving Japanese player. Basing ranked lower. Lean Mochizuki.'},
+        {p1:'E.Quinn',s1:'',p2:'L.Darderi',s2:'(14)',p1ml:250,p2ml:-300,lean:2,grade:'LEAN',basis:'Darderi seeded 14th, strong grass game in 2026. Quinn outranked. Lean Darderi.',winner:'E.Quinn',score:'7-6(9), 7-6(4), 6-7(2), 5-2 ret.'},
+        // ── SECTION 2: Ruud/Medvedev eighth ──────────────────────────────
+        {p1:'C.Ruud',s1:'(11)',p2:'H.Hurkacz',s2:'',p1ml:130,p2ml:-150,lean:2,grade:'LEAN',basis:'FADE THE SEED. Ruud grass Elo ~1714, clay specialist. Hurkacz huge serve and net game built for Wimbledon. Lean Hurkacz.',winner:'C.Ruud',score:'4-6, 6-4, 6-3, 7-6(5)'},
+        {p1:'H.Medjedovic',s1:'',p2:'S.Ofner',s2:'',p1ml:-130,p2ml:110,lean:1,grade:'LEAN',basis:'Medjedovic young Serbian talent, improving on grass. Ofner Austrian, competitive but ranked lower. Lean Medjedovic.',winner:'H.Medjedovic',score:'6-2, 6-3, 4-6, 6-4'},
+        {p1:'S.Kwon',s1:'',p2:'M.Landaluce',s2:'',p1ml:-140,p2ml:118,lean:1,grade:'LEAN',basis:'Kwon Korean tour-level player. Landaluce Spanish, ranked lower. Lean Kwon.'},
+        {p1:'A.Muller',s1:'',p2:'T.Paul',s2:'(21)',p1ml:200,p2ml:-240,lean:2,grade:'LEAN',basis:'Paul seeded 21st, grass Elo 1841 — underrated on fast surfaces. Muller solid but outranked. Lean Paul.',winner:'A.Muller',score:'7-5, 1-6, 7-6(8), ret.'},
+        {p1:'B.Nakashima',s1:'(28)',p2:'J.Pinnington Jones',s2:'',p1ml:-280,p2ml:235,lean:1,grade:'LEAN',basis:'Nakashima seeded 28th, grass Elo 1810, consistent baseline. Pinnington Jones British qualifier, outranked. Lean Nakashima.',winner:'B.Nakashima',score:'6-4, 6-3, 6-2'},
+        {p1:'J.Struff',s1:'',p2:'S.Baez',s2:'',p1ml:-150,p2ml:128,lean:1,grade:'LEAN',basis:'Struff big German serve — natural grass game. Baez clay specialist, grass Elo lower. Lean Struff.',winner:'J.Struff',score:'7-6(4), 7-5, 6-3'},
+        {p1:'C.Ugo Carabelli',s1:'',p2:'D.Merida',s2:'',p1ml:-140,p2ml:118,lean:1,grade:'LEAN',basis:'Ugo Carabelli Argentinian, solid baseline game. Merida Spanish, ranked lower. Lean Ugo Carabelli.',winner:'C.Ugo Carabelli',score:'6-3, 6-4, 6-2'},
+        {p1:'M.Cilic',s1:'',p2:'D.Medvedev',s2:'(8)',p1ml:300,p2ml:-380,lean:2,grade:'LEAN',basis:'Medvedev seeded 8th, grass Elo 1855. Cilic 37-year-old former champion — big serve still dangerous but past peak. Lean Medvedev.',winner:'D.Medvedev',score:'6-4, 7-6(2), 6-2'},
+        // ── SECTION 3: FAA eighth ─────────────────────────────────────────
+        {p1:'F.Auger-Aliassime',s1:'(3)',p2:'A.Shevchenko',s2:'',p1ml:-450,p2ml:325,lean:1,grade:'LEAN',basis:'FAA #3 seed, grass Elo 1789 — lowest of any top-10 seed. Big serve helps R1 vs outranked Shevchenko. Fade in futures.',winner:'F.Auger-Aliassime',score:'6-3, 6-4, 6-2'},
+        {p1:'A.Walton',s1:'',p2:'D.Prizmic',s2:'',p1ml:-130,p2ml:110,lean:1,grade:'LEAN',basis:'Walton Aussie grasscourter, Slam-experienced. Prizmic young Croatian, ranked lower. Lean Walton.'},
+        {p1:'A.Vallejo',s1:'',p2:'N.Mejia',s2:'',p1ml:-140,p2ml:118,lean:1,grade:'LEAN',basis:'Vallejo Spanish with solid all-court game. Mejia Colombian, ranked lower. Lean Vallejo.'},
+        {p1:'M.Zheng',s1:'',p2:'C.Norrie',s2:'(26)',p1ml:240,p2ml:-290,lean:2,grade:'LEAN',basis:'Norrie seeded 26th, grass Elo 1848 — SW19 specialist. Zheng outranked. Lean Norrie.',winner:'C.Norrie',score:'6-3, 7-6(5), 6-4'},
+        {p1:'A.Davidovich Fokina',s1:'(22)',p2:'J.Cerundolo',s2:'',p1ml:-240,p2ml:200,lean:1,grade:'LEAN',basis:'Davidovich Fokina seeded 22nd, athletic defender. J.Cerundolo clay Elo ~1845, grass significantly lower. Lean Davidovich Fokina.'},
+        {p1:'T.Tirante',s1:'',p2:'F.Marozsan',s2:'',p1ml:-140,p2ml:118,lean:1,grade:'LEAN',basis:'Tirante Argentinian improving on all surfaces. Marozsan Hungarian clay player, limited grass pedigree. Lean Tirante.'},
+        {p1:'L.Van Assche',s1:'',p2:'M.Fucsovics',s2:'',p1ml:-130,p2ml:110,lean:1,grade:'LEAN',basis:'Van Assche young Belgian with strong serve. Fucsovics veteran Hungarian, competitive but ranked lower. Lean Van Assche.'},
+        {p1:'D.Svrcina',s1:'',p2:'L.Tien',s2:'(16)',p1ml:280,p2ml:-340,lean:2,grade:'LEAN',basis:'Tien seeded 16th, 20-year-old American with grass Elo 1830 and huge upside. Svrcina outranked. Lean Tien.'},
+        // ── SECTION 4: Djokovic eighth ────────────────────────────────────
+        {p1:'A.Rublev',s1:'(12)',p2:'R.Safiullin',s2:'',p1ml:-280,p2ml:230,lean:1,grade:'LEAN',basis:'Rublev grass Elo 1784, seeded 12th. Safiullin streaky but capable. Rublev consistency + ranking gap wins R1.'},
+        {p1:'A.Kovacevic',s1:'',p2:'B.Van de Zandschulp',s2:'',p1ml:-130,p2ml:110,lean:1,grade:'LEAN',basis:'Kovacevic American improving on grass. Van de Zandschulp Dutch, ranked lower. Lean Kovacevic.'},
+        {p1:'J.de Jong',s1:'',p2:'R.Hijikata',s2:'',p1ml:-130,p2ml:110,lean:1,grade:'LEAN',basis:'de Jong Dutch with big serve for grass. Hijikata Aussie, competitive. Lean de Jong.'},
+        {p1:'R.Bautista Agut',s1:'',p2:'J.Fonseca',s2:'(24)',p1ml:200,p2ml:-240,lean:2,grade:'LEAN',basis:'Fonseca seeded 24th, 18-year-old Brazilian with enormous upside. Bautista Agut veteran, past peak. Lean Fonseca.'},
+        {p1:'A.Rinderknech',s1:'(25)',p2:'O.Tarvet',s2:'',p1ml:-260,p2ml:215,lean:1,grade:'LEAN',basis:'Rinderknech seeded 25th, massive serve — natural grass player. Tarvet outranked. Lean Rinderknech.'},
+        {p1:'M.Trungelliti',s1:'',p2:'M.Damm',s2:'',p1ml:-130,p2ml:110,lean:1,grade:'LEAN',basis:'Trungelliti Argentine veteran, competitive. Damm young Czech, ranked lower. Lean Trungelliti.'},
+        {p1:'H.Gaston',s1:'',p2:'S.Tsitsipas',s2:'',p1ml:200,p2ml:-240,lean:2,grade:'LEAN',basis:'Tsitsipas grass Elo ~1800, improving net game. Gaston clay-suited Frenchman. Lean Tsitsipas.'},
+        {p1:'W.Yibing',s1:'',p2:'N.Djokovic',s2:'(7)',p1ml:360,p2ml:-500,lean:2,grade:'OPTIMAL',basis:'Djokovic grass Elo 1925 — highest of any seed outside Sinner. 7× Wimbledon champion. 10.2% title prob (2nd in ATP). Best futures value at +380.'},
+        // ── SECTION 5: de Minaur eighth ───────────────────────────────────
+        {p1:'A.de Minaur',s1:'(5)',p2:'R.Burruchaga',s2:'',p1ml:-700,p2ml:480,lean:1,grade:'OPTIMAL',basis:'de Minaur grass Elo 1834, elite counter-puncher on quick surfaces. Burruchaga Slam debut. Alcaraz OUT cleans his quarter.'},
+        {p1:'A.Mannarino',s1:'',p2:'T.Droguet',s2:'',p1ml:-180,p2ml:152,lean:1,grade:'LEAN',basis:'Mannarino lefty slice veteran — grass is his best surface. Droguet young Frenchman, ranked lower. Lean Mannarino.'},
+        {p1:'P.Llamas Ruiz',s1:'',p2:'Z.Svajda',s2:'',p1ml:-130,p2ml:110,lean:1,grade:'LEAN',basis:'Llamas Ruiz Spanish with solid game. Svajda American developing player. Lean Llamas Ruiz.'},
+        {p1:'K.Majchrzak',s1:'',p2:'A.Tabilo',s2:'(30)',p1ml:260,p2ml:-320,lean:2,grade:'LEAN',basis:'Tabilo seeded 30th, grass Elo ~1803. Majchrzak Polish veteran outranked. Lean Tabilo.'},
+        {p1:'K.Khachanov',s1:'(19)',p2:'B.Harris',s2:'',p1ml:-320,p2ml:260,lean:1,grade:'LEAN',basis:'Khachanov seeded 19th, 6'6" big serve — solid Wimbledon contender. Harris ranked lower. Lean Khachanov.'},
+        {p1:'Y.Hanfmann',s1:'',p2:'G.Mpetshi Perricard',s2:'',p1ml:160,p2ml:-190,lean:2,grade:'LEAN',basis:'Mpetshi Perricard 6'8" with one of the biggest serves on tour — grass is his best surface. Hanfmann veteran. Lean GMP.'},
+        {p1:'T.Griekspoor',s1:'',p2:'J.Duckworth',s2:'',p1ml:-160,p2ml:135,lean:1,grade:'LEAN',basis:'Griekspoor grass Elo 1788, big serve — natural grass game. Duckworth Aussie veteran, ranked lower. Lean Griekspoor.'},
+        {p1:'M.Navone',s1:'',p2:'F.Cobolli',s2:'(9)',p1ml:300,p2ml:-370,lean:2,grade:'LEAN',basis:'Cobolli seeded 9th, grass Elo 1810 — improving Italian. Navone clay Argentinian, outranked on grass. Lean Cobolli.'},
+        // ── SECTION 6: Shelton eighth ─────────────────────────────────────
+        {p1:'J.Mensik',s1:'(15)',p2:'T.Samuel',s2:'',p1ml:-320,p2ml:260,lean:1,grade:'LEAN',basis:'Mensik seeded 15th, grass Elo 1870 — strong serve and clean ball-striking. Samuel outranked. Lean Mensik.'},
+        {p1:'D.Sweeny',s1:'',p2:'G.Dimitrov',s2:'',p1ml:160,p2ml:-190,lean:2,grade:'LEAN',basis:'Dimitrov grass Elo ~1820, elegant all-court game well-suited to Wimbledon. Sweeny ranked lower. Lean Dimitrov.'},
+        {p1:'S.Wawrinka',s1:'',p2:'M.Berrettini',s2:'',p1ml:180,p2ml:-220,lean:2,grade:'LEAN',basis:'Berrettini 2021 Wimbledon finalist, massive serve — grass monster when healthy. Wawrinka 40 years old. Lean Berrettini.'},
+        {p1:'R.Collignon',s1:'',p2:'A.Fils',s2:'(20)',p1ml:280,p2ml:-340,lean:2,grade:'LEAN',basis:'Fils seeded 20th, grass Elo 1796, young Frenchman adapting to grass well. Collignon outranked. Lean Fils.'},
+        {p1:'U.Humbert',s1:'(27)',p2:'Z.Bergs',s2:'',p1ml:-250,p2ml:210,lean:1,grade:'LEAN',basis:'Humbert seeded 27th, massive serve — natural grass player, grass Elo 1870. Bergs solid Belgian but outranked. Lean Humbert.'},
+        {p1:'S.Shimabukuro',s1:'',p2:'J.Faria',s2:'',p1ml:-130,p2ml:110,lean:1,grade:'LEAN',basis:'Shimabukuro Japanese improving player. Faria Portuguese, ranked lower. Lean Shimabukuro.'},
+        {p1:'D.Dzumhur',s1:'',p2:'A.Fery',s2:'',p1ml:-140,p2ml:118,lean:1,grade:'LEAN',basis:'Dzumhur Bosnian veteran, solid tour-level game. Fery young player, ranked lower. Lean Dzumhur.'},
+        {p1:'O.Virtanen',s1:'',p2:'B.Shelton',s2:'(4)',p1ml:400,p2ml:-550,lean:2,grade:'OPTIMAL',basis:'Shelton grass Elo 1863, biggest serve on tour. Virtanen outside top 100, no grass Slam history. Lean Shelton. 3.8% title prob.'},
+        // ── SECTION 7: Fritz eighth ────────────────────────────────────────
+        {p1:'T.Fritz',s1:'(6)',p2:'D.Lajovic',s2:'',p1ml:-400,p2ml:300,lean:1,grade:'LEAN',basis:'Fritz seeded 6th, grass Elo 1857. Lajovic clay specialist, grass Elo significantly lower. Lean Fritz.'},
+        {p1:'P.Kypson',s1:'',p2:'M.McDonald',s2:'',p1ml:-130,p2ml:110,lean:1,grade:'LEAN',basis:'Kypson American improving on grass. McDonald solid but ranked lower. Lean Kypson.'},
+        {p1:'B.Bonzi',s1:'',p2:'G.Diallo',s2:'',p1ml:-140,p2ml:118,lean:1,grade:'LEAN',basis:'Bonzi French with solid serve and improving all-court game. Diallo big serve but ranked lower. Lean Bonzi.'},
+        {p1:'L.Sonego',s1:'',p2:'T.Etcheverry',s2:'(29)',p1ml:200,p2ml:-240,lean:2,grade:'LEAN',basis:'Etcheverry seeded 29th. Sonego Italian attacking game suits grass but ranked lower. Lean Etcheverry.'},
+        {p1:'F.Tiafoe',s1:'(17)',p2:'T.Atmane',s2:'',p1ml:-280,p2ml:235,lean:1,grade:'LEAN',basis:'Tiafoe seeded 17th, grass Elo 1883 — athletic and powerful on fast surfaces. Atmane young Frenchman, outranked. Lean Tiafoe.'},
+        {p1:'V.Kopriva',s1:'',p2:'J.Choinski',s2:'',p1ml:-130,p2ml:110,lean:1,grade:'LEAN',basis:'Kopriva Czech with solid serve for grass. Choinski British-Polish, competitive. Lean Kopriva.'},
+        {p1:'K.Jacquet',s1:'',p2:'V.Gaubas',s2:'',p1ml:-140,p2ml:118,lean:1,grade:'LEAN',basis:'Jacquet French with improving grass game. Gaubas Lithuanian, ranked lower. Lean Jacquet.'},
+        {p1:'M.Arnaldi',s1:'(32)',p2:'Q.Halys',s2:'',p1ml:-220,p2ml:185,lean:1,grade:'LEAN',basis:'Arnaldi seeded 32nd, Italian improving on all surfaces. Halys French, competitive but outranked. Lean Arnaldi.'},
+        // ── SECTION 8: Zverev eighth ──────────────────────────────────────
+        {p1:'A.Zverev',s1:'(2)',p2:'A.Blockx',s2:'',p1ml:-700,p2ml:480,lean:1,grade:'OPTIMAL',basis:'Zverev grass Elo 1914. Blockx grass Elo ~1698, no Slam pedigree. yElo 2133 shows peak form after RG 2026 title. Lean Zverev.'},
+        {p1:'V.Royer',s1:'',p2:'H.Wendelken',s2:'',p1ml:-130,p2ml:110,lean:1,grade:'LEAN',basis:'Royer French veteran. Wendelken British qualifier, ranked lower. Lean Royer.'},
+        {p1:'C.Moutet',s1:'',p2:'M.Giron',s2:'',p1ml:-130,p2ml:110,lean:1,grade:'LEAN',basis:'Moutet tricky lefty with slice game — suits grass. Giron solid American but ranked lower. Lean Moutet.'},
+        {p1:'F.Cerundolo',s1:'(18)',p2:'J.Munar',s2:'',p1ml:-240,p2ml:200,lean:1,grade:'LEAN',basis:'F.Cerundolo seeded 18th. Munar Spanish clay player, grass Elo limited. Lean Cerundolo.'},
+        {p1:'A.Michelsen',s1:'',p2:'J.Fearnley',s2:'',p1ml:-140,p2ml:118,lean:1,grade:'LEAN',basis:'Michelsen American grass Elo 1800, solid and improving. Fearnley British wildcard — home crowd huge but outranked. Lean Michelsen.'},
+        {p1:'A.Molcan',s1:'',p2:'D.Altmaier',s2:'',p1ml:-130,p2ml:110,lean:1,grade:'LEAN',basis:'Molcan Slovak with big serve. Altmaier German clay player, grass Elo lower. Lean Molcan.'},
+        {p1:'J.Lehecka',s1:'(13)',p2:'A.Popyrin',s2:'',p1ml:-300,p2ml:248,lean:1,grade:'LEAN',basis:'Lehecka seeded 13th, grass Elo 1862 — explosive serve and flat ball-striking. Popyrin big serve but ranked lower. Lean Lehecka.'},
+        {p1:'T.Kokkinakis',s1:'',p2:'A.Bublik',s2:'(10)',p1ml:300,p2ml:-370,lean:2,grade:'LEAN',basis:'Bublik seeded 10th, grass Elo 1920 — one of the best grass Elos in the draw. Biggest serve at Wimbledon. Kokkinakis outranked. Lean Bublik.'},
       ],
       wta:[
-        // ── SECTION 1: Sabalenka quarter ──────────────────────────────────────
-        {p1:'A.Sabalenka',   s1:'(1)', p2:'A.Kostovic',    s2:'',    p1ml:-700,p2ml:470, lean:1,grade:'OPTIMAL',basis:'Sabalenka #1, grass Elo 1987, yElo 2144 — peak form. Kostovic unranked qualifier. 23.7% title prob, clear WTA favorite. Lock R1.'},
-        {p1:'M.Keys',        s1:'(19)',p2:'C.Bucsa',        s2:'',    p1ml:-280,p2ml:235, lean:1,grade:'LEAN',   basis:'Keys grass Elo 1890 with power game that suits Wimbledon. Bucsa solid Spaniard but grass Elo ~1772, outranked. Lean Keys.'},
-        {p1:'E.Mertens',     s1:'(21)',p2:'T.Maria',        s2:'',    p1ml:-200,p2ml:168, lean:1,grade:'LEAN',   basis:'Mertens Belgian veteran, strong grass game at 29. Maria 37 years old, veteran who competes on grass. Lean Mertens on ranking and grass Elo.'},
-        {p1:'B.Krejcikova',  s1:'',   p2:'D.Yastremska',   s2:'',    p1ml:-160,p2ml:135, lean:1,grade:'LEAN',   basis:'Krejcikova defending Wimbledon champion — grass Elo 1916 is exceptional. Yastremska grass Elo ~1800, aggressive but outgunned here. Lean Krejcikova.'},
-        {p1:'M.Sakkari',     s1:'(28)',p2:'A.Blinkova',     s2:'',    p1ml:-220,p2ml:185, lean:1,grade:'LEAN',   basis:'Sakkari grass Elo 1878, powerful all-court game improving on grass. Blinkova solid Russian, grass Elo lower. Lean Sakkari.'},
-        {p1:'V.Azarenka',    s1:'',   p2:'S.Sorribes Tormo',s2:'',   p1ml:-280,p2ml:235, lean:1,grade:'LEAN',   basis:'Azarenka veteran former world #1, still capable on grass at 36. Sorribes Tormo clay-grinder — exposed on fast surface. Lean Azarenka.'},
-        {p1:'J.Ostapenko',   s1:'(31)',p2:'Y.Starodubtseva', s2:'',   p1ml:-260,p2ml:215, lean:1,grade:'LEAN',   basis:'Ostapenko flat ball-striking suits grass — 2017 RG champ can hurt anyone. Starodubtseva ranked outside top 55, grass Elo ~1742. Lean Ostapenko.'},
-        {p1:'E.Svitolina',   s1:'(8)', p2:'A.Bondar',       s2:'',    p1ml:-380,p2ml:285, lean:1,grade:'LEAN',   basis:'Svitolina yElo 2113 — 3rd highest WTA in 2026. Slice game suits grass perfectly. Bondar grass Elo ~1738, outranked. Lean Svitolina.'},
-        // ── SECTION 2: Rybakina quarter ────────────────────────────────────────
-        {p1:'E.Rybakina',    s1:'(2)', p2:'N.Boisson',      s2:'',    p1ml:-800,p2ml:540, lean:1,grade:'OPTIMAL',basis:'Rybakina 2022 Wimbledon champion. Massive flat serve built for grass. Boisson no match. Lean emphatically in R1.'},
-        {p1:'D.Kasatkina',   s1:'(20)',p2:'P.Udvardy',      s2:'',    p1ml:-280,p2ml:235, lean:1,grade:'LEAN',   basis:'Kasatkina grass Elo 1818, elegant all-court game. Udvardy Hungarian, grass Elo ~1730, outranked. Lean Kasatkina.'},
-        {p1:'L.Fernandez',   s1:'(22)',p2:'M.Frech',         s2:'',    p1ml:-200,p2ml:168, lean:1,grade:'LEAN',   basis:'Fernandez grass Elo 1840, improving Canadian with solid net game. Frech Polish player, grass Elo ~1820. Close match — lean Fernandez.'},
-        {p1:'M.Vondrousova', s1:'',   p2:'A.Eala',           s2:'',    p1ml:-200,p2ml:168, lean:1,grade:'LEAN',   basis:'Vondrousova grass Elo 1918 — defending 2023 Wimbledon champion. Eala Filipino 20-year-old, massive upside but outranked. Lean Vondrousova.'},
-        {p1:'Q.Zheng',       s1:'(22)',p2:'C.McNally',       s2:'',    p1ml:-240,p2ml:200, lean:1,grade:'LEAN',   basis:'Zheng improving Chinese player, grass Elo 1840. McNally American player with solid game. Lean Zheng on ranking.'},
-        {p1:'A.Kalinskaya',  s1:'(24)',p2:'J.Bouzas-Maneiro',s2:'',   p1ml:-250,p2ml:208, lean:1,grade:'LEAN',   basis:'Kalinskaya grass Elo 1848, aggressive flat hitter. Bouzas-Maneiro Spanish clay player, grass Elo ~1748. Lean Kalinskaya.'},
-        {p1:'L.Samsonova',   s1:'(27)',p2:'T.Gibson',        s2:'',    p1ml:-260,p2ml:215, lean:1,grade:'LEAN',   basis:'Samsonova grass Elo 1892 — big serve, powerful baseline game suits Wimbledon well. Gibson solid American but outranked. Lean Samsonova.'},
-        {p1:'L.Noskova',     s1:'(9)', p2:'K.Volynets',      s2:'',    p1ml:-380,p2ml:285, lean:1,grade:'LEAN',   basis:'DARK HORSE: Noskova grass Elo 1875 — 3rd highest WTA. 7.4% title prob (higher than Rybakina). Massive flat serve. Volynets outranked. Watch closely.'},
-        // ── SECTION 3: Swiatek quarter ──────────────────────────────────────────
-        {p1:'I.Swiatek',     s1:'(3)', p2:'T.Townsend',      s2:'',    p1ml:-450,p2ml:320, lean:1,grade:'LEAN',   basis:'SURFACE ALERT: Swiatek grass Elo 1936 but multiple early Wimbledon exits. 11.2% title prob (2nd WTA). Townsend solid but outranked. Lean R1 with caution.'},
-        {p1:'M.Kostyuk',     s1:'(15)',p2:'L.Siegemund',     s2:'',    p1ml:-280,p2ml:235, lean:1,grade:'LEAN',   basis:'Kostyuk grass Elo 1870, solid Ukrainian all-courter. Siegemund veteran German, 36 years old — strong grass history but declining. Lean Kostyuk.'},
-        {p1:'E.Alexandrova', s1:'(14)',p2:'S.Bejlek',        s2:'',    p1ml:-320,p2ml:260, lean:1,grade:'LEAN',   basis:'Alexandrova grass Elo 1840, big serve and clean ball-striking. Bejlek young Czech, grass Elo ~1778. Lean Alexandrova.'},
-        {p1:'D.Shnaider',    s1:'(23)',p2:'P.Marcinko',      s2:'',    p1ml:-250,p2ml:208, lean:1,grade:'LEAN',   basis:'Shnaider Russian 21-year-old, grass Elo 1842, powerful flat hitter — strong future on grass. Marcinko Polish player, ranked lower. Lean Shnaider.'},
-        {p1:'K.Siniakova',   s1:'',   p2:'M.Joint',           s2:'',    p1ml:-180,p2ml:152, lean:1,grade:'LEAN',   basis:'Siniakova Czech veteran with outstanding net game — grass Elo 1800, doubles specialist who excels at SW19. Joint Belgian 23-year-old, less experienced. Lean Siniakova.'},
-        {p1:'E.Raducanu',    s1:'',   p2:'A.Rus',             s2:'',    p1ml:-240,p2ml:200, lean:1,grade:'LEAN',   basis:'Raducanu home crowd + grass Elo 1862 — she thrives at SW19, reached R4 in 2024. Rus solid Dutchwoman but outranked on grass. Lean Raducanu with home crowd.'},
-        {p1:'C.Tauson',      s1:'(20)',p2:'V.Kudermetova',   s2:'',    p1ml:-200,p2ml:168, lean:1,grade:'LEAN',   basis:'Tauson grass Elo 1862, Danish all-courter with strong serve. Kudermetova Russian, improving but grass Elo lower. Lean Tauson.'},
-        {p1:'M.Andreeva',    s1:'(5)', p2:'A.Bondar',         s2:'',    p1ml:-450,p2ml:325, lean:1,grade:'LEAN',   basis:'Andreeva #1 yElo on WTA tour 2026 at 2145, RG champion momentum. Grass Elo 1827 reflects limited results. Bondar grass Elo ~1738. R1 safe.'},
-        // ── SECTION 4: Pegula quarter ────────────────────────────────────────────
-        {p1:'J.Pegula',      s1:'(4)', p2:'A.Vidmanova',     s2:'',    p1ml:-600,p2ml:420, lean:1,grade:'OPTIMAL',basis:'Pegula grass Elo 1903 — 2nd highest in WTA field. yElo 2105, 10.5% title prob. Vidmanova outside top 100. Clean draw — lean Pegula.'},
-        {p1:'B.Bencic',      s1:'(11)',p2:'M.Bouzkova',      s2:'',    p1ml:-280,p2ml:235, lean:1,grade:'LEAN',   basis:'Bencic grass Elo 1791, athletic Swiss all-courter with exceptional variety. Bouzkova Czech, grass Elo ~1768. Lean Bencic.'},
-        {p1:'E.Navarro',     s1:'(25)',p2:'T.Valentova',     s2:'',    p1ml:-300,p2ml:248, lean:1,grade:'LEAN',   basis:'Navarro grass Elo 1860, powerful American improving on all surfaces. Valentova 18-year-old Czech, grass Elo ~1768. Lean Navarro.'},
-        {p1:'A.Anisimova',   s1:'(6)', p2:'A.Li',            s2:'',    p1ml:-380,p2ml:290, lean:1,grade:'LEAN',   basis:'Anisimova grass Elo 1768, flat ball-striking suits grass in theory. Li solid American tour-level player. Anisimova edges on ranking and form.'},
-        {p1:'V.Mboko',       s1:'(9)', p2:'A.Parks',          s2:'',    p1ml:-300,p2ml:248, lean:1,grade:'LEAN',   basis:'Mboko rank 9, improving young Cameroonian with strong serve and power game. Parks American, competitive. Lean Mboko on ranking.'},
-        {p1:'K.Muchova',     s1:'(10)',p2:'L.Boisson',       s2:'',    p1ml:-320,p2ml:260, lean:1,grade:'LEAN',   basis:'Muchova grass Elo 1774, creative net game and variety — very suited to Wimbledon. Boisson French 21-year-old, ranked lower. Lean Muchova.'},
-        {p1:'H.Baptiste',    s1:'(26)',p2:'A.Potapova',      s2:'',    p1ml:-180,p2ml:152, lean:1,grade:'LEAN',   basis:'Baptiste young American, grass Elo 1835. Potapova Russian with solid all-court game. Baptiste edges on ranking. Lean Baptiste.'},
-        {p1:'C.Gauff',       s1:'(7)', p2:'T.Korpatsch',     s2:'',    p1ml:-500,p2ml:360, lean:1,grade:'OPTIMAL',basis:'Gauff grass Elo 1823, serve improving, aggressive on approach. Korpatsch outside top 100. 4.0% title prob. Lean R1.'},
-        // ── SECTION 5–6: Andreeva / Noskova / Gauff quarters (remaining) ──────
-        {p1:'N.Osaka',       s1:'(16)',p2:'M.Sherif',        s2:'',    p1ml:-320,p2ml:260, lean:1,grade:'LEAN',   basis:'Osaka grass Elo 1865, powerful flat serve — grass suits her baseline power. Sherif Egyptian American, ranked lower. Lean Osaka.'},
-        {p1:'I.Jovic',       s1:'(17)',p2:'L.Tsurenko',      s2:'',    p1ml:-300,p2ml:248, lean:1,grade:'LEAN',   basis:'Jovic 19-year-old Serbian rapidly improving. Tsurenko veteran Ukrainian, ranked lower. Lean Jovic on youth and form.'},
-        {p1:'S.Cirstea',     s1:'(18)',p2:'M.Kessler',       s2:'',    p1ml:-200,p2ml:168, lean:1,grade:'LEAN',   basis:'Cirstea veteran Romanian, grass Elo 1865 — good at SW19. Kessler young American with big serve, grass Elo ~1780. Lean Cirstea on experience.'},
-        {p1:'L.Fernandez',   s1:'',   p2:'R.Zarazua',        s2:'',    p1ml:-260,p2ml:215, lean:1,grade:'LEAN',   basis:'Fernandez solid grass game. Zarazua Mexican qualifier, ranked lower. Lean Fernandez.'},
-        {p1:'A.Eala',        s1:'',   p2:'C.Liu',             s2:'',    p1ml:-140,p2ml:118, lean:1,grade:'LEAN',   basis:'Eala Filipino 20-year-old with big upside. Liu American veteran, competitive. Lean Eala on current form.'},
-        {p1:'M.Frech',       s1:'',   p2:'Y.Starodubtseva',  s2:'',    p1ml:-160,p2ml:135, lean:1,grade:'LEAN',   basis:'Frech Polish grinder adapting to grass. Starodubtseva ranked lower, grass Elo ~1742. Lean Frech.'},
-        {p1:'X.Wang',        s1:'(34)',p2:'A.Schmiedlova',   s2:'',    p1ml:-200,p2ml:168, lean:1,grade:'LEAN',   basis:'Wang Chinese 24-year-old improving significantly. Schmiedlova Slovak veteran, limited grass Elo. Lean Wang.'},
-        {p1:'J.Cristian',    s1:'(32)',p2:'H.Dart',          s2:'WC',  p1ml:-160,p2ml:135, lean:1,grade:'LEAN',   basis:'Cristian Romanian, ranked 32nd. Dart British wild card — home crowd at SW19 is massive. WATCH: if Dart is on serve, crowd can swing this. Slight lean Cristian on ranking.'},
-        {p1:'A.Kontaveit',   s1:'',   p2:'J.Tjen',            s2:'',    p1ml:-160,p2ml:135, lean:1,grade:'LEAN',   basis:'Kontaveit Estonian veteran making Wimbledon return. Tjen Australian 19-year-old, improving. Lean Kontaveit on Wimbledon experience.'},
-        {p1:'K.Muchova',     s1:'',   p2:'S.Kenin',           s2:'',    p1ml:-200,p2ml:168, lean:1,grade:'LEAN',   basis:'Muchova creative net game and variety — very suited to Wimbledon. Kenin American former AO champion but grass results inconsistent. Lean Muchova.'},
-        {p1:'D.Vekic',       s1:'',   p2:'A.Rus',             s2:'',    p1ml:-180,p2ml:152, lean:1,grade:'LEAN',   basis:'Vekic Croatian with strong serve and aggressive baseline. Rus Dutch grinder, less suited to grass. Lean Vekic.'},
-        {p1:'J.Paolini',     s1:'(13)',p2:'A.Montgomery',    s2:'',    p1ml:-300,p2ml:245, lean:1,grade:'LEAN',   basis:'Paolini 2024 Wimbledon finalist, proven on grass. 0.9% title prob but strong first-week results at SW19. Montgomery outranked. Lean Paolini.'},
-        {p1:'E.Cocciaretto', s1:'(38)',p2:'L.Tsurenko',      s2:'',    p1ml:-220,p2ml:185, lean:1,grade:'LEAN',   basis:'Cocciaretto Italian 24-year-old, improving on all surfaces. Tsurenko veteran, grass Elo lower. Lean Cocciaretto.'},
-        {p1:'A.Potapova',    s1:'(30)',p2:'M.Joint',          s2:'',    p1ml:-220,p2ml:185, lean:1,grade:'LEAN',   basis:'Potapova Russian 24-year-old with solid baseline game. Joint Belgian 23-year-old, ranked lower. Lean Potapova.'},
-        {p1:'A.Li',          s1:'',   p2:'P.Marcinko',        s2:'',    p1ml:-180,p2ml:152, lean:1,grade:'LEAN',   basis:'Li American veteran, steady grass game. Marcinko Polish player, ranked lower on grass. Lean Li.'},
-        {p1:'M.Bouzkova',    s1:'(28)',p2:'K.Volynets',       s2:'',    p1ml:-200,p2ml:168, lean:1,grade:'LEAN',   basis:'Bouzkova Czech veteran, grass Elo ~1768 — solid at SW19. Volynets improving American, outranked. Lean Bouzkova.'},
+        // ── SECTION 1: Sabalenka eighth ──────────────────────────────────
+        {p1:'A.Sabalenka',s1:'(1)',p2:'T.Kostovic',s2:'',p1ml:-700,p2ml:470,lean:1,grade:'OPTIMAL',basis:'Sabalenka #1, grass Elo 1987, yElo 2144. Kostovic qualifier. 23.7% title prob — clear WTA favorite. Lock R1.',winner:'A.Sabalenka'},
+        {p1:'O.Oliynykova',s1:'',p2:'M.Kessler',s2:'',p1ml:-130,p2ml:110,lean:1,grade:'LEAN',basis:'Oliynykova Ukrainian with solid all-court game. Kessler young American, ranked lower. Lean Oliynykova.',winner:'M.Kessler'},
+        {p1:'J.Ostapenko',s1:'',p2:'H.Dart',s2:'',p1ml:-180,p2ml:152,lean:1,grade:'LEAN',basis:'Ostapenko flat ball-striking suits grass — 2017 RG champ. Dart British wildcard with home crowd but outranked. Lean Ostapenko.',winner:'J.Ostapenko'},
+        {p1:'A.Ruzic',s1:'',p2:'D.Semenistaja',s2:'',p1ml:-140,p2ml:118,lean:1,grade:'LEAN',basis:'Ruzic Croatian, solid grass game. Semenistaja ranked lower. Lean Ruzic.',winner:'A.Ruzic'},
+        {p1:'L.Fernandez',s1:'(22)',p2:'J.Tjen',s2:'',p1ml:-260,p2ml:215,lean:1,grade:'LEAN',basis:'Fernandez seeded 22nd, grass Elo 1840, solid net game. Tjen Australian 19-year-old, outranked. Lean Fernandez.',winner:'J.Tjen'},
+        {p1:'M.Xu',s1:'',p2:'D.Kasatkina',s2:'',p1ml:160,p2ml:-190,lean:2,grade:'LEAN',basis:'Kasatkina grass Elo 1818, elegant all-court game. Xu Chinese, ranked lower. Lean Kasatkina.',winner:'D.Kasatkina'},
+        {p1:'A.Gasanova',s1:'',p2:'E.Arango',s2:'',p1ml:-130,p2ml:110,lean:1,grade:'LEAN',basis:'Gasanova Russian, tour-level experience. Arango Colombian, ranked lower. Lean Gasanova.',winner:'A.Gasanova'},
+        {p1:'E.Jacquemot',s1:'',p2:'N.Osaka',s2:'(14)',p1ml:280,p2ml:-340,lean:2,grade:'LEAN',basis:'Osaka seeded 14th, grass Elo 1865 — powerful flat serve suits Wimbledon. Jacquemot outranked. Lean Osaka.',winner:'N.Osaka'},
+        // ── SECTION 2: Muchova/Andreeva eighth ──────────────────────────────
+        {p1:'K.Muchova',s1:'(10)',p2:'A.Zakharova',s2:'',p1ml:-320,p2ml:260,lean:1,grade:'LEAN',basis:'Muchova seeded 10th, creative net game and variety — very suited to Wimbledon. Zakharova outranked. Lean Muchova.',winner:'K.Muchova'},
+        {p1:'B.Andreescu',s1:'',p2:'Z.Shuai',s2:'',p1ml:-160,p2ml:135,lean:1,grade:'LEAN',basis:'Andreescu Canadian returning form, solid on grass. Shuai veteran Chinese, ranked lower. Lean Andreescu.'},
+        {p1:'A.Parks',s1:'',p2:'A.Dudeney',s2:'',p1ml:-140,p2ml:118,lean:1,grade:'LEAN',basis:'Parks American with solid grass game. Dudeney British, competitive but ranked lower. Lean Parks.',winner:'A.Parks'},
+        {p1:'M.Sawangkaew',s1:'',p2:'M.Chwalinska',s2:'(20)',p1ml:220,p2ml:-260,lean:2,grade:'LEAN',basis:'Chwalinska seeded 20th, Polish with strong serve. Sawangkaew Thai qualifier, outranked. Lean Chwalinska.',winner:'M.Sawangkaew'},
+        {p1:'K.Siniakova',s1:'(32)',p2:'Q.Zheng',s2:'',p1ml:-200,p2ml:168,lean:1,grade:'LEAN',basis:'Siniakova seeded 32nd, Czech veteran with outstanding net game — grass Elo 1800. Zheng Chinese, competitive but ranked lower. Lean Siniakova.',winner:'K.Siniakova'},
+        {p1:'P.Stearns',s1:'',p2:'N.Bartunkova',s2:'',p1ml:-140,p2ml:118,lean:1,grade:'LEAN',basis:'Stearns American with solid baseline game. Bartunkova Czech, ranked lower. Lean Stearns.',winner:'P.Stearns'},
+        {p1:'B.Krejcikova',s1:'',p2:'H.Klugman',s2:'',p1ml:-200,p2ml:168,lean:1,grade:'LEAN',basis:'Krejcikova defending Wimbledon champion — grass Elo 1916 is exceptional. Klugman young South African, outranked. Lean Krejcikova.',winner:'B.Krejcikova'},
+        {p1:'M.Linette',s1:'',p2:'M.Andreeva',s2:'(5)',p1ml:320,p2ml:-400,lean:2,grade:'LEAN',basis:'Andreeva seeded 5th — #1 yElo on WTA 2026 at 2145, RG champion. Grass Elo 1827 reflects limited grass results but R1 is safe. Linette outranked. Lean Andreeva.',winner:'M.Linette'},
+        // ── SECTION 3: Pegula eighth ────────────────────────────────────────
+        {p1:'J.Pegula',s1:'(4)',p2:'D.Vidmanova',s2:'',p1ml:-600,p2ml:420,lean:1,grade:'OPTIMAL',basis:'Pegula grass Elo 1903 — 2nd highest WTA. yElo 2105, 10.5% title prob. Vidmanova outside top 100. Clean draw — lean Pegula.',winner:'J.Pegula'},
+        {p1:'S.Sorribes Tormo',s1:'',p2:'V.Jimenez Kasintseva',s2:'',p1ml:-150,p2ml:128,lean:1,grade:'LEAN',basis:'Sorribes Tormo Spanish grinder, seasoned on all surfaces. Jimenez Kasintseva Andorran, ranked lower. Lean Sorribes Tormo.',winner:'S.Sorribes Tormo'},
+        {p1:'D.Yastremska',s1:'',p2:'A.Ito',s2:'',p1ml:-150,p2ml:128,lean:1,grade:'LEAN',basis:'Yastremska Ukrainian aggressive hitter, grass Elo ~1800. Ito Japanese, solid but outranked. Lean Yastremska.'},
+        {p1:'J.Bouzas Maneiro',s1:'',p2:'A.Potapova',s2:'(27)',p1ml:240,p2ml:-290,lean:2,grade:'LEAN',basis:'Potapova seeded 27th, Russian with solid all-court game. Bouzas Maneiro Spanish, outranked. Lean Potapova.'},
+        {p1:'E.Alexandrova',s1:'(18)',p2:'P.Udvardy',s2:'',p1ml:-280,p2ml:235,lean:1,grade:'LEAN',basis:'Alexandrova seeded 18th, big serve and clean ball-striking. Udvardy Hungarian, ranked lower. Lean Alexandrova.',winner:'E.Alexandrova'},
+        {p1:'L.Tararudee',s1:'',p2:'L.Tagger',s2:'',p1ml:-130,p2ml:110,lean:1,grade:'LEAN',basis:'Tararudee Thai qualifier, competitive. Tagger ranked lower. Lean Tararudee.'},
+        {p1:'Y.Putintseva',s1:'',p2:'T.Maria',s2:'',p1ml:-160,p2ml:135,lean:1,grade:'LEAN',basis:'Putintseva Kazakhstani with good grasscourt movement. Maria 37-year-old German veteran, declining. Lean Putintseva.',winner:'Y.Putintseva'},
+        {p1:'J.Cristian',s1:'',p2:'I.Jovic',s2:'(16)',p1ml:260,p2ml:-320,lean:2,grade:'LEAN',basis:'Jovic seeded 16th, 19-year-old Serbian rapidly improving. Cristian Romanian, outranked. Lean Jovic.',winner:'J.Cristian'},
+        // ── SECTION 4: Bencic/Gauff eighth ──────────────────────────────────
+        {p1:'B.Bencic',s1:'(11)',p2:'M.Stojsavljevic',s2:'',p1ml:-300,p2ml:248,lean:1,grade:'LEAN',basis:'Bencic seeded 11th, athletic Swiss with exceptional variety — very suited to Wimbledon. Stojsavljevic British qualifier, outranked. Lean Bencic.',winner:'B.Bencic'},
+        {p1:'W.Xinyu',s1:'',p2:'E.Cocciaretto',s2:'',p1ml:-140,p2ml:118,lean:1,grade:'LEAN',basis:'Wang Xinyu Chinese with improving all-court game. Cocciaretto Italian, ranked lower. Lean Wang Xinyu.',winner:'W.Xinyu'},
+        {p1:'F.Jones',s1:'',p2:'D.Parry',s2:'',p1ml:-130,p2ml:110,lean:1,grade:'LEAN',basis:'Jones British with solid grass game. Parry French, competitive but ranked lower. Lean Jones.'},
+        {p1:'M.Frech',s1:'',p2:'A.Kalinskaya',s2:'(19)',p1ml:240,p2ml:-290,lean:2,grade:'LEAN',basis:'Kalinskaya seeded 19th, aggressive flat hitter, grass Elo 1848. Frech Polish, outranked. Lean Kalinskaya.',winner:'M.Frech'},
+        {p1:'A.Li',s1:'(28)',p2:'Z.Sonmez',s2:'',p1ml:-240,p2ml:200,lean:1,grade:'LEAN',basis:'Li seeded 28th, American veteran with solid grass game. Sonmez Turkish, outranked. Lean Li.'},
+        {p1:'C.Liu',s1:'',p2:'H.Vandewinkel',s2:'',p1ml:-140,p2ml:118,lean:1,grade:'LEAN',basis:'Liu American with solid baseline game. Vandewinkel Belgian, ranked lower. Lean Liu.'},
+        {p1:'S.Sierra',s1:'',p2:'A.Bondar',s2:'',p1ml:-130,p2ml:110,lean:1,grade:'LEAN',basis:'Sierra Colombian qualifier, competitive. Bondar Belarusian, ranked lower on grass. Lean Sierra.'},
+        {p1:'T.Korpatsch',s1:'',p2:'C.Gauff',s2:'(7)',p1ml:360,p2ml:-500,lean:2,grade:'OPTIMAL',basis:'Gauff seeded 7th, grass Elo 1823, serve improving. 4.0% title prob. Korpatsch outside top 100. Lean Gauff R1.',winner:'T.Korpatsch'},
+        // ── SECTION 5: Svitolina eighth ─────────────────────────────────────
+        {p1:'E.Svitolina',s1:'(8)',p2:'D.Snigur',s2:'',p1ml:-380,p2ml:285,lean:1,grade:'LEAN',basis:'Svitolina seeded 8th, yElo 2113 — 3rd highest WTA 2026. Slice game suits grass. Snigur Ukrainian, outranked. Lean Svitolina.',winner:'E.Svitolina'},
+        {p1:'V.Erjavec',s1:'',p2:'L.Jeanjean',s2:'',p1ml:-130,p2ml:110,lean:1,grade:'LEAN',basis:'Erjavec Slovenian with solid game. Jeanjean French, ranked lower. Lean Erjavec.',winner:'L.Jeanjean'},
+        {p1:'A.Tomljanovic',s1:'',p2:'M.Bolkvadze',s2:'',p1ml:-150,p2ml:128,lean:1,grade:'LEAN',basis:'Tomljanovic Australian veteran, solid grass game. Bolkvadze Georgian, ranked lower. Lean Tomljanovic.'},
+        {p1:'A.Krueger',s1:'',p2:'D.Vekic',s2:'(31)',p1ml:240,p2ml:-290,lean:2,grade:'LEAN',basis:'Vekic seeded 31st, Croatian with strong serve and aggressive baseline. Krueger American, outranked. Lean Vekic.',winner:'A.Krueger'},
+        {p1:'E.Navarro',s1:'(23)',p2:'P.Badosa',s2:'',p1ml:-220,p2ml:185,lean:1,grade:'LEAN',basis:'Navarro seeded 23rd, grass Elo 1860 — powerful American improving. Badosa Spanish, grass Elo limited. Lean Navarro.',winner:'E.Navarro'},
+        {p1:'O.Selekhmeteva',s1:'',p2:'S.Kraus',s2:'',p1ml:-140,p2ml:118,lean:1,grade:'LEAN',basis:'Selekhmeteva Russian, improving tour-level player. Kraus ranked lower. Lean Selekhmeteva.',winner:'O.Selekhmeteva'},
+        {p1:'Y.Starodubtseva',s1:'',p2:'A.Blinkova',s2:'',p1ml:-130,p2ml:110,lean:1,grade:'LEAN',basis:'Starodubtseva Ukrainian, solid grasscourt game. Blinkova Russian, ranked similarly. Lean Starodubtseva on recent form.'},
+        {p1:'N.Podoroska',s1:'',p2:'M.Kostyuk',s2:'(12)',p1ml:280,p2ml:-340,lean:2,grade:'LEAN',basis:'Kostyuk seeded 12th, solid Ukrainian all-courter, grass Elo 1870. Podoroska outranked on this surface. Lean Kostyuk.'},
+        // ── SECTION 6: Paolini/Sakkari eighth ───────────────────────────────
+        {p1:'J.Paolini',s1:'(13)',p2:'R.Montgomery',s2:'',p1ml:-300,p2ml:245,lean:1,grade:'LEAN',basis:'Paolini seeded 13th, 2024 Wimbledon finalist — proven on grass. Montgomery solid but outranked. Lean Paolini.',winner:'J.Paolini'},
+        {p1:'I.Shymanovich',s1:'',p2:'V.Golubic',s2:'',p1ml:-130,p2ml:110,lean:1,grade:'LEAN',basis:'Shymanovich Belarusian, solid grass game. Golubic Swiss veteran, ranked lower. Lean Shymanovich.',winner:'I.Shymanovich'},
+        {p1:'A.Kalinina',s1:'',p2:'K.Rakhimova',s2:'',p1ml:-130,p2ml:110,lean:1,grade:'LEAN',basis:'Kalinina Ukrainian, steady game. Rakhimova Russian, competitive but ranked lower. Lean Kalinina.',winner:'A.Kalinina'},
+        {p1:'M.Sakkari',s1:'',p2:'C.Tauson',s2:'(24)',p1ml:210,p2ml:-250,lean:2,grade:'LEAN',basis:'Tauson seeded 24th, Danish all-courter, grass Elo 1862. Sakkari powerful but not seeded. Lean Tauson on seeding and grass Elo.',winner:'M.Sakkari'},
+        {p1:'A.Eala',s1:'(29)',p2:'R.Zarazua',s2:'',p1ml:-240,p2ml:200,lean:1,grade:'LEAN',basis:'Eala seeded 29th, Filipino 20-year-old with massive upside. Zarazua Mexican, outranked. Lean Eala.'},
+        {p1:'S.Williams',s1:'',p2:'M.Joint',s2:'',p1ml:-160,p2ml:135,lean:1,grade:'LEAN',basis:'S.Williams American veteran (not Serena) with tour-level experience. Joint Belgian, ranked lower. Lean Williams.'},
+        {p1:'T.Valentova',s1:'',p2:'K.Pliskova',s2:'',p1ml:-140,p2ml:118,lean:1,grade:'LEAN',basis:'Valentova young Czech with improving game. Pliskova veteran Czech (Kristyna), solid serve. Lean Valentova on youth and form.',winner:'T.Valentova'},
+        {p1:'T.Townsend',s1:'',p2:'I.Swiatek',s2:'(3)',p1ml:320,p2ml:-400,lean:2,grade:'LEAN',basis:'SURFACE ALERT: Swiatek seeded 3rd, grass Elo 1936 but multiple early Wimbledon exits. 11.2% title prob. Townsend solid but outranked. Lean Swiatek R1 with caution.'},
+        // ── SECTION 7: Anisimova/Keys eighth ─────────────────────────────────
+        {p1:'A.Anisimova',s1:'(6)',p2:'L.Gjorcheska',s2:'',p1ml:-380,p2ml:290,lean:1,grade:'LEAN',basis:'Anisimova seeded 6th, flat ball-striking suits grass. Gjorcheska North Macedonian, ranked lower. Lean Anisimova.',winner:'A.Anisimova'},
+        {p1:'P.Marcinko',s1:'',p2:'S.Kenin',s2:'',p1ml:-130,p2ml:110,lean:1,grade:'LEAN',basis:'Marcinko Polish, competitive on grass. Kenin former AO champ but grass results inconsistent. Lean Marcinko.',winner:'P.Marcinko'},
+        {p1:'I.Begu',s1:'',p2:'K.Swan',s2:'',p1ml:-140,p2ml:118,lean:1,grade:'LEAN',basis:'Begu Romanian veteran, solid grass game. Swan British wildcard, home crowd but outranked. Lean Begu.'},
+        {p1:'K.Day',s1:'',p2:'M.Keys',s2:'(26)',p1ml:240,p2ml:-290,lean:2,grade:'LEAN',basis:'Keys seeded 26th, grass Elo 1890 — power game suits Wimbledon. Day American, outranked. Lean Keys.'},
+        {p1:'S.Cirstea',s1:'(17)',p2:'S.Bejlek',s2:'',p1ml:-220,p2ml:185,lean:1,grade:'LEAN',basis:'Cirstea seeded 17th, Romanian veteran — good at SW19, grass Elo 1865. Bejlek young Czech, outranked. Lean Cirstea.',winner:'S.Cirstea'},
+        {p1:'K.Birrell',s1:'',p2:'A.Korneeva',s2:'',p1ml:-130,p2ml:110,lean:1,grade:'LEAN',basis:'Birrell Australian with grass-suited game. Korneeva Spanish-Russian, ranked lower. Lean Birrell.',winner:'K.Birrell'},
+        {p1:'C.Osorio',s1:'',p2:'S.Waltert',s2:'',p1ml:-140,p2ml:118,lean:1,grade:'LEAN',basis:'Osorio Colombian with solid all-court game. Waltert Swiss, ranked lower. Lean Osorio.'},
+        {p1:'E.Seidel',s1:'',p2:'L.Noskova',s2:'(9)',p1ml:300,p2ml:-370,lean:2,grade:'LEAN',basis:'DARK HORSE: Noskova seeded 9th, grass Elo 1875 — 3rd highest WTA. 7.4% title prob. Massive flat serve. Seidel outranked. Lean Noskova and watch closely.'},
+        // ── SECTION 8: Shnaider/Rybakina eighth ─────────────────────────────
+        {p1:'D.Shnaider',s1:'(15)',p2:'E.Lys',s2:'',p1ml:-280,p2ml:235,lean:1,grade:'LEAN',basis:'Shnaider seeded 15th, Russian 21-year-old with grass Elo 1842 — powerful flat hitter. Lys German, outranked. Lean Shnaider.',winner:'D.Shnaider'},
+        {p1:'P.Kudermetova',s1:'',p2:'L.Samsonova',s2:'',p1ml:-130,p2ml:110,lean:1,grade:'LEAN',basis:'Kudermetova Russian with solid game. Samsonova grass Elo 1892 — big serve but ranked lower. Close — lean Kudermetova on form.'},
+        {p1:'K.Boulter',s1:'',p2:'T.Grant',s2:'',p1ml:-160,p2ml:135,lean:1,grade:'LEAN',basis:'Boulter British with strong grass game — home crowd at SW19. Grant South African, outranked. Lean Boulter.',winner:'K.Boulter'},
+        {p1:'T.Gibson',s1:'',p2:'M.Bouzkova',s2:'(21)',p1ml:230,p2ml:-280,lean:2,grade:'LEAN',basis:'Bouzkova seeded 21st, Czech veteran — solid at SW19. Gibson American, outranked. Lean Bouzkova.',winner:'T.Gibson'},
+        {p1:'E.Mertens',s1:'(25)',p2:'L.Siegemund',s2:'',p1ml:-220,p2ml:185,lean:1,grade:'LEAN',basis:'Mertens seeded 25th, Belgian veteran with strong grass game. Siegemund veteran German, 36 years old. Lean Mertens.',winner:'E.Mertens'},
+        {p1:'B.Haddad Maia',s1:'',p2:'M.Timofeeva',s2:'',p1ml:-160,p2ml:135,lean:1,grade:'LEAN',basis:'Haddad Maia Brazilian with solid grass-adapted game. Timofeeva Russian, ranked lower. Lean Haddad Maia.',winner:'B.Haddad Maia'},
+        {p1:'E.Ruse',s1:'',p2:'C.McNally',s2:'',p1ml:-130,p2ml:110,lean:1,grade:'LEAN',basis:'Ruse Romanian, solid tour-level player. McNally American with competitive baseline game. Lean Ruse on ranking.',winner:'E.Ruse'},
+        {p1:'L.Boisson',s1:'',p2:'E.Rybakina',s2:'(2)',p1ml:480,p2ml:-700,lean:2,grade:'OPTIMAL',basis:'Rybakina seeded 2nd, 2022 Wimbledon champion. Massive flat serve built for grass. Boisson French, no match. Lean Rybakina emphatically in R1.',winner:'E.Rybakina'},
+      
       ]
     },
     {id:'r2',name:'Round 2',dates:'Jul 2 – Jul 3',status:'upcoming',atp:[],wta:[]},
@@ -12382,8 +12487,8 @@ const TEN_TOURNAMENTS=[{
   ]
 }];
 // ── Legacy today arrays (used by picks engine) ─────────────────
-const TEN_TODAY_ATP=(()=>{const t=TEN_TOURNAMENTS[0];const r=t.rounds.find(r=>r.status==='active')||t.rounds[0];return r.atp.filter(m=>m.p2!=='TBD').map(m=>({p1:m.p1,p2:m.p2,surface:t.surface,tournament:`${t.abbr} ${r.name}`,bo5:t.bo5Men,p1ml:m.p1ml,p2ml:m.p2ml,date:'2026-06-29'}));})();
-const TEN_TODAY_WTA=(()=>{const t=TEN_TOURNAMENTS[0];const r=t.rounds.find(r=>r.status==='active')||t.rounds[0];return r.wta.filter(m=>m.p2!=='TBD').map(m=>({p1:m.p1,p2:m.p2,surface:t.surface,tournament:`${t.abbr} ${r.name}`,bo5:t.bo5Women,p1ml:m.p1ml,p2ml:m.p2ml,date:'2026-06-29'}));})();
+const TEN_TODAY_ATP=(()=>{const t=TEN_TOURNAMENTS[0];const r=t.rounds.find(r=>r.status==='active')||t.rounds[0];return r.atp.filter(m=>m.p2!=='TBD').map(m=>({p1:m.p1,p2:m.p2,surface:t.surface,tournament:`${t.abbr} ${r.name}`,bo5:t.bo5Men,p1ml:m.p1ml,p2ml:m.p2ml,date:m.matchDate||today()}));})();
+const TEN_TODAY_WTA=(()=>{const t=TEN_TOURNAMENTS[0];const r=t.rounds.find(r=>r.status==='active')||t.rounds[0];return r.wta.filter(m=>m.p2!=='TBD').map(m=>({p1:m.p1,p2:m.p2,surface:t.surface,tournament:`${t.abbr} ${r.name}`,bo5:t.bo5Women,p1ml:m.p1ml,p2ml:m.p2ml,date:m.matchDate||today()}));})();
 function renderTennisPicks(){
   const el=document.getElementById('ten-picks-list');if(!el)return;
   const all=[...TEN_TODAY_ATP,...TEN_TODAY_WTA];
@@ -12734,16 +12839,18 @@ function lockTennisBet(tournament,match,pick,ml){
   const dec=mlNum>0?mlNum/100+1:100/Math.abs(mlNum)+1;
   const betOn=pick+' ML';
   const id=`ten_${today()}_${hA.replace(/\s/g,'')}_${awA.replace(/\s/g,'')}_${pick.replace(/\s/g,'')}`;
-  const pred={id,date:today(),hA,awA,sport:'TEN',betType:'ML',betOn,winProb:0.60,ml,decOdds:dec,wager:0,outcome:'pending',lockedAt:Date.now(),surface:'clay',note:tournament};
+  const _adb=typeof ATP_DB!=='undefined'?ATP_DB:{};const _wdb=typeof WTA_DB!=='undefined'?WTA_DB:{};
+  const _sp=_adb[hA]?'ATP':_wdb[hA]?'WTA':_adb[awA]?'ATP':_wdb[awA]?'WTA':'TEN';
+  const pred={id,date:today(),hA,awA,sport:_sp,league:_sp,betType:'ML',betOn,winProb:0.60,ml,decOdds:dec,wager:0,outcome:'pending',lockedAt:Date.now(),surface:'clay',note:tournament};
   const preds=getP();if(!preds.find(p=>p.id===id)){preds.push(pred);saveP(preds);}
   updHdr();renderTennisPendingBets();try{renderHomeLockedBets();}catch(e){}
-  toast('// TENNIS LOCKED: '+pick);try{window.showBetPopup({type:'lock',betOn:pick+' ML',sport:'TEN',league:'TEN',betType:'ML',ml,prob:0.60,decOdds:dec});}catch(ex){}
+  toast('// TENNIS LOCKED: '+pick);try{window.showBetPopup({type:'lock',betOn:pick+' ML',sport:_sp,league:_sp,betType:'ML',ml,prob:0.60,decOdds:dec});}catch(ex){}
 }
 function renderTennisPendingBets(){
   const el=document.getElementById('ten-pending');if(!el)return;
-  // All tennis bets now in preds (sport:'TEN'); legacy locked_bets TENNIS also merged
-  const pp=getP().filter(p=>p.sport==='TEN').map(p=>({
-    id:p.id,sport:'TEN',
+  // All tennis bets now in preds (sport:'ATP'/'WTA'); legacy locked_bets TENNIS also merged
+  const pp=getP().filter(p=>p.sport==='TEN'||p.sport==='ATP'||p.sport==='WTA').map(p=>({
+    id:p.id,sport:p.sport,
     game:_gameTitle(p.hA,p.awA,p.sport)||p.betOn||'Match',
     pick:p.betOn,ml:p.ml,date:p.date,outcome:p.outcome||'pending'
   }));
@@ -12983,79 +13090,160 @@ function renderRGDraw(tour,round){
   }
   el.innerHTML=html||'<div class="empty">SELECT A ROUND TO VIEW</div>';
 }
+function fixWimPickDates(){
+  // Build player→matchDate map from R1 data.
+  // Completed matches (have winner) played Jun 29; pending matches play today.
+  const r0=TEN_TOURNAMENTS[0]?.rounds[0];
+  if(!r0)return;
+  const playerDate={};
+  [...(r0.atp||[]),...(r0.wta||[])].forEach(m=>{
+    const d=m.matchDate||(m.winner?'2026-06-29':today());
+    if(m.p1)playerDate[m.p1]=d;
+    if(m.p2)playerDate[m.p2]=d;
+  });
+  const preds=getP();
+  const log=getDailyLog();
+  let fixed=0;
+  preds.forEach(p=>{
+    if(p.sport!=='TEN'&&p.sport!=='ATP'&&p.sport!=='WTA')return;
+    const correctDate=playerDate[p.hA]||playerDate[p.awA];
+    if(!correctDate||p.date===correctDate)return;
+    const oldDate=p.date;
+    // Move out of old daily log locked list
+    if(log[oldDate]){
+      log[oldDate].locked=(log[oldDate].locked||[]).filter(lb=>lb!==p.betOn);
+    }
+    p.date=correctDate;
+    // Add to new daily log
+    if(!log[correctDate])log[correctDate]={recs:[],locked:[],assessed:false};
+    if(!log[correctDate].locked.includes(p.betOn))log[correctDate].locked.push(p.betOn);
+    fixed++;
+  });
+  // Also fix sport/league tags (TEN→ATP/WTA) on any remaining legacy bets
+  _migrateTenSport();
+  if(fixed){saveP(preds);saveDailyLog(log);toast(`// FIXED ${fixed} WIMBLEDON PICK DATE${fixed>1?'S':''} + SPORT TAGS`);try{renderHomeLockedBets();}catch(e){}try{renderOverallHistory();}catch(e){}try{renderHomePage();}catch(e){}}
+  else toast('// ALL WIMBLEDON PICK DATES + SPORT TAGS CORRECT');
+}
 function renderWimDraw(tour,round){
   const el=document.getElementById('wim-draw-content');if(!el)return;
+  const isMen=tour==='men';
+  const bo5=isMen;
+  const tourLabel=isMen?'MENS (ATP)':'WOMENS (WTA)';
+  const r1Matches=isMen
+    ?(TEN_TOURNAMENTS[0]?.rounds[0]?.atp||[])
+    :(TEN_TOURNAMENTS[0]?.rounds[0]?.wta||[]);
   const gc_={OPTIMAL:'var(--nc)',LEAN:'var(--ic)',SKIP:'var(--t3)'};
-  const gb_={OPTIMAL:'var(--nc)',LEAN:'var(--ic)',SKIP:'rgba(255,255,255,.1)'};
   let html='';
-  const matches=tour==='men'?WIM_R1_MEN:WIM_R1_WOMEN;
   if(round==='r1'){
-    html+=`<div style="font-family:var(--mono);font-size:14px;letter-spacing:2px;color:var(--nc);margin-bottom:10px">// ${tour==='men'?'MENS (ATP)':'WOMENS (WTA)'} — WIMBLEDON R1 PICKS · JUN 29 – JUL 1 · 10K MONTE CARLO</div>`;
-    const premiums=matches.filter(m=>m.grade==='OPTIMAL');
-    if(premiums.length) html+=`<div style="font-family:var(--mono);font-size:13px;color:var(--gc);letter-spacing:2px;margin-bottom:8px">// ${premiums.length} OPTIMAL VALUE PLAYS · GRASS ELO + MC MODEL</div>`;
-    const bo5=tour==='men';
-    html+=matches.map((m,i)=>{
-      const gc=gc_[m.grade]||'var(--t3)';const gb=gb_[m.grade]||'rgba(255,255,255,.1)';
-      const leanP=m.lean===1?m.p1:m.p2;
-      const leanS=m.lean===1?m.s1:m.s2;
-      const leanML=m.lean===1?m.p1ml:m.p2ml;
-      const mlStr=leanML>0?'+'+leanML:leanML;
-      // Run MC simulation
-      const d1=bo5?ATP_DB[m.p1]:WTA_DB[m.p1];
-      const d2=bo5?ATP_DB[m.p2]:WTA_DB[m.p2];
-      let mcHtml='';
-      if(d1&&d2){
-        const mcP=tennisMatchWinProbFull(d1,d2,'grass',bo5);
-        const ou=_tennisSetOU(mcP,bo5?'M':'W');
-        const imp1=m.p1ml<0?Math.abs(m.p1ml)/(Math.abs(m.p1ml)+100):100/(100+m.p1ml);
-        const imp2=1-imp1;
-        const ev1=((mcP*(m.p1ml>0?m.p1ml/100+1:100/Math.abs(m.p1ml)+1))-1)*100;
-        const ev2=(((1-mcP)*(m.p2ml>0?m.p2ml/100+1:100/Math.abs(m.p2ml)+1))-1)*100;
-        const mcGrade=mcP>=.67||mcP<=.33?'OPTIMAL':mcP>=.60||mcP<=.40?'LEAN':'MONITOR';
-        const ouMain=bo5?ou.find(o=>o.line===3.5):ou[0];
-        const ouDir=ouMain&&ouMain.overP>0.5?'OVER':'UNDER';
-        const ouConf=ouMain?Math.round(Math.max(ouMain.overP,1-ouMain.overP)*100):50;
-        // Games O/U from MC simulation
-        const _wGSim=tennisSimGames(d1,d2,'grass',bo5,5000);
-        const _wGLine=tennisGamesLine(_wGSim,bo5);
-        const _wGCol=_wGLine.gradeCol;
-        // Full stat-aware reasoning
-        const _leanD=m.lean===1?d1:d2;const _dogWD=m.lean===1?d2:d1;
-        const _weStr=_leanD.weRatio!=null&&_dogWD.weRatio!=null?` W/UFE ${_leanD.weRatio.toFixed(1)} vs ${_dogWD.weRatio.toFixed(1)}.`:'';
-        const _ripStr=_leanD.mcpRiPW!=null&&_dogWD.mcpRiPW!=null?` RiP-Win ${(_leanD.mcpRiPW*100).toFixed(0)}% vs ${(_dogWD.mcpRiPW*100).toFixed(0)}%.`:'';
-        const _wnrStr=_leanD.mcpFhWnr!=null&&_dogWD.mcpFhWnr!=null?` Rally Wnr ${((_leanD.mcpFhWnr+_leanD.mcpBhWnr)*100).toFixed(0)}% vs ${((_dogWD.mcpFhWnr+_dogWD.mcpBhWnr)*100).toFixed(0)}%.`:'';
-        const _netStr=_leanD.mcpNetFreq!=null&&_dogWD.mcpNetFreq!=null?` Net ${(_leanD.mcpNetFreq*100).toFixed(1)}%@${(_leanD.mcpNetW*100).toFixed(0)}% vs ${(_dogWD.mcpNetFreq*100).toFixed(1)}%@${(_dogWD.mcpNetW*100).toFixed(0)}%.`:'';
-        const _rallyStr=_leanD.rallyWPt!=null&&_dogWD.rallyWPt!=null?` Rally W/Pt ${(_leanD.rallyWPt*100).toFixed(1)}/${(_dogWD.rallyWPt*100).toFixed(1)}, UFE/Pt ${(_leanD.rallyUPt*100).toFixed(1)}/${(_dogWD.rallyUPt*100).toFixed(1)}.`:'';
-        const reasoning=wimPickReasoning(m.p1,m.p2,mcP,m.p1ml,bo5,m.grade)+_weStr+_ripStr+_wnrStr+_rallyStr+_netStr;
-        mcHtml=`<div style="background:rgba(0,240,255,.05);border:1px solid rgba(0,240,255,.12);border-radius:3px;padding:8px 10px;margin-bottom:7px">
-          <div style="font-family:var(--mono);font-size:12px;color:var(--t3);letter-spacing:1px;margin-bottom:5px">// 10K MONTE CARLO · GRASS ELO · MCP + W/UFE BLEND</div>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:6px">
-            <div style="text-align:center;min-width:80px"><div style="font-family:var(--mono);font-size:11px;color:var(--t3)">MC WIN%</div><div style="font-family:var(--orb);font-size:17px;font-weight:700;color:var(--nc)">${(mcP*100).toFixed(1)}%</div><div style="font-family:var(--mono);font-size:11px;color:var(--t3)">${m.p1}</div></div>
-            <div style="text-align:center;min-width:80px"><div style="font-family:var(--mono);font-size:11px;color:var(--t3)">MC WIN%</div><div style="font-family:var(--orb);font-size:17px;font-weight:700;color:var(--t2)">${((1-mcP)*100).toFixed(1)}%</div><div style="font-family:var(--mono);font-size:11px;color:var(--t3)">${m.p2}</div></div>
-            <div style="text-align:center;min-width:80px"><div style="font-family:var(--mono);font-size:11px;color:var(--t3)">MODEL EV</div><div style="font-family:var(--orb);font-size:17px;font-weight:700;color:${ev1>=0?'var(--rc)':'var(--hc)'}">${ev1>=0?'+':''}${ev1.toFixed(1)}%</div><div style="font-family:var(--mono);font-size:11px;color:var(--t3)">${m.p1} EV</div></div>
-            ${ouMain?`<div style="text-align:center;min-width:80px"><div style="font-family:var(--mono);font-size:11px;color:var(--t3)">O/U ${ouMain.line} SETS</div><div style="font-family:var(--orb);font-size:17px;font-weight:700;color:var(--gc)">${ouDir} ${ouConf}%</div><div style="font-family:var(--mono);font-size:11px;color:var(--t3)">${bo5?'BO5':'BO3'} SETS</div></div>`:''}
-            <div style="text-align:center;min-width:80px"><div style="font-family:var(--mono);font-size:11px;color:var(--t3)">O/U ${_wGLine.line} GAMES</div><div style="font-family:var(--orb);font-size:17px;font-weight:700;color:${_wGCol}">${_wGLine.dir} ${_wGLine.conf}%</div><div style="font-family:var(--mono);font-size:11px;color:var(--t3)">EXP ${_wGLine.expected} total</div></div>
+    const pending=r1Matches.filter(m=>!m.winner);
+    const done=r1Matches.filter(m=>m.winner);
+    html+=`<div style="font-family:var(--mono);font-size:14px;letter-spacing:2px;color:var(--nc);margin-bottom:10px">// ${tourLabel} — WIMBLEDON R1 · ${done.length}/${r1Matches.length} COMPLETE</div>`;
+    if(pending.length){
+      html+=`<div style="font-family:var(--mono);font-size:12px;color:var(--gc);letter-spacing:2px;margin-bottom:8px">// UPCOMING / IN PROGRESS (${pending.length})</div>`;
+      html+=pending.map((m,i)=>{
+        const gc=gc_[m.grade]||'var(--t3)';
+        const leanP=m.lean===1?m.p1:m.p2;
+        const leanML=m.lean===1?m.p1ml:m.p2ml;
+        const mlStr=leanML>0?'+'+leanML:leanML;
+        const d1=bo5?ATP_DB[m.p1]:WTA_DB[m.p1];
+        const d2=bo5?ATP_DB[m.p2]:WTA_DB[m.p2];
+        let mcHtml='';
+        if(d1&&d2){
+          const mcP=tennisMatchWinProbFull(d1,d2,'grass',bo5);
+          const ev1=((mcP*(m.p1ml>0?m.p1ml/100+1:100/Math.abs(m.p1ml)+1))-1)*100;
+          mcHtml=`<div style="background:rgba(0,240,255,.05);border:1px solid rgba(0,240,255,.12);border-radius:3px;padding:7px 9px;margin-bottom:6px"><div style="display:flex;gap:8px;flex-wrap:wrap"><span style="font-family:var(--mono);font-size:12px;color:var(--t3)">MC WIN%</span><span style="font-family:var(--mono);font-size:14px;font-weight:700;color:var(--nc)">${m.p1} ${(mcP*100).toFixed(0)}%</span><span style="font-family:var(--mono);font-size:14px;color:var(--t2)">${m.p2} ${((1-mcP)*100).toFixed(0)}%</span><span style="font-family:var(--mono);font-size:13px;color:${ev1>=0?'var(--gc)':'var(--hc)'}">EV ${ev1>=0?'+':''}${ev1.toFixed(1)}%</span></div></div>`;
+        }
+        return`<div class="card" style="margin-bottom:6px;border-left:3px solid ${gc}">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+            <span style="font-family:var(--mono);font-size:12px;color:var(--t3)">R1 <span style="color:var(--nc)">· GRASS · BO${bo5?5:3}</span></span>
+            <span style="font-family:var(--mono);font-size:13px;font-weight:700;color:${gc};padding:1px 7px;border:1px solid ${gc};border-radius:2px">${m.grade}</span>
           </div>
-          <div style="font-family:var(--mono);font-size:13px;color:var(--t2);line-height:1.6;border-top:1px solid rgba(0,240,255,.1);padding-top:6px">${reasoning}</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px">
+            <div><span style="font-family:var(--orb);font-size:18px;font-weight:700;color:${m.lean===1?'var(--nc)':'var(--t)'}">${m.p1}</span><span style="font-family:var(--mono);font-size:13px;color:var(--t3)"> ${m.s1}</span><div style="font-family:var(--mono);font-size:13px;color:var(--t3)">${m.p1ml>0?'+'+m.p1ml:m.p1ml}</div></div>
+            <span style="font-family:var(--mono);font-size:14px;color:var(--t3)">VS</span>
+            <div style="text-align:right"><span style="font-family:var(--orb);font-size:18px;font-weight:700;color:${m.lean===2?'var(--nc)':'var(--t)'}">${m.p2}</span><span style="font-family:var(--mono);font-size:13px;color:var(--t3)"> ${m.s2}</span><div style="font-family:var(--mono);font-size:13px;color:var(--t3)">${m.p2ml>0?'+'+m.p2ml:m.p2ml}</div></div>
+          </div>
+          <div style="font-family:var(--mono);font-size:13px;color:var(--gc);margin-bottom:4px">LEAN: ${leanP} <span style="color:var(--nc)">${mlStr}</span></div>
+          <div style="font-family:var(--mono);font-size:12px;color:var(--t3);line-height:1.5;margin-bottom:6px">${m.basis}</div>
+          ${mcHtml}
+          <button class="btn btn-n btn-sm" onclick="lockPick('${m.p1.replace(/'/g,"\\'")}','${m.p2.replace(/'/g,"\\'")}','${isMen?'ATP':'WTA'}','${leanP.replace(/'/g,"\\'")}',0.72,'${mlStr}',1.0,'${m.matchDate||today()}')">LOCK ${leanP}</button>
+        </div>`;
+      }).join('');
+    } else {
+      html+=`<div class="card" style="border-left:2px solid var(--nc);padding:10px;margin-bottom:10px"><div style="font-family:var(--mono);color:var(--nc)">// ALL R1 MATCHES COMPLETE — VIEW R2 FOR NEXT ROUND</div></div>`;
+    }
+    if(done.length){
+      html+=`<details style="margin-top:8px"><summary style="font-family:var(--mono);font-size:12px;color:var(--t3);letter-spacing:2px;cursor:pointer;padding:6px 0">// COMPLETED (${done.length}) ▸ CLICK TO EXPAND</summary><div style="margin-top:6px">`;
+      html+=done.map(m=>{
+        const isUpset=m.winner&&((m.lean===1&&m.winner===m.p2)||(m.lean===2&&m.winner===m.p1));
+        const wCol=m.winner===m.p1?'var(--nc)':'var(--gc)';
+        return`<div class="card" style="margin-bottom:5px;border-left:2px solid rgba(0,240,255,.2);opacity:.75">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div style="flex:1">
+              <div style="display:flex;gap:6px;align-items:center;margin-bottom:3px">
+                <span style="font-family:var(--orb);font-size:15px;font-weight:700;color:${m.winner===m.p1?wCol:'var(--t3)'}">${m.p1} ${m.s1}</span>
+                <span style="font-family:var(--mono);font-size:12px;color:var(--t3)">vs</span>
+                <span style="font-family:var(--orb);font-size:15px;font-weight:700;color:${m.winner===m.p2?wCol:'var(--t3)'}">${m.p2} ${m.s2}</span>
+                ${isUpset?`<span style="font-family:var(--mono);font-size:10px;color:var(--hc);border:1px solid var(--hc);padding:0 4px;border-radius:2px">UPSET</span>`:''}
+              </div>
+              <div style="font-family:var(--mono);font-size:12px;color:var(--t3)">✓ ${m.winner} ${m.score?'· '+m.score:''}</div>
+            </div>
+          </div>
+        </div>`;
+      }).join('');
+      html+=`</div></details>`;
+    }
+  }
+  else if(round==='r2'){
+    const r2=[];
+    for(let i=0;i<r1Matches.length;i+=2){
+      const a=r1Matches[i];const b=r1Matches[i+1];
+      if(!a||!b)continue;
+      const w1=a.winner||'TBD';const w2=b.winner||'TBD';
+      const s1=a.winner?((a.winner===a.p1?a.s1:a.s2)||''):'';
+      const s2=b.winner?((b.winner===b.p1?b.s1:b.s2)||''):'';
+      r2.push({p1:w1,s1,p2:w2,s2,ready:w1!=='TBD'&&w2!=='TBD',matchIdx:i/2+1});
+    }
+    const readyCount=r2.filter(m=>m.ready).length;
+    html+=`<div style="font-family:var(--mono);font-size:14px;letter-spacing:2px;color:var(--nc);margin-bottom:10px">// ${tourLabel} — WIMBLEDON R2 · ${readyCount}/${r2.length} MATCHUPS SET</div>`;
+    html+=r2.map(m=>{
+      if(!m.ready){
+        const a=r1Matches[(m.matchIdx-1)*2];const b=r1Matches[(m.matchIdx-1)*2+1];
+        const w1=m.p1==='TBD'?`${a?.p1} vs ${a?.p2}`:'';
+        const w2=m.p2==='TBD'?`${b?.p1} vs ${b?.p2}`:'';
+        return`<div class="card" style="margin-bottom:6px;border-left:2px solid rgba(255,255,255,.15);opacity:.6">
+          <div style="font-family:var(--mono);font-size:12px;color:var(--t3);margin-bottom:3px">R2 MATCH ${m.matchIdx}</div>
+          <div style="font-family:var(--orb);font-size:15px;font-weight:700;color:var(--t3)">${m.p1==='TBD'?'TBD — winner of: '+w1:m.p1+' '+m.s1}</div>
+          <div style="font-family:var(--mono);font-size:13px;color:var(--t3);margin:2px 0">vs</div>
+          <div style="font-family:var(--orb);font-size:15px;font-weight:700;color:var(--t3)">${m.p2==='TBD'?'TBD — winner of: '+w2:m.p2+' '+m.s2}</div>
         </div>`;
       }
-      return`<div class="card" style="margin-bottom:7px;border-left:3px solid ${gb}">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px">
-          <span style="font-family:var(--mono);font-size:12px;color:var(--t3)">R1-${i+1} <span style="color:var(--nc)">· GRASS · BO${bo5?5:3}</span></span>
-          <span style="font-family:var(--mono);font-size:13px;font-weight:700;color:${gc};padding:1px 7px;border:1px solid ${gc};border-radius:2px">${m.grade}</span>
+      const d1=bo5?ATP_DB[m.p1]:WTA_DB[m.p1];
+      const d2=bo5?ATP_DB[m.p2]:WTA_DB[m.p2];
+      let mcHtml='';let leanP=m.p1;let leanML='';
+      if(d1&&d2){
+        const mcP=tennisMatchWinProbFull(d1,d2,'grass',bo5);
+        leanP=mcP>=0.5?m.p1:m.p2;
+        const leanProb=Math.max(mcP,1-mcP);
+        const implML=leanProb>0.5?Math.round(-leanProb/(1-leanProb)*100):Math.round((1-leanProb)/leanProb*100);
+        leanML=implML<0?implML:('+'+implML);
+        const grade=leanProb>=.67?'OPTIMAL':leanProb>=.60?'LEAN':'MONITOR';
+        const gc=gc_[grade]||'var(--nc)';
+        mcHtml=`<div style="background:rgba(0,240,255,.05);border:1px solid rgba(0,240,255,.12);border-radius:3px;padding:7px 9px;margin:5px 0"><div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center"><span style="font-family:var(--mono);font-size:13px;font-weight:700;color:${gc};border:1px solid ${gc};padding:1px 6px;border-radius:2px">${grade}</span><span style="font-family:var(--mono);font-size:13px;color:var(--nc)">${m.p1} ${(mcP*100).toFixed(0)}%</span><span style="font-family:var(--mono);font-size:13px;color:var(--t2)">${m.p2} ${((1-mcP)*100).toFixed(0)}%</span></div><div style="font-family:var(--mono);font-size:13px;color:var(--gc);margin-top:4px">LEAN: ${leanP} ${leanML}</div></div>`;
+      }
+      return`<div class="card" style="margin-bottom:7px;border-left:3px solid var(--nc)">
+        <div style="font-family:var(--mono);font-size:12px;color:var(--t3);margin-bottom:4px">R2 MATCH ${m.matchIdx} <span style="color:var(--nc)">· GRASS · BO${bo5?5:3}</span></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+          <div><span style="font-family:var(--orb);font-size:18px;font-weight:700">${m.p1}</span><span style="font-family:var(--mono);font-size:13px;color:var(--t3)"> ${m.s1}</span></div>
+          <span style="font-family:var(--mono);font-size:14px;color:var(--t3)">VS</span>
+          <div style="text-align:right"><span style="font-family:var(--orb);font-size:18px;font-weight:700">${m.p2}</span><span style="font-family:var(--mono);font-size:13px;color:var(--t3)"> ${m.s2}</span></div>
         </div>
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
-          <div><span style="font-family:var(--orb);font-size:18px;font-weight:700;color:${m.lean===1?'var(--nc)':'var(--t)'}">${m.p1}</span><span style="font-family:var(--mono);font-size:14px;color:var(--t3)"> ${m.s1}</span><div style="font-family:var(--mono);font-size:14px;color:var(--t3)">${m.p1ml>0?'+'+m.p1ml:m.p1ml}</div></div>
-          <span style="font-family:var(--mono);font-size:15px;color:var(--t3)">VS</span>
-          <div style="text-align:right"><span style="font-family:var(--orb);font-size:18px;font-weight:700;color:${m.lean===2?'var(--nc)':'var(--t)'}">${m.p2}</span><span style="font-family:var(--mono);font-size:14px;color:var(--t3)"> ${m.s2}</span><div style="font-family:var(--mono);font-size:14px;color:var(--t3)">${m.p2ml>0?'+'+m.p2ml:m.p2ml}</div></div>
-        </div>
-        <div style="font-family:var(--mono);font-size:14px;color:var(--gc);margin-bottom:5px">LEAN: ${leanP}${leanS?' '+leanS:''} <span style="color:var(--nc)">${mlStr}</span></div>
-        <div style="font-family:var(--mono);font-size:13px;color:var(--t3);line-height:1.5;margin-bottom:7px">${m.basis}</div>
         ${mcHtml}
-        <button class="btn btn-n btn-sm" onclick="lockPick('${m.p1.replace(/'/g,"\\'")}','${m.p2.replace(/'/g,"\\'")}','TEN','${leanP.replace(/'/g,"\\'")}',0.72,'${mlStr}',1.0,'2026-06-29')">LOCK ${leanP}</button>
+        <button class="btn btn-n btn-sm" onclick="lockPick('${m.p1.replace(/'/g,"\\'")}','${m.p2.replace(/'/g,"\\'")}','${isMen?'ATP':'WTA'}','${leanP.replace(/'/g,"\\'")}',0.62,'${leanML}',1.0,'${m.matchDate||today()}')">LOCK ${leanP}</button>
       </div>`;
     }).join('');
-  } else if(round==='futures'){
+  }
+  else if(round==='futures'){
     html+=`<div style="font-family:var(--mono);font-size:14px;letter-spacing:2px;color:var(--nc);margin-bottom:10px">// WIMBLEDON 2026 — TOURNAMENT WINNER FUTURES</div>`;
     const list=WIM_FUTURES.filter(f=>f.tour===(tour==='men'?'ATP':'WTA'));
     html+=list.map((f,i)=>`<div class="card" style="margin-bottom:8px;border-left:3px solid ${i===0?'var(--gc)':'var(--nc)'}">
@@ -13183,12 +13371,15 @@ function renderSlam(code){
     </div>`;
     html+=`<div class="sh" style="color:var(--nc)">WIMBLEDON 2026 — DRAW & PICKS</div>`;
     html+=`<div style="display:flex;gap:5px;margin-bottom:12px;flex-wrap:wrap">
-      <button class="btn btn-n btn-sm" onclick="renderWimDraw('men','r1')">MENS R1 PICKS</button>
-      <button class="btn btn-n btn-sm" onclick="renderWimDraw('women','r1')">WOMENS R1 PICKS</button>
+      <button class="btn btn-n btn-sm" onclick="renderWimDraw('men','r1')">MENS R1</button>
+      <button class="btn btn-n btn-sm" onclick="renderWimDraw('women','r1')">WOMENS R1</button>
+      <button class="btn btn-o btn-sm" onclick="renderWimDraw('men','r2')">MENS R2</button>
+      <button class="btn btn-o btn-sm" onclick="renderWimDraw('women','r2')">WOMENS R2</button>
       <button class="btn btn-o btn-sm" onclick="renderWimDraw('men','futures')">ATP FUTURES</button>
       <button class="btn btn-o btn-sm" onclick="renderWimDraw('women','futures')">WTA FUTURES</button>
-    </div>
-    <div id="wim-draw-content"></div>`;
+      <button class="btn btn-p btn-sm" onclick="fixWimPickDates()">FIX PICK DATES</button>
+    </div>`;
+    html+=`<div id="wim-draw-content"></div>`;
     // ATP Seeds
     html+=`<div class="sh" style="margin-top:14px;color:var(--nc)">ATP SEEDS — WIMBLEDON 2026</div>`;
     const atpSeeds=[
@@ -13327,7 +13518,7 @@ function resetTennisLive(){
   const preds=getP();
   let changed=false;
   for(const p of preds){
-    if(p.sport==='TEN'&&p.outcome==='pending'){
+    if((p.sport==='TEN'||p.sport==='ATP'||p.sport==='WTA')&&p.outcome==='pending'){
       const locked=new Date(p.lockedAt||0);
       const hoursAgo=(Date.now()-locked.getTime())/3600000;
       if(hoursAgo>6){p.outcome='loss';p.settledAt=Date.now();changed=true;}// assume loss if >6h old pending
@@ -13856,7 +14047,7 @@ function renderMorningReport(){
 }
 
 // ═══ REMOTE DATA BOOTSTRAP (data.json from GitHub Pages) ════════════════════
-let LAST_AUTO_UPDATE = '2026-06-29 15:02 MT';
+let LAST_AUTO_UPDATE = '2026-06-30 15:00 MT';
 window.__CV_DATA = null;
 
 async function loadRemoteData(force=false){
@@ -14843,7 +15034,7 @@ function renderIntelCards(tier){
     {sport:'NBA',  data:typeof NBA_PROPS_DATA !=='undefined'?NBA_PROPS_DATA :[]},
     {sport:'WNBA', data:typeof WNBA_PROPS_DATA!=='undefined'?WNBA_PROPS_DATA:[]},
     {sport:'NHL',  data:typeof NHL_PROPS_DATA !=='undefined'?NHL_PROPS_DATA :[]},
-    {sport:'TEN',  data:typeof TEN_PROPS_DATA !=='undefined'?TEN_PROPS_DATA :[]},
+    {sport:'ATP',  data:typeof TEN_PROPS_DATA !=='undefined'?TEN_PROPS_DATA :[]},
     {sport:'WC',   data:typeof WC_PROPS_DATA  !=='undefined'?WC_PROPS_DATA  :[]},
   ];
   const propToMove=(p,sport)=>{
@@ -15559,7 +15750,7 @@ function renderTrackRecord(){
       {lbl:'NBA',          codes:['NBA']},
       {lbl:'WNBA',         codes:['WNBA']},
       {lbl:'CBB',          codes:['CBB','NCAAB']},
-      {lbl:'ATP',          codes:['ATP','TEN']},
+      {lbl:'ATP',          codes:['ATP']},
       {lbl:'WTA',          codes:['WTA']},
       {lbl:'World Cup',    codes:['SOC','WC']},
       {lbl:'Premier League',codes:['PL']},
@@ -16506,6 +16697,8 @@ document.addEventListener('DOMContentLoaded',()=>{(async()=>{
   try{await loadPicksFromGitHub();}catch(e){}
   try{await idbRecoverDailyLog();}catch(e){console.error('idbRecoverLog',e);}
   try{await syncPicksFromBackend();}catch(e){console.error('syncPicks',e);}
+  try{_migrateTenSport();}catch(e){console.error('migrateTenSport',e);}
+  try{(()=>{const _pp=getP();const _fc=_pp.filter(p=>!(p.outcome==='pending'&&(p.hA||'').includes('Medvedev')&&String(p.ml||'')=='-350'));if(_fc.length!==_pp.length)saveP(_fc);})();}catch(e){}
   try{loadGames(todayESPN());}catch(e){console.error('loadGames',e);}
   try{renderR();}catch(e){console.error('renderR',e);}
   try{renderNHLEdge('team');}catch(e){console.error('renderNHLEdge',e);}
@@ -18687,31 +18880,15 @@ function _generateWNBAPropsLive(games,statsData){
 }
 // Hardcoded WNBA player props for today's games (IND@CON · MIN@LVA · DAL@PDX · LAS@PHX)
 // Updated: June 13 2026 — based on 2026 season averages + matchup
-var WNBA_PROPS_DATE='20260627';
+var WNBA_PROPS_DATE='20260630';
 var WNBA_PROPS_DATA=[
-  // ── Phoenix Mercury @ Toronto Tempo (12:00 PM MT) ──
-  {player:'Brittney Sykes',team:'TOR',opp:'PHX',game:'PHX_TOR',stat:'PRA',line:25.5,over:true,ml:'-233',conf:70,grade:'ELITE',hitRate:'27.6 PRA avg · all-around floor',basis:'Brittney Sykes fills every box. Season avg 18.4 pts / 4.8 reb / 4.4 ast. Home amplifies every category. Phoenix Mercury matchup supports high PRA floor.'},
-  {player:'Marina Mabrey',team:'TOR',opp:'PHX',game:'PHX_TOR',stat:'3PM',line:2.0,over:true,ml:'-203',conf:67,grade:'LOCK',hitRate:'2.4 3PM/game · catch-and-shoot',basis:'Marina Mabrey elite three-point threat. Phoenix Mercury allows high 3PM rate to opposing guards. Season avg 2.4 3PM. Off-ball movement creates open looks.'},
-  {player:'Brittney Sykes',team:'TOR',opp:'PHX',game:'PHX_TOR',stat:'PTS',line:17.0,over:true,ml:'-170',conf:63,grade:'LOCK',hitRate:'18.4 ppg · home favored',basis:'Brittney Sykes home scorer vs Phoenix Mercury. Home crowd elevates output. Season avg 18.4 pts. Matchup context favors over.'},
-  {player:'Marina Mabrey',team:'TOR',opp:'PHX',game:'PHX_TOR',stat:'PTS',line:16.0,over:true,ml:'-170',conf:63,grade:'LOCK',hitRate:'17.4 ppg · home favored',basis:'Marina Mabrey home scorer vs Phoenix Mercury. Home crowd elevates output. Season avg 17.4 pts. Matchup context favors over.'},
-  {player:'Sonia Citron',team:'TOR',opp:'PHX',game:'PHX_TOR',stat:'PTS',line:13.5,over:true,ml:'-170',conf:63,grade:'LOCK',hitRate:'14.8 ppg · home favored',basis:'Sonia Citron home scorer vs Phoenix Mercury. Home crowd elevates output. Season avg 14.8 pts. Matchup context favors over.'},
-  {player:'Kahleah Copper',team:'PHX',opp:'TOR',game:'PHX_TOR',stat:'PRA',line:26.0,over:true,ml:'-150',conf:60,grade:'LEAN',hitRate:'30.4 PRA avg · all-around floor',basis:'Kahleah Copper fills every box. Season avg 21.8 pts / 5.4 reb / 3.2 ast. Road usage stays elite — needed to keep team competitive. Toronto Tempo matchup supports high PRA floor.'},
-
-  // ── Los Angeles Sparks @ Indiana Fever (6:00 PM MT · O/U 180.5) ──
-  {player:'Aliyah Boston',team:'IND',opp:'LAS',game:'LAS_IND',stat:'PRA',line:24.5,over:true,ml:'-233',conf:70,grade:'ELITE',hitRate:'26.6 PRA avg · all-around floor',basis:'Aliyah Boston fills every box. Season avg 16.8 pts / 7.4 reb / 2.4 ast. Home amplifies every category. Los Angeles Sparks matchup supports high PRA floor.'},
-  {player:'Kelsey Mitchell',team:'IND',opp:'LAS',game:'LAS_IND',stat:'PRA',line:25.0,over:true,ml:'-233',conf:70,grade:'ELITE',hitRate:'27.1 PRA avg · all-around floor',basis:'Kelsey Mitchell fills every box. Season avg 20.1 pts / 2.8 reb / 4.2 ast. Home amplifies every category. Los Angeles Sparks matchup supports high PRA floor.'},
-  {player:'NaLyssa Smith',team:'IND',opp:'LAS',game:'LAS_IND',stat:'REB',line:8.0,over:true,ml:'-233',conf:70,grade:'ELITE',hitRate:'8.6 rpg · glass control',basis:'NaLyssa Smith rebounds dominate the paint. Los Angeles Sparks interior rotation leaves gaps. Season avg 8.6 reb. Home board advantage.'},
-  {player:'Aliyah Boston',team:'IND',opp:'LAS',game:'LAS_IND',stat:'REB',line:7.0,over:true,ml:'-223',conf:69,grade:'ELITE',hitRate:'7.4 rpg · glass control',basis:'Aliyah Boston rebounds dominate the paint. Los Angeles Sparks interior rotation leaves gaps. Season avg 7.4 reb. Home board advantage.'},
-  {player:'Kelsey Mitchell',team:'IND',opp:'LAS',game:'LAS_IND',stat:'3PM',line:2.0,over:true,ml:'-194',conf:66,grade:'LOCK',hitRate:'2.2 3PM/game · catch-and-shoot',basis:'Kelsey Mitchell elite three-point threat. Los Angeles Sparks allows high 3PM rate to opposing guards. Season avg 2.2 3PM. Off-ball movement creates open looks.'},
-  {player:'Aliyah Boston',team:'IND',opp:'LAS',game:'LAS_IND',stat:'PTS',line:15.5,over:true,ml:'-170',conf:63,grade:'LOCK',hitRate:'16.8 ppg · home favored',basis:'Aliyah Boston home scorer vs Los Angeles Sparks. Home crowd elevates output. Season avg 16.8 pts. Matchup context favors over.'},
-
-  // ── Atlanta Dream @ Seattle Storm (7:00 PM MT · O/U 168.5) ──
-  {player:'Nneka Ogwumike',team:'SEA',opp:'ATL',game:'ATL_SEA',stat:'REB',line:6.0,over:true,ml:'-203',conf:67,grade:'LOCK',hitRate:'6.4 rpg · glass control',basis:'Nneka Ogwumike rebounds dominate the paint. Atlanta Dream interior rotation leaves gaps. Season avg 6.4 reb. Home board advantage.'},
-  {player:'Skylar Diggins-Smith',team:'SEA',opp:'ATL',game:'ATL_SEA',stat:'AST',line:5.5,over:true,ml:'-203',conf:67,grade:'LOCK',hitRate:'5.8 apg · playmaking engine',basis:'Skylar Diggins-Smith runs the offense at home. Atlanta Dream help rotations create kick-outs. Season avg 5.8 ast. Matchup style favors high-usage playmakers.'},
-  {player:'Angel Reese',team:'ATL',opp:'SEA',game:'ATL_SEA',stat:'REB',line:10.0,over:true,ml:'-186',conf:65,grade:'LOCK',hitRate:'11.8 rpg · glass control',basis:'Angel Reese rebounds dominate the paint. Seattle Storm interior rotation leaves gaps. Season avg 11.8 reb. Road rebounding stays consistent for elite rebounders.'},
-  {player:'Nneka Ogwumike',team:'SEA',opp:'ATL',game:'ATL_SEA',stat:'PTS',line:13.5,over:true,ml:'-170',conf:63,grade:'LOCK',hitRate:'14.8 ppg · home favored',basis:'Nneka Ogwumike home scorer vs Atlanta Dream. Home crowd elevates output. Season avg 14.8 pts. Matchup context favors over.'},
-  {player:'Skylar Diggins-Smith',team:'SEA',opp:'ATL',game:'ATL_SEA',stat:'PTS',line:14.0,over:true,ml:'-170',conf:63,grade:'LOCK',hitRate:'15.4 ppg · home favored',basis:'Skylar Diggins-Smith home scorer vs Atlanta Dream. Home crowd elevates output. Season avg 15.4 pts. Matchup context favors over.'},
-  {player:'Angel Reese',team:'ATL',opp:'SEA',game:'ATL_SEA',stat:'PRA',line:28.5,over:true,ml:'-156',conf:61,grade:'LEAN',hitRate:'33.1 PRA avg · all-around floor',basis:'Angel Reese fills every box. Season avg 18.2 pts / 11.8 reb / 3.1 ast. Road usage stays elite — needed to keep team competitive. Seattle Storm matchup supports high PRA floor.'},
+  // ── Las Vegas Aces @ New York Liberty (5:00 PM MT · O/U 173.5) ──
+  {player:'Breanna Stewart',team:'NYL',opp:'LVA',game:'LVA_NYL',stat:'PRA',line:31.5,over:true,ml:'-257',conf:72,grade:'ELITE',hitRate:'34.4 PRA avg · all-around floor',basis:'Breanna Stewart fills every box. Season avg 21.4 pts / 9.2 reb / 3.8 ast. Home amplifies every category. Las Vegas Aces matchup supports high PRA floor.'},
+  {player:'Sabrina Ionescu',team:'NYL',opp:'LVA',game:'LVA_NYL',stat:'PRA',line:30.0,over:true,ml:'-257',conf:72,grade:'ELITE',hitRate:'33.0 PRA avg · all-around floor',basis:'Sabrina Ionescu fills every box. Season avg 19.8 pts / 5.8 reb / 7.4 ast. Home amplifies every category. Las Vegas Aces matchup supports high PRA floor.'},
+  {player:'Breanna Stewart',team:'NYL',opp:'LVA',game:'LVA_NYL',stat:'REB',line:8.5,over:true,ml:'-245',conf:71,grade:'ELITE',hitRate:'9.2 rpg · glass control',basis:'Breanna Stewart rebounds dominate the paint. Las Vegas Aces interior rotation leaves gaps. Season avg 9.2 reb. Home board advantage.'},
+  {player:'Jonquel Jones',team:'NYL',opp:'LVA',game:'LVA_NYL',stat:'PRA',line:25.5,over:true,ml:'-245',conf:71,grade:'ELITE',hitRate:'28.0 PRA avg · all-around floor',basis:'Jonquel Jones fills every box. Season avg 16.2 pts / 8.6 reb / 3.2 ast. Home amplifies every category. Las Vegas Aces matchup supports high PRA floor.'},
+  {player:'Jonquel Jones',team:'NYL',opp:'LVA',game:'LVA_NYL',stat:'REB',line:8.0,over:true,ml:'-233',conf:70,grade:'ELITE',hitRate:'8.6 rpg · glass control',basis:'Jonquel Jones rebounds dominate the paint. Las Vegas Aces interior rotation leaves gaps. Season avg 8.6 reb. Home board advantage.'},
+  {player:'Sabrina Ionescu',team:'NYL',opp:'LVA',game:'LVA_NYL',stat:'AST',line:7.0,over:true,ml:'-223',conf:69,grade:'ELITE',hitRate:'7.4 apg · playmaking engine',basis:'Sabrina Ionescu runs the offense at home. Las Vegas Aces help rotations create kick-outs. Season avg 7.4 ast. Matchup style favors high-usage playmakers.'},
 ];
 async function renderWNBAProps(){
   var el=document.getElementById('wnba-props-list');
@@ -21581,11 +21758,11 @@ function renderAnalyticsBetHistory(filter){
     BASEBALL:   {codes:['MLB'],                            color:'var(--vc)', leagues:[{k:'MLB',label:'MLB'}]},
     BASKETBALL: {codes:['NBA','WNBA'],                     color:'var(--pc)', leagues:[{k:'NBA',label:'NBA'},{k:'WNBA',label:'WNBA'}]},
     HOCKEY:     {codes:['NHL','PWHL','KHL','SHL','LIIGA'], color:'var(--ic)', leagues:[{k:'NHL',label:'NHL'},{k:'PWHL',label:'PWHL'},{k:'KHL',label:'KHL'},{k:'SHL',label:'SHL'},{k:'LIIGA',label:'LIIGA'}]},
-    TENNIS:     {codes:['TEN'],                            color:'var(--mc)', leagues:[{k:'TEN',label:'TEN'}]},
+    TENNIS:     {codes:['TEN','ATP','WTA'],                  color:'var(--mc)', leagues:[{k:'ATP',label:'ATP'},{k:'WTA',label:'WTA'}]},
     FOOTBALL:   {codes:['NFL','CFB','FB'],                 color:'var(--hc)', leagues:[{k:'NFL',label:'NFL'},{k:'CFB',label:'COLLEGE'}]},
   };
   const OUTCOME_FILTERS=['ALL','WIN','LOSS','PROP'];
-  const LEAGUE_CODES=['MLB','NBA','WNBA','NHL','PWHL','KHL','SHL','LIIGA','TEN','NFL','CFB','FB'];
+  const LEAGUE_CODES=['MLB','NBA','WNBA','NHL','PWHL','KHL','SHL','LIIGA','TEN','ATP','WTA','NFL','CFB','FB'];
 
   // Resolve filter type
   let filterType='outcome'; // outcome | sport | league
@@ -21677,7 +21854,7 @@ function renderAnalyticsBetHistory(filter){
   if(mKeys.length>1){h+=`<div class="card" style="margin-bottom:10px;padding:10px"><div style="font-family:var(--mono);font-size:11px;color:var(--t3);letter-spacing:2px;margin-bottom:6px">MONTHLY RESULTS</div>${mKeys.map(k=>{const m=monthly[k];const a=m.w+m.l?m.w/(m.w+m.l):null;const bw=a?Math.round(a*100):0;return`<div style="margin-bottom:5px"><div style="display:flex;justify-content:space-between;font-family:var(--mono);font-size:12px;margin-bottom:2px"><span style="color:var(--t3)">${k}</span><div style="display:flex;gap:8px"><span>${m.w}W-${m.l}L</span><span style="color:${pC(a||0)};font-weight:700">${a!==null?(a*100).toFixed(0)+'%':'--'}</span><span style="color:${uC(m.u)}">${m.u>=0?'+':''}${m.u.toFixed(1)}u</span></div></div><div style="height:3px;background:rgba(255,255,255,.06);border-radius:1px"><div style="width:${bw}%;height:100%;background:${pC(a||0)};border-radius:1px"></div></div></div>`;}).join('')}</div>`;}
   const sortedBets=bets.slice().sort((a,b)=>(b.lockedAt||0)-(a.lockedAt||0));
   h+=`<div style="font-family:var(--mono);font-size:11px;color:var(--t3);letter-spacing:2px;margin-bottom:6px">${filterLabel} — ${Math.min(60,sortedBets.length)} of ${sortedBets.length} BETS</div>`;
-  h+=`<div style="display:grid;gap:4px">${sortedBets.slice(0,60).map(b=>{const col=b.outcome==='win'?'var(--nc)':b.outcome==='loss'?'var(--hc)':b.outcome==='push'?'var(--vc)':'var(--pc)';const sc={MLB:'var(--vc)',NHL:'var(--ic)',NBA:'var(--pc)',TEN:'var(--mc)'}[b.sport]||'var(--t3)';return`<div style="background:rgba(10,0,24,.8);border-left:2px solid ${col};border-radius:2px;padding:7px 10px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:4px"><div style="flex:1;min-width:0"><div style="display:flex;align-items:center;gap:5px;margin-bottom:2px"><span style="font-family:var(--mono);font-size:10px;padding:1px 4px;border:1px solid ${sc};color:${sc};border-radius:2px">${b.sport}</span><span style="font-family:var(--mono);font-size:12px;color:var(--t);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${b.betOn||''}</span></div><div style="font-family:var(--mono);font-size:10px;color:var(--t3)">${b.betType||''} · ${b.ml||''} · ${b.date||''}</div></div><div style="text-align:right;flex-shrink:0"><div style="font-family:var(--mono);font-size:11px;color:${col};font-weight:700">${(b.outcome||'PENDING').toUpperCase()}</div>${b.winProb?`<div style="font-family:var(--mono);font-size:10px;color:var(--t3)">${(b.winProb*100).toFixed(0)}%</div>`:''}</div></div>`;}).join('')}</div>`;
+  h+=`<div style="display:grid;gap:4px">${sortedBets.slice(0,60).map(b=>{const isPend=b.outcome==='pending';const col=b.outcome==='win'?'var(--nc)':b.outcome==='loss'?'var(--hc)':b.outcome==='push'?'var(--vc)':'var(--pc)';const sc={MLB:'var(--vc)',NHL:'var(--ic)',NBA:'var(--pc)',TEN:'var(--mc)',ATP:'var(--mc)',WTA:'var(--mc)'}[b.sport]||'var(--t3)';const mu=_gameTitle(b.hA,b.awA,b.sport)||b.betOn||'';return`<div style="background:rgba(10,0,24,.8);border-left:2px solid ${col};border-radius:2px;padding:7px 10px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:4px"><div style="flex:1;min-width:0"><div style="display:flex;align-items:center;gap:5px;margin-bottom:2px"><span style="font-family:var(--mono);font-size:10px;padding:1px 4px;border:1px solid ${sc};color:${sc};border-radius:2px">${b.sport}</span><span style="font-family:var(--mono);font-size:12px;color:var(--t);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${mu}</span></div><div style="font-family:var(--mono);font-size:10px;color:var(--t3)">${b.betOn||''} · ${b.ml||''} · ${b.date||''}</div></div><div style="display:flex;align-items:center;gap:5px;flex-shrink:0">${isPend?`<button class="btn btn-n btn-sm" onclick="recR('${b.id}','win');renderAnalyticsBetHistory('${filter}')" style="font-size:11px;padding:2px 7px">✓ WIN</button><button class="btn btn-o btn-sm" onclick="recR('${b.id}','loss');renderAnalyticsBetHistory('${filter}')" style="font-size:11px;padding:2px 7px;color:var(--hc);border-color:var(--hc)">✗ LOSS</button><button class="btn btn-sm" onclick="removePick('${b.id}');renderAnalyticsBetHistory('${filter}')" style="font-size:11px;padding:2px 7px;color:var(--t3);border-color:var(--t3)">✕</button>`:`<div style="text-align:right"><div style="font-family:var(--mono);font-size:11px;color:${col};font-weight:700">${(b.outcome||'').toUpperCase()}</div>${b.winProb?`<div style="font-family:var(--mono);font-size:10px;color:var(--t3)">${(b.winProb*100).toFixed(0)}%</div>`:''}</div>`}</div></div>`;}).join('')}</div>`;
   el.innerHTML=h;
 }
 window.renderAnalyticsBetHistory=renderAnalyticsBetHistory;
@@ -23349,7 +23526,7 @@ function renderLockedTracker() {
 
   picks = picks.map(function(p){
     if((!p.sport||p.sport==='MLB')&&(NHL_T.has(p.hA)||NHL_T.has(p.awA)))return Object.assign({},p,{sport:'NHL',league:'NHL'});
-    if((!p.sport||p.sport==='MLB')&&(TEN_T.test(p.hA)||TEN_T.test(p.awA)))return Object.assign({},p,{sport:'TEN'});
+    if((!p.sport||p.sport==='MLB')&&(TEN_T.test(p.hA)||TEN_T.test(p.awA)))return Object.assign({},p,{sport:'ATP'});
     return p;
   });
 
