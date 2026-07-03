@@ -1,6 +1,6 @@
 {
-  "generatedMT": "2026-07-03T16:10:50.515307-06:00",
-  "ts": "16:10 MT",
+  "generatedMT": "2026-07-03T16:18:31.949623-06:00",
+  "ts": "16:18 MT",
   "mlbLive": [
     {
       "id": "401816007",
@@ -8,9 +8,9 @@
       "home": "CHC",
       "away": "STL",
       "homeScore": "0",
-      "awayScore": "14",
+      "awayScore": "16",
       "state": "in",
-      "period": 5,
+      "period": 6,
       "displayClock": "0:00",
       "venue": "Wrigley Field",
       "date": "2026-07-03T20:05Z",
@@ -32,9 +32,9 @@
       "home": "CHC",
       "away": "STL",
       "homeScore": "0",
-      "awayScore": "14",
+      "awayScore": "16",
       "state": "in",
-      "period": 5,
+      "period": 6,
       "displayClock": "0:00",
       "venue": "Wrigley Field",
       "date": "2026-07-03T20:05Z",
