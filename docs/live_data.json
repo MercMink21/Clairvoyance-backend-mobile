@@ -1,15 +1,66 @@
 {
-  "generatedMT": "2026-07-09T22:14:01.385224-06:00",
-  "ts": "22:14 MT",
-  "mlbLive": [],
+  "generatedMT": "2026-07-14T20:41:05.912905-06:00",
+  "ts": "20:41 MT",
+  "mlbLive": [
+    {
+      "id": "401817370",
+      "sport": "MLB",
+      "home": "NL",
+      "away": "AL",
+      "homeScore": "0",
+      "awayScore": "3",
+      "state": "in",
+      "period": 7,
+      "displayClock": "0:00",
+      "venue": "Citizens Bank Park",
+      "date": "2026-07-15T00:00Z",
+      "network": "FOX",
+      "homeML": null,
+      "awayML": null,
+      "ou": null,
+      "spread": null,
+      "provider": ""
+    }
+  ],
   "nbaLive": [],
   "nhlLive": [],
   "tennisLive": [],
-  "mlbAll": [],
+  "mlbAll": [
+    {
+      "id": "401817370",
+      "sport": "MLB",
+      "home": "NL",
+      "away": "AL",
+      "homeScore": "0",
+      "awayScore": "3",
+      "state": "in",
+      "period": 7,
+      "displayClock": "0:00",
+      "venue": "Citizens Bank Park",
+      "date": "2026-07-15T00:00Z",
+      "network": "FOX",
+      "homeML": null,
+      "awayML": null,
+      "ou": null,
+      "spread": null,
+      "provider": ""
+    }
+  ],
   "nbaAll": [],
   "nhlAll": [],
   "liveProbs": {
-    "mlb": [],
+    "mlb": [
+      {
+        "homeWinProb": 0.5,
+        "awayWinProb": 0.5,
+        "hScore": 0,
+        "aScore": 0,
+        "gameId": "401817370",
+        "home": "NL",
+        "away": "AL",
+        "state": "in"
+      }
+    ],
     "nba": [],
     "nhl": []
   },
