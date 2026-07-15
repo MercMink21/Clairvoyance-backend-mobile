@@ -1,3 +1,4 @@
+<!-- build: 2026-07-15T20:49Z -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -4110,7 +4111,7 @@ function _ouAdj(hA,awA,date,baseOverP,ouL,delta){
 // Shared by _adjV and a new oninput handler on the input itself so both
 // paths (step buttons AND direct typing) always keep the sign current.
 function _syncSprdLabels(id){var el=document.getElementById(id);if(!el)return;var nv=Math.round((parseFloat(el.value)||0)*2)/2;var fl=document.getElementById('fav_'+id);var dl=document.getElementById('dog_'+id);if(fl)fl.textContent=(nv<0?'':'+')+(nv).toFixed(1);if(dl){var dv=-nv;dl.textContent=(dv<0?'':'+')+(dv).toFixed(1);}}
-function _adjV(id,d){var el=document.getElementById(id);if(!el)return;var v=parseFloat(el.value)||0;var nv=Math.round((v+d)*2)/2;el.value=nv.toFixed(1);_syncSprdLabels(id);}
+function _adjV(id,d){var el=document.getElementById(id);if(!el)return;var v=parseFloat(el.value)||0;var nv=Math.round((v+d)*2)/2;el.value=nv.toFixed(1);if(id.indexOf('ah_wc_')===0)_syncAHLabels(id);else _syncSprdLabels(id);}
 function _ouLockDir(hA,awA,date,baseOverP,baseL,inputId,dir,sport){
   var inp=document.getElementById(inputId);
   var nl=inp?parseFloat(inp.value):parseFloat(baseL);
@@ -4152,6 +4153,16 @@ function _spreadLockDir(favN,dogN,hA,awA,date,baseP,baseSprd,inputId,dir){
   var label=dir==='FAV'?favN+' -'+(Math.abs(ns)).toFixed(1):dogN+' +'+(Math.abs(ns)).toFixed(1);
   lockPick(hA,awA,'SPREAD',label,sp,'-115',1.87,date||today());
 }
+function _ahLockDir(hc,ac,date,favN,dogN,baseFavP,baseAH,inputId,dir){
+  var inp=document.getElementById(inputId);
+  var ns=inp?parseFloat(inp.value):parseFloat(baseAH);
+  if(isNaN(ns))ns=parseFloat(baseAH);
+  var delta=Math.abs(ns)-Math.abs(parseFloat(baseAH));
+  var p=dir==='FAV'?Math.max(.15,Math.min(.85,baseFavP-delta*0.045)):Math.max(.15,Math.min(.85,(1-baseFavP)+delta*0.045));
+  var label=dir==='FAV'?favN+' '+ns.toFixed(1):dogN+' +'+(Math.abs(ns)).toFixed(1);
+  lockPick(hc,ac,'SOC','AH '+label,p,'-110',1.909,date||today());
+}
+function _syncAHLabels(id){var el=document.getElementById(id);if(!el)return;var nv=Math.round((parseFloat(el.value)||0)*2)/2;var fl=document.getElementById('fav_'+id);var dl=document.getElementById('dog_'+id);if(fl)fl.textContent=nv.toFixed(1);if(dl)dl.textContent='+'+Math.abs(nv).toFixed(1);}
 function _spreadParlayDir(favN,dogN,hA,awA,date,baseP,baseSprd,inputId,dir,sport){
   var inp=document.getElementById(inputId);
   var ns=inp?parseFloat(inp.value):parseFloat(baseSprd);
@@ -18566,15 +18577,19 @@ function renderTrackRecord(){
     window._cvEventPeriodData={LDEFS:activeLDEFS3,periodBets:eventBets,eventName,frameLabel:rangeLbl,totalP:totalP3,totalLbl:totalLbl3};
     const rC3=p=>p===null?'rgba(220,190,255,.45)':p>=.62?'#00f0ff':p>=.50?'#bbff00':'#ff2090';
     const uC3=u=>u>=0?'#00f0ff':'#ff2090';
-    // Header — matches Sport/League Performance cards: pink CLAIRVOYANCE
-    // title, event name where "SPORT/LEAGUE PERFORMANCE" would go, date
-    // range as the active-frame subtitle.
+    // Header — just the CLAIRVOYANCE title above the divider (the "header
+    // line"); event name + the "// EVENT PERFORMANCE" label sit below the
+    // divider, in that order. Date range is intentionally not displayed
+    // anywhere on the card — eStart/eEnd still drive which bets get
+    // counted, they're just not shown.
     const hdr3='<div style="position:relative;text-align:center;margin-bottom:8px">'
       +'<div style="font-family:\'Orbitron\',sans-serif;font-size:20px;font-weight:900;color:#f000ff;text-shadow:0 0 14px #f000ff,0 0 28px #880099;letter-spacing:2px">CLAIRVOYANCE</div>'
-      +'<div style="font-family:\'Orbitron\',sans-serif;font-size:19px;font-weight:800;color:#e6eaff;letter-spacing:2px;margin-top:5px;text-shadow:0 0 8px rgba(0,240,255,.5)">'+eventName+'</div>'
-      +'<div style="font-family:\'Orbitron\',sans-serif;font-size:13px;font-weight:700;color:#f000ff;letter-spacing:1.5px;margin-top:4px;text-shadow:0 0 6px #f000ff88">'+rangeLbl+'</div>'
       +'</div>';
     const divider3='<div style="height:1px;background:linear-gradient(90deg,transparent,rgba(240,0,255,.6),transparent);margin-bottom:8px;position:relative"></div>';
+    const eventHdr3='<div style="position:relative;text-align:center;margin-bottom:10px">'
+      +'<div style="font-family:\'Orbitron\',sans-serif;font-size:19px;font-weight:800;color:#e6eaff;letter-spacing:2px;text-shadow:0 0 8px rgba(0,240,255,.5)">'+eventName+'</div>'
+      +'<div style="font-family:var(--mono);font-size:12px;color:#f000ff;letter-spacing:3px;margin-top:4px">// EVENT PERFORMANCE</div>'
+      +'</div>';
     const footer3='<div style="position:relative;margin-top:8px">'
       +'<div style="height:1px;background:linear-gradient(90deg,transparent,rgba(240,0,255,.4),transparent);margin-bottom:6px"></div>'
       +'<div style="display:flex;flex-direction:column;gap:3px;align-items:center">'
@@ -18586,9 +18601,9 @@ function renderTrackRecord(){
       +'<span style="font-family:\'Orbitron\',sans-serif;font-size:10px;font-weight:600;color:#f000ff;text-shadow:0 0 8px #f000ff;letter-spacing:1px;white-space:nowrap">clairvoyanceengine.info</span>'
       +'</div></div>';
     if(!eStart||!eEnd){
-      return hdr3+divider3+'<div style="position:relative;flex:1;display:flex;align-items:center;justify-content:center;text-align:center"><div style="font-family:var(--mono);font-size:15px;color:rgba(220,190,255,.4);padding:0 10px">Pick a preset above or set START/END dates to see this event’s performance.</div></div>'+footer3;
+      return hdr3+divider3+eventHdr3+'<div style="position:relative;flex:1;display:flex;align-items:center;justify-content:center;text-align:center"><div style="font-family:var(--mono);font-size:15px;color:rgba(220,190,255,.4);padding:0 10px">Pick a preset above or set START/END dates to see this event’s performance.</div></div>'+footer3;
     }
-    const colHdr3='<div style="display:grid;grid-template-columns:2fr 1.4fr .9fr .9fr;gap:0;margin-top:18px;margin-bottom:4px;position:relative"><div style="font-family:var(--mono);font-size:11px;color:rgba(220,190,255,.3);letter-spacing:1px">LEAGUE</div><div style="text-align:center;font-family:var(--mono);font-size:11px;color:rgba(220,190,255,.3);letter-spacing:1px">RECORD</div><div style="text-align:center;font-family:var(--mono);font-size:11px;color:rgba(220,190,255,.3);letter-spacing:1px">WIN%</div><div style="text-align:right;font-family:var(--mono);font-size:11px;color:rgba(220,190,255,.3);letter-spacing:1px">UNITS</div></div>';
+    const colHdr3='<div style="display:grid;grid-template-columns:2fr 1.4fr .9fr .9fr;gap:0;margin-bottom:4px;position:relative"><div style="font-family:var(--mono);font-size:11px;color:rgba(220,190,255,.3);letter-spacing:1px">LEAGUE</div><div style="text-align:center;font-family:var(--mono);font-size:11px;color:rgba(220,190,255,.3);letter-spacing:1px">RECORD</div><div style="text-align:center;font-family:var(--mono);font-size:11px;color:rgba(220,190,255,.3);letter-spacing:1px">WIN%</div><div style="text-align:right;font-family:var(--mono);font-size:11px;color:rgba(220,190,255,.3);letter-spacing:1px">UNITS</div></div>';
     const rows3=activeLDEFS3.map(lm=>{
       const lb=eventBets.filter(b=>lm.codes.some(c=>b.sport&&b.sport.toUpperCase()===c.toUpperCase()));
       const p=cP(lb);
@@ -18608,12 +18623,12 @@ function renderTrackRecord(){
     // league row (activeLDEFS3.length===1) — only useful once 2+ leagues
     // are being combined (or showing everything with data).
     const totalRow3=(totalP3.n>0&&activeLDEFS3.length!==1)?('<div style="display:grid;grid-template-columns:2fr 1.4fr .9fr .9fr;align-items:center;padding:8px 0 4px;border-top:1px solid rgba(240,0,255,.3);margin-top:2px">'
-      +'<div><div style="font-family:\'Orbitron\',sans-serif;font-size:15px;font-weight:900;color:#00f0ff;text-shadow:0 0 8px #00f0ff">'+totalLbl3+'</div><div style="font-family:var(--mono);font-size:11px;color:rgba(220,190,255,.35)">'+rangeLbl+'</div></div>'
+      +'<div><div style="font-family:\'Orbitron\',sans-serif;font-size:15px;font-weight:900;color:#00f0ff;text-shadow:0 0 8px #00f0ff">'+totalLbl3+'</div></div>'
       +'<div style="text-align:center;font-family:\'Orbitron\',sans-serif;font-size:16px;font-weight:700;color:#00f0ff">'+totalP3.w+'W-'+totalP3.l+'L</div>'
       +'<div style="text-align:center;font-family:\'Orbitron\',sans-serif;font-size:16px;font-weight:700;color:#00f0ff">'+tPct3+'</div>'
       +'<div style="text-align:right;font-family:\'Orbitron\',sans-serif;font-size:17px;font-weight:700;color:#00f0ff">'+tUnit3+'</div>'
       +'</div>'):'';
-    return hdr3+divider3+'<div style="flex:1;position:relative;display:flex;flex-direction:column">'+colHdr3+rows3+totalRow3+'</div>'+footer3;
+    return hdr3+divider3+eventHdr3+'<div style="flex:1;position:relative;display:flex;flex-direction:column">'+colHdr3+rows3+totalRow3+'</div>'+footer3;
   })()}
   </div>
   <div style="display:flex;gap:8px;margin-bottom:16px">
@@ -18955,17 +18970,20 @@ async function _exportEventPerfCard(){
   const cP=bets=>{const s=bets.filter(p=>p.outcome!=='pending');const w=s.filter(p=>p.outcome==='win').length,l=s.filter(p=>p.outcome==='loss').length;const u=s.reduce((a,p)=>p.outcome==='win'?a+(parseFloat(p.decOdds)||2)-1:p.outcome==='loss'?a-1:a,0);return{w,l,n:s.length,pct:s.length?w/s.length:null,units:u};};
   const today=()=>new Date().toISOString().slice(0,10);
 
-  // Header — event name where LEAGUE PERFORMANCE would normally go, date
-  // range where the period label would normally go.
+  // Header — CLAIRVOYANCE title/subtitle, then the divider ("header line"),
+  // then the event name, then the "// EVENT PERFORMANCE" label — date range
+  // isn't shown anywhere on the card (eStart/eEnd still drive which bets
+  // get counted, just not displayed).
   _glowText(ctx,'CLAIRVOYANCE',W/2,72,'900 41px "Orbitron"','#f000ff',22,'center');
   _glowText(ctx,'ADVANCED SPORTS INTELLIGENCE ENGINE',W/2,104,'600 14px "Orbitron"','#00f0ff',8,'center');
-  _glowText(ctx,eventName,W/2,132,'800 26px "Orbitron"','#e6eaff',10,'center');
 
-  ctx.save();const hd=ctx.createLinearGradient(80,156,W-80,156);
+  ctx.save();const hd=ctx.createLinearGradient(80,128,W-80,128);
   hd.addColorStop(0,'transparent');hd.addColorStop(.5,'rgba(240,0,255,.7)');hd.addColorStop(1,'transparent');
   ctx.strokeStyle=hd;ctx.lineWidth=1.5;ctx.shadowColor='#f000ff';ctx.shadowBlur=8;
-  ctx.beginPath();ctx.moveTo(80,156);ctx.lineTo(W-80,156);ctx.stroke();ctx.restore();
-  _glowText(ctx,'// EVENT PERFORMANCE · '+frameLabel,80,178,'700 14px "Orbitron"','#f000ff',8,'left');
+  ctx.beginPath();ctx.moveTo(80,128);ctx.lineTo(W-80,128);ctx.stroke();ctx.restore();
+
+  _glowText(ctx,eventName,W/2,164,'800 26px "Orbitron"','#e6eaff',10,'center');
+  _glowText(ctx,'// EVENT PERFORMANCE',W/2,190,'700 14px "Orbitron"','#f000ff',8,'center');
 
   const cX={league:80,record:430,pct:660,units:W-60};
   const hdrY=214;
@@ -19013,7 +19031,6 @@ async function _exportEventPerfCard(){
     ctx.strokeStyle=td;ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(80,totalY);ctx.lineTo(W-80,totalY);ctx.stroke();ctx.restore();
     const tY=totalY+rowH/2;
     _glowText(ctx,totalLbl,cX.league,tY,'900 21px "Orbitron"','#00f0ff',14,'left');
-    _glowText(ctx,frameLabel,cX.league,tY+18,'400 12px "Orbitron"','rgba(220,190,255,.35)',3,'left');
     const tRec=totalP.w+'W-'+totalP.l+'L';
     const tPct=totalP.pct!==null?(totalP.pct*100).toFixed(1)+'%':'—';
     const tUnit=(totalP.units>=0?'+':'')+totalP.units.toFixed(1)+'u';
@@ -22914,10 +22931,10 @@ function _renderWCMatchCard(m,liveScore){
     +'<div style="margin-top:2px"><span class="pill '+aCS.pl+'">'+aCS.lb+'</span></div></div>'
     +(ah!==0?'<div style="flex:2;background:rgba(255,200,0,.05);border:1px solid rgba(255,200,0,.2);border-radius:3px;padding:4px 5px;display:flex;flex-direction:column;align-items:center;gap:2px">'
     +'<div style="font-family:var(--mono);font-size:13px;color:var(--t3);letter-spacing:1px">ASIAN HCP</div>'
-    +'<div style="font-family:var(--mono);font-size:14px;color:var(--gc)">'+ahFavTeam+' '+ah+'</div>'
+    +'<div style="display:flex;align-items:center;gap:2px"><button onclick="event.stopPropagation();_adjV(\'ah_wc_'+m.hc+'_'+m.ac+'\',-0.5)" style="font-family:var(--mono);font-size:16px;width:22px;height:26px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);color:rgba(220,190,255,.7);border-radius:2px;cursor:pointer;flex-shrink:0">−</button>'+'<input type="number" step="0.5" value="'+ah+'" id="ah_wc_'+m.hc+'_'+m.ac+'" style="width:50px;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.15);color:var(--t);font-family:var(--mono);font-size:16px;padding:2px 4px;border-radius:2px;text-align:center" oninput="_syncAHLabels(this.id)">'+'<button onclick="event.stopPropagation();_adjV(\'ah_wc_'+m.hc+'_'+m.ac+'\',0.5)" style="font-family:var(--mono);font-size:16px;width:22px;height:26px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);color:rgba(220,190,255,.7);border-radius:2px;cursor:pointer;flex-shrink:0">+</button></div>'
     +'<div style="display:flex;gap:2px">'
-    +'<button onclick="event.stopPropagation();lockPick(\''+m.hc+'\',\''+m.ac+'\',\'SOC\',\'AH '+ahFavTeam+' '+ah+'\','+ahFavP.toFixed(3)+',\'-110\',1.909,\''+m.date+'\')" style="font-size:13px;padding:2px 4px;background:rgba(255,200,0,.1);border:1px solid rgba(255,200,0,.4);color:var(--gc);border-radius:2px;cursor:pointer">'+ahFavTeam+' ▼</button>'
-    +'<button onclick="event.stopPropagation();lockPick(\''+m.hc+'\',\''+m.ac+'\',\'SOC\',\'AH '+ahDogTeam+' +'+(Math.abs(ah))+'\','+ahDogP.toFixed(3)+',\'-110\',1.909,\''+m.date+'\')" style="font-size:13px;padding:2px 4px;background:rgba(80,120,255,.08);border:1px solid rgba(80,120,255,.3);color:var(--t2);border-radius:2px;cursor:pointer">+'+ahDogTeam+'</button>'
+    +'<button onclick="event.stopPropagation();_ahLockDir(\''+m.hc+'\',\''+m.ac+'\',\''+m.date+'\',\''+ahFavTeam+'\',\''+ahDogTeam+'\','+ahFavP.toFixed(4)+',\''+ah+'\',\'ah_wc_'+m.hc+'_'+m.ac+'\',\'FAV\')" style="font-size:13px;padding:2px 4px;background:rgba(255,200,0,.1);border:1px solid rgba(255,200,0,.4);color:var(--gc);border-radius:2px;cursor:pointer">'+ahFavTeam+' <span id="fav_ah_wc_'+m.hc+'_'+m.ac+'">'+ah+'</span></button>'
+    +'<button onclick="event.stopPropagation();_ahLockDir(\''+m.hc+'\',\''+m.ac+'\',\''+m.date+'\',\''+ahFavTeam+'\',\''+ahDogTeam+'\','+ahFavP.toFixed(4)+',\''+ah+'\',\'ah_wc_'+m.hc+'_'+m.ac+'\',\'DOG\')" style="font-size:13px;padding:2px 4px;background:rgba(80,120,255,.08);border:1px solid rgba(80,120,255,.3);color:var(--t2);border-radius:2px;cursor:pointer">'+ahDogTeam+' <span id="dog_ah_wc_'+m.hc+'_'+m.ac+'">+'+Math.abs(ah)+'</span></button>'
     +'</div></div>':'')
     +'<div style="flex:2;background:rgba(0,240,255,.05);border:1px solid rgba(0,240,255,.2);border-radius:3px;padding:5px 6px;display:flex;flex-direction:column;align-items:center;gap:3px">'
     +'<div style="font-family:var(--mono);font-size:13px;color:var(--t3);letter-spacing:1px">O/U LINE</div>'
