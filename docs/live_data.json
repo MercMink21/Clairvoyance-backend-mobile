@@ -1,6 +1,6 @@
 {
-  "generatedMT": "2026-08-02T17:20:34.097782-06:00",
-  "ts": "17:20 MT",
+  "generatedMT": "2026-08-02T17:33:25.115885-06:00",
+  "ts": "17:33 MT",
   "mlbLive": [
     {
       "id": "401816372",
@@ -8,7 +8,7 @@
       "home": "LAD",
       "away": "BOS",
       "homeScore": "0",
-      "awayScore": "0",
+      "awayScore": "2",
       "state": "in",
       "period": 1,
       "displayClock": "0:00",
@@ -298,7 +298,7 @@
       "home": "LAD",
       "away": "BOS",
       "homeScore": "0",
-      "awayScore": "0",
+      "awayScore": "2",
       "state": "in",
       "period": 1,
       "displayClock": "0:00",
