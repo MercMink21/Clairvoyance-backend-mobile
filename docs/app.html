@@ -3926,7 +3926,20 @@ async function loadGames(dateStr){
     const events=await fetchESPN(d);
     if(!events){
       if(el&&isToday)el.innerHTML='<div class="empty">SCHEDULE UNAVAILABLE<br><button class="btn btn-p btn-sm" style="margin-top:8px" onclick="loadGames()">↻ RETRY</button></div>';
-      if(st)st.textContent='ESPN: FAILED';return;
+      if(st)st.textContent='ESPN: FAILED';
+      // Real bug, found and fixed: this used to `return` here without
+      // touching ESPN_GAMES, silently leaving it holding whatever date's
+      // games were loaded last (e.g. today's, from the page's own initial
+      // load). A caller settling a BACKLOG of historical dates would then
+      // grade that stale/wrong date's bets against the WRONG game's real
+      // score whenever this fetch had a transient failure -- confirmed
+      // live: a rapid multi-date backfill loop hit exactly this, and an
+      // 2026-08-25 pending bet got settled using 2026-08-26's real result.
+      // Clearing to [] instead makes a fetch failure a safe no-op (nothing
+      // matches, nothing gets wrongly settled, the date just retries next
+      // run) instead of silent data corruption.
+      ESPN_GAMES=[];window._mlbGames=[];
+      return;
     }
     games=events.map(parseESPNGame).filter(Boolean);
     if(st)st.textContent=`ESPN: ${games.length} GAMES`;
@@ -4121,40 +4134,59 @@ async function loadTmrw(){
   }
 }
 // ═══ AUTO-SETTLEMENT ════════════════════════════════════════
-function autoSettleFromESPN(games){
+function autoSettleFromESPN(games,targetDate){
+  // targetDate: which day's pending bets to match against `games` (which
+  // the caller is responsible for having fetched for that same day --
+  // see run_settle()'s multi-day backfill loop in auto_lock_settle.py).
+  // Defaults to today() so any other real-time caller (e.g. a live
+  // in-session interval) keeps working unchanged. This used to be
+  // hardcoded to today() here, which meant any bet that missed
+  // settlement on its own calendar day became permanently unsettleable
+  // -- caught via a real ~2-month-old backlog of stuck pending bets.
+  targetDate=targetDate||today();
   const preds=getP();let changed=false;
   for(const g of games){
     if(g.status!=='post'||g.hScore===null)continue;
+    // Defense in depth: only grade with a game that's actually FROM
+    // targetDate. Guards against any caller (loadGames' internal cache,
+    // a future refactor) ever handing this stale/wrong-date games data --
+    // without this a mismatched games array silently grades a pending
+    // bet against the wrong real-world game. See loadGames' own fix for
+    // the specific failure mode this was caught from.
+    if(g.date&&g.date!==targetDate)continue;
     // Find matching pending bets
     for(const p of preds){
       if(p.outcome!=='pending')continue;
-      if(p.date!==today())continue;
+      if(p.date!==targetDate)continue;
       const sameGame=(p.hA===g.hA&&p.awA===g.awA)||(p.hA===g.awA&&p.awA===g.hA);
       if(!sameGame)continue;
       if(p.sport!=='MLB')continue;
       const hW=g.hScore>g.aScore;const aW=g.aScore>g.hScore;
       let outcome=null;
-      if(p.betType==='ML'){
-        if(p.betOn===g.hA)outcome=hW?'win':'loss';
-        else if(p.betOn===g.awA)outcome=aW?'win':'loss';
-      }else if(p.betType==='RL'){
-        // MLB run lines are always ±1.5 in practice, so this isn't wrong
-        // today, but it's an assumption baked into the win-margin check
-        // rather than read from the actual locked line — a run line ever
-        // locked at a non-standard number would still be graded as if it
-        // were 1.5.
-        const fav=p.betOn.includes('-1.5');const diff=g.hScore-g.aScore;
-        if(p.betOn.includes(g.hA))outcome=(fav?diff>=2:diff<=-2)?'win':'loss';
-        else if(p.betOn.includes(g.awA))outcome=(fav?diff<=-2:diff>=2)?'win':'loss';
-      }else if(p.betType==='OU'){
-        const total=g.hScore+g.aScore;
-        // Trailing-number extraction — see identical comment in
-        // autoSettleNBA. betOn's "TEAM/TEAM Under 9.5" prefix means a
-        // keyword-only strip leaves non-numeric text in front of the
-        // number and parseFloat returns NaN, so the pick never settles.
-        const m=(p.betOn||'').match(/(\d+\.?\d*)\s*$/);
-        const ou=m?parseFloat(m[1]):NaN;
-        if(!isNaN(ou))outcome=(/over/i.test(p.betOn)?total>ou:total<ou)?'win':'loss';
+      // Classify from betOn TEXT, not the stored betType field — the
+      // automated lock pipeline (auto_lock_settle.py's lock_game_leg)
+      // passes the SPORT tag ('MLB') as lockPick's type param rather than
+      // a bet-type keyword ('RL'/'OU'), so _betTypeNorm in lockPick always
+      // falls through to its 'ML' default regardless of what the pick
+      // actually is. Confirmed live: the real ledger has run-line picks
+      // like "TB +1.5" and totals like "OVER 7.5" stored with
+      // betType:'ML' -- betType can't be trusted here. betOn's own text
+      // is always correct regardless (same fix pattern already used by
+      // autoSettleWNBA/autoSettleSoccer).
+      const betOn=p.betOn||'';
+      const isOU=/^(over|under)/i.test(betOn);
+      const ouM=isOU?/(\d+\.?\d*)\s*$/.exec(betOn):null;
+      const spreadM=!isOU?/([+-]\d+\.?\d*)\s*$/.exec(betOn):null;
+      if(isOU&&ouM){
+        const total=g.hScore+g.aScore;const ou=parseFloat(ouM[1]);
+        if(!isNaN(ou))outcome=(/over/i.test(betOn)?total>ou:total<ou)?'win':'loss';
+      }else if(spreadM&&(betOn.includes(g.hA)||betOn.includes(g.awA))){
+        const line=parseFloat(spreadM[1]);
+        if(betOn.includes(g.hA)){const covered=(g.hScore-g.aScore)+line;outcome=covered>0?'win':covered<0?'loss':'push';}
+        else{const covered=(g.aScore-g.hScore)+line;outcome=covered>0?'win':covered<0?'loss':'push';}
+      }else{
+        if(betOn===g.hA||betOn===g.hA+' ML')outcome=hW?'win':'loss';
+        else if(betOn===g.awA||betOn===g.awA+' ML')outcome=aW?'win':'loss';
       }
       if(outcome){p.outcome=outcome;p.settledAt=Date.now();p.hScore=g.hScore;p.aScore=g.aScore;changed=true;
         // Update daily log
@@ -4165,9 +4197,11 @@ function autoSettleFromESPN(games){
   if(changed){saveP(preds);updHdr();}
 }
 // Auto-settle NHL picks from NHL API
-async function autoSettleNHL(){
+async function autoSettleNHL(targetDate){
+  // See autoSettleFromESPN's comment -- same targetDate backfill pattern.
+  targetDate=targetDate||today();
   try{
-    const r=await fetch(`https://api-web.nhle.com/v1/score/${today()}`,{mode:'cors'});
+    const r=await fetch(`https://api-web.nhle.com/v1/score/${targetDate}`,{mode:'cors'});
     if(!r.ok)return;const d=await r.json();
     const preds=getP();let changed=false;
     for(const g of(d.games||[])){
@@ -4176,7 +4210,7 @@ async function autoSettleNHL(){
       const hs=g.homeTeam?.score||0,as=g.awayTeam?.score||0;
       for(const p of preds){
         if(p.outcome!=='pending'||p.sport!=='NHL')continue;
-        if(p.date!==today())continue;
+        if(p.date!==targetDate)continue;
         const nhlSameGame=(p.hA===h&&p.awA===a)||(p.hA===a&&p.awA===h);
         if(!nhlSameGame)continue;
         let outcome=null;
@@ -7495,9 +7529,13 @@ function lockCFBGame(hA,awA,betType,betOn,ml,winProb,ouLine){
 // number extraction for SPREAD's signed line) established during the
 // earlier accuracy audit — built in from the start here rather than
 // needing a follow-up fix.
-async function autoSettleCFB(){
+async function autoSettleCFB(targetDate){
+  // See autoSettleFromESPN's comment -- same targetDate backfill pattern.
+  // dates= param confirmed directly against ESPN's real API to return
+  // real historical events for an arbitrary past date, not just "today".
+  targetDate=targetDate||today();
   try{
-    const r=await fetch('https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?limit=300');
+    const r=await fetch('https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?limit=300&dates='+targetDate.replace(/-/g,''));
     if(!r.ok)return;
     const d=await r.json();
     const preds=getP();let changed=false;
@@ -7513,7 +7551,7 @@ async function autoSettleCFB(){
         // tagged sport:'FOOTBALL'/league:'CFB', so this correctly matches
         // regardless of which field ended up holding 'CFB'.
         if(p.outcome!=='pending'||_normSport(p)!=='CFB')continue;
-        if(p.date!==today())continue;
+        if(p.date!==targetDate)continue;
         const sameGame=(p.hA===hn&&p.awA===an)||(p.hA===an&&p.awA===hn);
         if(!sameGame)continue;
         let outcome=null;
@@ -7574,11 +7612,15 @@ const _SOC_SETTLE_LEAGUES=[
   {key:'mls',espn:'usa.1',sport:'MLS'},
   {key:'ita',espn:'ita.1',sport:'SERIEA'},
 ];
-async function autoSettleSoccer(){
+async function autoSettleSoccer(targetDate){
+  // Same fix as autoSettleWNBA -- no date param or date check before now,
+  // silently stuck on ESPN's default "today" scoreboard response forever
+  // once a matchday's games rolled off it.
+  targetDate=targetDate||today();
   const preds=getP();let changed=false;
   for(const lg of _SOC_SETTLE_LEAGUES){
     try{
-      const r=await fetch('https://site.api.espn.com/apis/site/v2/sports/soccer/'+lg.espn+'/scoreboard');
+      const r=await fetch('https://site.api.espn.com/apis/site/v2/sports/soccer/'+lg.espn+'/scoreboard?dates='+targetDate.replace(/-/g,''));
       if(!r.ok)continue;
       const d=await r.json();
       for(const ev of(d.events||[])){
@@ -7590,7 +7632,7 @@ async function autoSettleSoccer(){
         if(!hn||!an)continue;
         const hs=parseInt(home?.score||0),as=parseInt(away?.score||0);
         for(const p of preds){
-          if(p.outcome!=='pending'||_normSport(p)!==lg.sport)continue;
+          if(p.outcome!=='pending'||_normSport(p)!==lg.sport||p.date!==targetDate)continue;
           const sameGame=(p.hA===hn&&p.awA===an)||(p.hA===an&&p.awA===hn);
           if(!sameGame)continue;
           let outcome=null;
@@ -8032,9 +8074,11 @@ function lockNFLGame(hA,awA,betType,betOn,ml,winProb,ouLine){
 // Same settlement shape/fixes established for CFB's autoSettleCFB (AND-
 // logic same-game match, today-only, case-insensitive OVER, trailing-
 // number extraction for SPREAD's signed line).
-async function autoSettleNFL2(){
+async function autoSettleNFL2(targetDate){
+  // See autoSettleFromESPN's comment -- same targetDate backfill pattern.
+  targetDate=targetDate||today();
   try{
-    const r=await fetch('https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?limit=100');
+    const r=await fetch('https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?limit=100&dates='+targetDate.replace(/-/g,''));
     if(!r.ok)return;
     const d=await r.json();
     const preds=getP();let changed=false;
@@ -8047,7 +8091,7 @@ async function autoSettleNFL2(){
       const hs=parseInt(home?.score||0),as=parseInt(away?.score||0);
       for(const p of preds){
         if(p.outcome!=='pending'||_normSport(p)!=='NFL')continue;
-        if(p.date!==today())continue;
+        if(p.date!==targetDate)continue;
         const sameGame=(p.hA===hn&&p.awA===an)||(p.hA===an&&p.awA===hn);
         if(!sameGame)continue;
         let outcome=null;
@@ -13953,10 +13997,13 @@ function renderCrossDeviceSync(){
 // linescores[], a real but separate addition -- not built here since
 // this app's own O/U tennis volume is low and ML is what actually needs
 // covering).
-async function autoSettleTennis(){
+async function autoSettleTennis(targetDate){
+  // Same fix as autoSettleWNBA/Soccer -- no date param or date check
+  // before now.
+  targetDate=targetDate||today();
   for(const tour of['atp','wta']){
     try{
-      const r=await fetch('https://site.api.espn.com/apis/site/v2/sports/tennis/'+tour+'/scoreboard');
+      const r=await fetch('https://site.api.espn.com/apis/site/v2/sports/tennis/'+tour+'/scoreboard?dates='+targetDate.replace(/-/g,''));
       if(!r.ok)continue;const d=await r.json();
       const preds=getP();let changed=false;
       for(const ev of(d.events||[])){
@@ -13969,7 +14016,7 @@ async function autoSettleTennis(){
             const n1=c1.athlete?.displayName,n2=c2.athlete?.displayName;
             if(!n1||!n2)continue;
             for(const p of preds){
-              if(p.outcome!=='pending'||_normSport(p)!=='TEN')continue;
+              if(p.outcome!=='pending'||_normSport(p)!=='TEN'||p.date!==targetDate)continue;
               const sameMatch=(p.hA===n1&&p.awA===n2)||(p.hA===n2&&p.awA===n1);
               if(!sameMatch)continue;
               const betOn=p.betOn||'';
@@ -14008,9 +14055,17 @@ function startTennisSettle(){
 // buttons instead. Parses the always-correct betOn text directly
 // instead (same approach as autoSettleSoccer): "TEAM" -> ML,
 // "TEAM -3.5"/"TEAM +3.5" -> spread, "OVER/UNDER N" -> total.
-async function autoSettleWNBA(){
+async function autoSettleWNBA(targetDate){
+  // Previously had NO date parameter or date check at all -- relied
+  // entirely on ESPN's scoreboard defaulting to "today" when no dates=
+  // param is given, which meant it could never see or settle a bet from
+  // any prior day once that day's games rolled off the default response.
+  // Now takes the same explicit targetDate backfill pattern as the other
+  // sports (see autoSettleFromESPN's comment), plus an explicit p.date
+  // match added for the same cross-date-rematch safety the others have.
+  targetDate=targetDate||today();
   try{
-    const r=await fetch('https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard?limit=100');
+    const r=await fetch('https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard?limit=100&dates='+targetDate.replace(/-/g,''));
     if(!r.ok)return;const d=await r.json();
     const preds=getP();let changed=false;
     for(const ev of(d.events||[])){
@@ -14021,7 +14076,7 @@ async function autoSettleWNBA(){
       if(!hn||!an)continue;
       const hs=parseInt(h?.score||0),as=parseInt(a?.score||0);
       for(const p of preds){
-        if(p.outcome!=='pending'||_normSport(p)!=='WNBA')continue;
+        if(p.outcome!=='pending'||_normSport(p)!=='WNBA'||p.date!==targetDate)continue;
         const sameGame=(p.hA===hn&&p.awA===an)||(p.hA===an&&p.awA===hn);
         if(!sameGame)continue;
         let outcome=null;
@@ -14059,9 +14114,11 @@ function startWNBASettle(){
 }
 
 // NBA auto-settlement from ESPN
-async function autoSettleNBA(){
+async function autoSettleNBA(targetDate){
+  // See autoSettleFromESPN's comment -- same targetDate backfill pattern.
+  targetDate=targetDate||today();
   try{
-    const r=await fetch('https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?seasontype=3');
+    const r=await fetch('https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?seasontype=3&dates='+targetDate.replace(/-/g,''));
     if(!r.ok)return;const d=await r.json();
     const preds=getP();let changed=false;
     for(const ev of(d.events||[])){
@@ -14072,7 +14129,7 @@ async function autoSettleNBA(){
       const hs=parseInt(h?.score||0),as=parseInt(a?.score||0);
       for(const p of preds){
         if(p.outcome!=='pending'||_normSport(p)!=='NBA')continue;
-        if(p.date!==today())continue;
+        if(p.date!==targetDate)continue;
         // Both teams must match (either home/away order) — the previous
         // OR check let a pending bet settle off any game sharing just
         // ONE team code with the actual locked matchup.
@@ -14203,7 +14260,14 @@ async function autoSettleTextFormat(){
 }
 
 // Settle PROP bets using ESPN box score player stats
-async function autoSettlePropsESPN(){
+async function autoSettlePropsESPN(targetDate){
+  // Same fix as the other auto-settle functions -- scoreboards below had
+  // no date param before now, so this could only ever see today's props.
+  // The evDate===p.date check further down already correctly ties a
+  // matched event's real date to the bet's date (not hardcoded to
+  // today()), so adding the dates= param alone is enough here -- no
+  // separate targetDate-based prediction filter needed.
+  targetDate=targetDate||today();
   const preds=getP();
   const pending=preds.filter(p=>p.outcome==='pending'&&p.betType==='PROP');
   if(!pending.length)return;
@@ -14331,7 +14395,8 @@ async function autoSettlePropsESPN(){
     if(!scoreboards[sport])continue;
     let events=[];
     try{
-      const r=await fetch(scoreboards[sport]);
+      const dSep=scoreboards[sport].includes('?')?'&':'?';
+      const r=await fetch(scoreboards[sport]+dSep+'dates='+targetDate.replace(/-/g,''));
       if(!r.ok)continue;
       const d=await r.json();
       events=(d.events||[]).filter(ev=>ev.competitions?.[0]?.status?.type?.state==='post');
@@ -25175,21 +25240,21 @@ function _generateWNBAPropsLive(games,statsData){
 // Updated: June 13 2026 — based on 2026 season averages + matchup
 var WNBA_PROPS_DATE='20260826';
 var WNBA_PROPS_DATA=[
-  // ── Golden State Valkyries @ Connecticut Sun (5:00 PM MT · O/U 150.5) ──
-  {player:'Alyssa Thomas',team:'CON',opp:'GSV',game:'GSV_CON',stat:'PRA',line:28.5,over:true,ml:'-245',conf:71,grade:'ELITE',hitRate:'31.1 PRA avg · all-around floor',basis:'Alyssa Thomas fills every box. Season avg 15.8 pts / 8.2 reb / 7.1 ast. Home amplifies every category. Golden State Valkyries matchup supports high PRA floor.'},
-  {player:'Alyssa Thomas',team:'CON',opp:'GSV',game:'GSV_CON',stat:'REB',line:7.5,over:true,ml:'-233',conf:70,grade:'ELITE',hitRate:'8.2 rpg · glass control',basis:'Alyssa Thomas rebounds dominate the paint. Golden State Valkyries interior rotation leaves gaps. Season avg 8.2 reb. Home board advantage.'},
-  {player:'Alyssa Thomas',team:'CON',opp:'GSV',game:'GSV_CON',stat:'AST',line:6.5,over:true,ml:'-223',conf:69,grade:'ELITE',hitRate:'7.1 apg · playmaking engine',basis:'Alyssa Thomas runs the offense at home. Golden State Valkyries help rotations create kick-outs. Season avg 7.1 ast. Matchup style favors high-usage playmakers.'},
-  {player:'DeWanna Bonner',team:'CON',opp:'GSV',game:'GSV_CON',stat:'REB',line:6.0,over:true,ml:'-203',conf:67,grade:'LOCK',hitRate:'6.4 rpg · glass control',basis:'DeWanna Bonner rebounds dominate the paint. Golden State Valkyries interior rotation leaves gaps. Season avg 6.4 reb. Home board advantage.'},
-  {player:'Alyssa Thomas',team:'CON',opp:'GSV',game:'GSV_CON',stat:'PTS',line:14.5,over:true,ml:'-170',conf:63,grade:'LOCK',hitRate:'15.8 ppg · home favored',basis:'Alyssa Thomas home scorer vs Golden State Valkyries. Home crowd elevates output. Season avg 15.8 pts. Matchup context favors over.'},
-  {player:'DiJonai Carrington',team:'CON',opp:'GSV',game:'GSV_CON',stat:'PTS',line:14.5,over:true,ml:'-170',conf:63,grade:'LOCK',hitRate:'15.7 ppg · home favored',basis:'DiJonai Carrington home scorer vs Golden State Valkyries. Home crowd elevates output. Season avg 15.7 pts. Matchup context favors over.'},
+  // ── Golden State Valkyries @ Connecticut Sun (5:00 PM MT · O/U 151.5) ──
+  {player:'Brittney Griner',team:'CON',opp:'GSV',game:'GSV_CON',stat:'PTS',line:12.0,over:true,ml:'-213',conf:68,grade:'ELITE',hitRate:'13.2 ppg · home favored',basis:'Brittney Griner home scorer vs Golden State Valkyries. Home crowd elevates output. Season avg 13.2 pts. Matchup context favors over.'},
+  {player:'Aaliyah Edwards',team:'CON',opp:'GSV',game:'GSV_CON',stat:'PTS',line:9.5,over:true,ml:'-213',conf:68,grade:'ELITE',hitRate:'10.6 ppg · home favored',basis:'Aaliyah Edwards home scorer vs Golden State Valkyries. Home crowd elevates output. Season avg 10.6 pts. Matchup context favors over.'},
+  {player:'LeÃ¯la Lacan',team:'CON',opp:'GSV',game:'GSV_CON',stat:'PTS',line:10.5,over:true,ml:'-203',conf:67,grade:'LOCK',hitRate:'11.6 ppg · home favored',basis:'LeÃ¯la Lacan home scorer vs Golden State Valkyries. Home crowd elevates output. Season avg 11.6 pts. Matchup context favors over.'},
+  {player:'Olivia Nelson-Ododa',team:'CON',opp:'GSV',game:'GSV_CON',stat:'PTS',line:9.0,over:true,ml:'-203',conf:67,grade:'LOCK',hitRate:'10.0 ppg · home favored',basis:'Olivia Nelson-Ododa home scorer vs Golden State Valkyries. Home crowd elevates output. Season avg 10.0 pts. Matchup context favors over.'},
+  {player:'Brittney Griner',team:'CON',opp:'GSV',game:'GSV_CON',stat:'REB',line:5.5,over:true,ml:'-194',conf:66,grade:'LOCK',hitRate:'5.8 rpg · glass control',basis:'Brittney Griner rebounds dominate the paint. Golden State Valkyries interior rotation leaves gaps. Season avg 5.8 reb. Home board advantage.'},
+  {player:'LeÃ¯la Lacan',team:'CON',opp:'GSV',game:'GSV_CON',stat:'AST',line:4.0,over:true,ml:'-194',conf:66,grade:'LOCK',hitRate:'4.6 apg · playmaking engine',basis:'LeÃ¯la Lacan runs the offense at home. Golden State Valkyries help rotations create kick-outs. Season avg 4.6 ast. Matchup style favors high-usage playmakers.'},
 
-  // ── Toronto Tempo @ Seattle Storm (8:00 PM MT · O/U 176.5) ──
-  {player:'Nneka Ogwumike',team:'SEA',opp:'TOR',game:'TOR_SEA',stat:'REB',line:6.0,over:true,ml:'-203',conf:67,grade:'LOCK',hitRate:'6.4 rpg · glass control',basis:'Nneka Ogwumike rebounds dominate the paint. Toronto Tempo interior rotation leaves gaps. Season avg 6.4 reb. Home board advantage.'},
-  {player:'Skylar Diggins-Smith',team:'SEA',opp:'TOR',game:'TOR_SEA',stat:'AST',line:5.5,over:true,ml:'-203',conf:67,grade:'LOCK',hitRate:'5.8 apg · playmaking engine',basis:'Skylar Diggins-Smith runs the offense at home. Toronto Tempo help rotations create kick-outs. Season avg 5.8 ast. Matchup style favors high-usage playmakers.'},
-  {player:'Nneka Ogwumike',team:'SEA',opp:'TOR',game:'TOR_SEA',stat:'PTS',line:13.5,over:true,ml:'-170',conf:63,grade:'LOCK',hitRate:'14.8 ppg · home favored',basis:'Nneka Ogwumike home scorer vs Toronto Tempo. Home crowd elevates output. Season avg 14.8 pts. Matchup context favors over.'},
-  {player:'Skylar Diggins-Smith',team:'SEA',opp:'TOR',game:'TOR_SEA',stat:'PTS',line:14.0,over:true,ml:'-170',conf:63,grade:'LOCK',hitRate:'15.4 ppg · home favored',basis:'Skylar Diggins-Smith home scorer vs Toronto Tempo. Home crowd elevates output. Season avg 15.4 pts. Matchup context favors over.'},
-  {player:'Brittney Sykes',team:'TOR',opp:'SEA',game:'TOR_SEA',stat:'PRA',line:24.0,over:true,ml:'-144',conf:59,grade:'LEAN',hitRate:'27.6 PRA avg · all-around floor',basis:'Brittney Sykes fills every box. Season avg 18.4 pts / 4.8 reb / 4.4 ast. Road usage stays elite — needed to keep team competitive. Seattle Storm matchup supports high PRA floor.'},
-  {player:'Marina Mabrey',team:'TOR',opp:'SEA',game:'TOR_SEA',stat:'3PM',line:2.0,over:true,ml:'-144',conf:59,grade:'LEAN',hitRate:'2.4 3PM/game · catch-and-shoot',basis:'Marina Mabrey elite three-point threat. Seattle Storm allows high 3PM rate to opposing guards. Season avg 2.4 3PM. Off-ball movement creates open looks.'},
+  // ── Toronto Tempo @ Seattle Storm (8:00 PM MT · O/U 174.5) ──
+  {player:'Dominique Malonga',team:'SEA',opp:'TOR',game:'TOR_SEA',stat:'PTS',line:15.5,over:true,ml:'-245',conf:71,grade:'ELITE',hitRate:'17.0 ppg · home favored',basis:'Dominique Malonga home scorer vs Toronto Tempo. Home crowd elevates output. Season avg 17.0 pts. Matchup context favors over.'},
+  {player:'Dominique Malonga',team:'SEA',opp:'TOR',game:'TOR_SEA',stat:'REB',line:8.0,over:true,ml:'-245',conf:71,grade:'ELITE',hitRate:'8.9 rpg · glass control',basis:'Dominique Malonga rebounds dominate the paint. Toronto Tempo interior rotation leaves gaps. Season avg 8.9 reb. Home board advantage.'},
+  {player:'Dominique Malonga',team:'SEA',opp:'TOR',game:'TOR_SEA',stat:'PRA',line:25.5,over:true,ml:'-233',conf:70,grade:'ELITE',hitRate:'27.6 PRA avg · all-around floor',basis:'Dominique Malonga fills every box. Season avg 17.0 pts / 8.9 reb / 1.7 ast. Home amplifies every category. Toronto Tempo matchup supports high PRA floor.'},
+  {player:'Flaujae Johnson',team:'SEA',opp:'TOR',game:'TOR_SEA',stat:'PTS',line:12.5,over:true,ml:'-223',conf:69,grade:'ELITE',hitRate:'13.8 ppg · home favored',basis:'Flau\'jae Johnson home scorer vs Toronto Tempo. Home crowd elevates output. Season avg 13.8 pts. Matchup context favors over.'},
+  {player:'Natisha Hiedeman',team:'SEA',opp:'TOR',game:'TOR_SEA',stat:'PTS',line:14.0,over:true,ml:'-213',conf:68,grade:'ELITE',hitRate:'15.4 ppg · home favored',basis:'Natisha Hiedeman home scorer vs Toronto Tempo. Home crowd elevates output. Season avg 15.4 pts. Matchup context favors over.'},
+  {player:'Natisha Hiedeman',team:'SEA',opp:'TOR',game:'TOR_SEA',stat:'AST',line:4.5,over:true,ml:'-194',conf:66,grade:'LOCK',hitRate:'4.8 apg · playmaking engine',basis:'Natisha Hiedeman runs the offense at home. Toronto Tempo help rotations create kick-outs. Season avg 4.8 ast. Matchup style favors high-usage playmakers.'},
 ];
 async function renderWNBAProps(){
   var el=document.getElementById('wnba-props-list');
